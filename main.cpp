@@ -2,7 +2,9 @@
 #include <string>
 #include <time.h>
 #include <algorithm>
+#include <fstream>
 #include <vector>
+#include <sstream>
 using std::string;
 using std::cin;
 using std::vector;
@@ -17,6 +19,7 @@ struct stud {
     double vid2;
     int sum=0;
 };
+vector<stud> students;
 stud Userinput(){
     stud student;
     int nd=1;
@@ -62,6 +65,37 @@ stud GenStudent(){
 
     }
     return student;
+
+}
+void readfile(){
+    std::ifstream fd ("kursiokai.txt");
+    int i=students.size();
+    int tempnd;
+    string line;
+    std::getline(fd, line);
+    while(std::getline(fd, line)){
+        std::istringstream scan(line);
+        students.push_back(stud());
+        scan>>students[i].surname;
+        scan>>students[i].name;
+        while(scan){
+            scan>>tempnd;
+            if(tempnd<0||tempnd>10){
+                tempnd=0;
+            }
+            students[i].nd.push_back(tempnd);
+        }
+        students[i].ex=students[i].nd.back();
+        students[i].nd.pop_back();
+        i++;
+    }
+
+}
+bool sorting(const stud student1, const stud student2){
+    if(student1.surname!=student2.surname)
+        return (student1.surname<student2.surname);
+    if(student1.name!=student2.name)
+        return (student1.name<student2.name);
 
 }
 void print(vector<stud>students, char type){
@@ -118,13 +152,13 @@ if(type=='m'){
 int main() {
     srand((unsigned int)time(nullptr));
     int choice=0;
-    vector<stud> students;
     while(choice==0){
         printf("Saugomi %d studentu(o) duomenys, pasirinkite ka daryti toliau:\n",students.size());
         printf("1. Ivesti studenta paciam\n");
         printf("2. Generuoti studenta\n");
         printf("3. Atspausdinti (galutinis pagal nd mediana)\n");
         printf("4. Atspausdinti (galutinis pagal nd vidurki)\n");
+        printf("5. Skaityti is failo\n");
         cin>>choice;
         switch(choice){
             case 1:
@@ -135,21 +169,44 @@ int main() {
                 students.push_back(GenStudent());
                 choice=0;
                 break;
+                PRINTM:
             case 3:
                 if(students.size()==0){
-                    goto LINEKAPUT;//You found an easter egg xd
-                    }
+                    goto LINEKAPUT;
+                }
+                sort(students.begin(),students.end(),sorting);
                 print(students,'m');
                 break;
+                PRINTV:
             case 4:
                 if(students.size()==0){
                     goto LINEKAPUT;
                 }
+                sort(students.begin(),students.end(),sorting);
                 print(students,'v');
                 break;
+            case 5:
+                readfile();
+                char printchoice;
+                printf("Spausdinti nuskaityta faila su galutiniu pazymiu pagal nd [v]idurki/[m]ediana?\n");
+                cin>>printchoice;
+                switch(printchoice){
+                    case'v':
+                        choice=4;
+                        goto PRINTV;
+                        break;
+                    case 'm':
+                        choice=3;
+                        goto PRINTM;
+                        break;
+                    default:
+                        printf("Neteisinga Ivestis, galima tik m - mediana, v- vidurkis");
+                        cin>>printchoice;
+                        break;
+                }
                 LINEKAPUT:
             default:
-                printf("Pasirinkote neegzistuojanti pasirinkima/bandote atspausdinti tuscia vektoriu :(, bandykite is naujo\n");
+                printf("Pasirinkote neegzistuojanti pasirinkima/bandote spausdinti tuscia masyva, bandykite is naujo\n");
                 choice=0;
         }
 
