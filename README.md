@@ -1,7 +1,7 @@
 
-##Versijų istorija (changelog)
+## Versijų istorija (changelog)
 
-###[v0.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.1)
+### [v0.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.1)
 (2019-02-18)
 
 **Pridėta**
