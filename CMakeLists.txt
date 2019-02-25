@@ -3,4 +3,4 @@ project(Obj_Duomenu_apdorojimas)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Obj_Duomenu_apdorojimas main.cpp)
+add_executable(Obj_Duomenu_apdorojimas main.cpp Input.h Output.h Input.cpp Output.cpp Mutual.h Mutual.cpp)
