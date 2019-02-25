@@ -11,7 +11,7 @@
 - Input handling nuskaitant failą - galima nuskaityti namų darbų pažymius net ir jei jie yra ne skaičiai arba mazesni uz 0/ didesni uz 10 (aptikus - nulinami), jei netinkamas input yra ilgesnis nei 4 simboliai - didelė rizika sugadinti nuskaitytų duomenų tikslumą 
 - Nested switch meniu klaidų spausdinimui
 - Programos struktūros sekcija README.MD faile
-- ![alt text](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/Meme.jpg "Send Bob")
+- ![alt text](Meme.jpg "Send Bob")
 
 **Koreguota**
 - Panaikinti goto, taip pat ir easter egg (LINEKAPUT:), perdaryta switch logika.
