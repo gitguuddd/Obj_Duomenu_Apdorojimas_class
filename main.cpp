@@ -102,7 +102,6 @@ int main() {
                         printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
                         cin>>pchoice;
                     }
-                        printf("Talpa - %d\n",students.capacity());
                     splitnprint(filename,pchoice);
                     ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<<diff.count()<<" s.\n";
                     ft<<"--------------------------------\n";
