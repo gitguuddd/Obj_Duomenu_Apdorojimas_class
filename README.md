@@ -1,7 +1,7 @@
 
 ## Versijų istorija (changelog)
 ### [v0.4](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4)
-(2019-03-10)
+(2019-03-11)
 ![alt text](meme2.jpg "Taip, kaltas")
 
 **Pridėta**
