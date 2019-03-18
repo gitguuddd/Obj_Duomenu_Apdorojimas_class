@@ -42,7 +42,7 @@ Vis dar naudojamas tas pats release profilis, -O3 flagas. Testuojama su 10 nd pa
 
 ---
 ### [v0.4](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4)
-(2019-03-10)
+(2019-03-11)
 ![alt text](meme2.jpg "Taip, kaltas")
 
 **Pridėta**
@@ -55,7 +55,7 @@ Vis dar naudojamas tas pats release profilis, -O3 flagas. Testuojama su 10 nd pa
 - ```splitnprint``` **funkcija** kuri, pagal vartotojo pasirinkimą ([m]ediana/[v]idurkis) suskaičiuoja studentų vektoriuje saugomų studentų galutinius pažymius pagal namų darbų įverčių medianą/namų darbų įverčių vidurkį, 
 išrikiuoja stundentus pagal galutinį pažymį,
  randa iteratorių ties kuriuo galutinis pažymys tampa lygus 5.0, panaudoja iteratorių skeliant studentų sąrašą į ```mldc``` studentus ir ```L_laivas``` studentus, juos atspausdina į failus su atitinkamais vardais ``` studentu skaičius + studentu + v/m + mldc/L_laivas```
-- Naudojant ```high_resolution_clock``` išmatuotas ```Genstudent```, ```readfile``` ir ```splitnprint``` veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000), laikai išvedami į ```v0.4_laikai.txt``` failą
+- Naudojant ```high_resolution_clock``` išmatuotas ```Genstudent```, ```readfile``` ir ```splitnprint``` veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000, 1000000), laikai išvedami į ```v0.4_laikai.txt``` failą
 - Naujose funkcijose pridėtas input/exception handling'as
 - Dabar galima skelti ir atspausdinti ir duomenis kurie buvo sugeneruoti/įvesti paties naudotojo arba nuskaityti iš kursiokai.txt failo
 
