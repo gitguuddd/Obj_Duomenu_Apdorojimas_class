@@ -1,5 +1,46 @@
 
 ## Versijų istorija (changelog)
+### [v0.5](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
+(2019-03-18)
+![alt text](liudeselis.jpg "Puikiai veikiantis template'as")
+![alt text](tenor.gif "My face when")
+
+**Pridėta**
+- ```splitnprint``` ir ```readfile``` funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template'us (žiūrėti viršuje :) )
+- ```STLpick``` funkcija, kuri leidžia vartotojui pasirinkti ar jis norės dirbti su vektoriumi/deku/listu
+- Naujuose inputuose sudėtas input handling'as
+- Į benchmark'o failą (v0.5_laikai.txt) išvedamas ir pasirinkto STL'o pavadinimas
+- Nustatyta, kad listas lūžta, kai perlipa 19800 saugomų studentų skačių, listo generavimas apribotas iki 10000 studentų.
+- ![alt text](meme3.jpg "Ane")
+
+**Koreguota**
+- Visur sutvarkytas lygiavimas
+- ```v0.4_laikai.txt``` keičiama į ```v0.5_laikai.txt```
+- ```Generuoti studentu faila (v0.4)``` keičiama į ```Generuoti studentu faila (v0.5)``` 
+- Pasirodo, kad ```Generuoti studentu faila (v0.5)``` funkcija visados generuodavo vienu studentu mažiau nei reikia. Tai sutvarkyta
+- Namų darbų skaičiaus maksimalus pasirinkimas padidintas iki 1000000
+- Keliose vietose panaikinti nereikalingi try-catch blokai
+- Po 0.4 studentų generavimo programa į menių negrįžta ir tiesiog baiga darbą.
+
+**Testavimo rezultatai naudojant skirtingus STL'us**
+Vis dar naudojamas tas pats release profilis, -O3 flagas. Testuojama su 10 nd pažymių, bandomi abu atvejai (skaičiuoja pagal nd vidurkį/medianą).
+
+| STL'as     | std::vector<> | std::deque<> | std::list<>  |
+|------------|---------------|--------------|--------------|
+| 10vid      | 0.009014 s.   | 0.005128 s.  | 0.003992 s.  |
+| 10med      | 0.006949 s.   | 0.002992 s.  | 0.004979 s.  |
+| 100vid     | 0.007017 s.   | 0.009007 s.  | 0.00698 s.   |
+| 100med     | 0.007977 s.   | 0.007982 s.  | 0.008977 s.  |
+| 1000vid    | 0.035963 s.   | 0.040521 s.  | 0.4627448 s. |
+| 1000med    | 0.031945 s.   | 0.032907 s.  | 0.191491 s.  |
+| 10000vid   | 0.328088 s.   | 0.323124 s.  | 7.471561 s.  |
+| 10000med   | 0.310168 s.   | 0.308523 s.  | 19.684555 s. |
+| 100000vid  | 3.757647 s.   | 3.352958 s.  | Nėra         |
+| 100000med  | 3.35035 s.    | 3.537462 s.  | Nėra         |
+| 1000000vid | 37.74918 s.   | 42.60728 s.  | Nėra         |
+| 1000000med | 41.558277 s.  | 37.02453 s.  | Nėra         |
+
+---
 ### [v0.4](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4)
 (2019-03-10)
 ![alt text](meme2.jpg "Taip, kaltas")

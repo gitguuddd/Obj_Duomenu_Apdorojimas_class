@@ -9,6 +9,8 @@
 #include <string>
 #include <chrono>
 #include <vector>
+#include <deque>
+#include <list>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
@@ -17,6 +19,8 @@ using std::setprecision;
 using std::string;
 using std::cin;
 using std::vector;
+using std::deque;
+using std::list;
 using namespace std::chrono;
 extern char pchoice;
 extern string msg;
@@ -49,11 +53,17 @@ struct stud {
         }
     };
 };
-
+extern void STLpick(char &STL, int & ind);
 extern vector<stud> students;
 extern vector<stud> mldcstudents;
-extern stud test;
 extern vector<stud>::iterator up;
+extern list<stud> studentsl;
+extern list<stud> mldcstudentsl;
+extern list<stud>::iterator upl;
+extern deque<stud> studentsd;
+extern deque<stud> mldcstudentsd;
+extern deque<stud>::iterator upd;
+extern stud test;
 
 template <typename T1, typename T2>
 extern void handleinput( T1 &input, T2 message) {

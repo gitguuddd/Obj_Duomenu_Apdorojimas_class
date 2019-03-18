@@ -2,11 +2,12 @@
 #include "Input.h"
 #include "Output.h"
 int main() {
+    char STL;
+    int ind;
     int choice=0;
     int specchoice =-1;
     int printfail=0;
     int readcount=0;
-    int gencount=0;
     bool isempty=false;
     students.reserve(100);
     while (choice == 0 || choice == 5 || choice == 4) {
@@ -17,7 +18,7 @@ int main() {
             printf("3. Skaityti is failo\n");
             printf("4. Atspausdinti (galutinis pagal nd mediana)\n");
             printf("5. Atspausdinti (galutinis pagal nd vidurki)\n");
-            printf("6. Generuoti studentu faila (v0.4)\n");
+            printf("6. Generuoti studentu faila (v0.5)\n");
             printf("7. Skelti studentus i maladec ir L-laivo sarasus, atspausdinti\n");
             cin >> choice;
             if (choice!=1&&choice!=2&&choice!=3&&choice!=4&&choice!=5&&choice!=6&&choice!=7) {
@@ -85,39 +86,42 @@ int main() {
                     break;
                 }
             case 6:
-                if(gencount==0){
-                    ft.open("V0.4_laikai.txt");
-                    for(int i=1;i<=6;i++){
+                STLpick(STL,ind);
+                    ft.open("V0.5_laikai.txt");
+                    (STL=='v')?ft<<"Pasirinktas konteineris - vektorius\n":
+                        (STL=='d')?ft<<"Pasirinktas konteineris - dekas\n":
+                        ft<<"Pasirinktas konteineris - listas\n";
+                    for(int i=1;i<=ind;i++){
                         students.clear();
+                        studentsl.clear();
+                        studentsd.clear();
                         mldcstudents.clear();
+                        mldcstudentsl.clear();
+                        mldcstudentsd.clear();
                         ft<<int(round(pow(10,i)))<<"studentu\n";
                         ft<<"--------------------------------\n";
                     Genstudent(i);
                     ft<<"Studentai sugeneruoti ir isvesti i faila per "<<diff.count()<<" s.\n";
-                    readfile(filename);
+                       (STL=='v')?readfile(filename):
+                        (STL=='d')?readfiled(filename):
+                        readfilel(filename);
                     ft<<"Studentai nuskaityti is failo  "<<filename<<" per "<<diff.count()<<" s.\n";
                     printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",filename.c_str());
                     cin>>pchoice;
                     while(pchoice!='v'&&pchoice!='m'){
                         printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
                         cin>>pchoice;
-                    }
-                    splitnprint(filename,pchoice);
+                    }(STL=='v')?splitnprint(filename,pchoice):
+                        (STL=='d')?splitnprintd(filename, pchoice):
+                        splitnprintl(filename,pchoice);
                     ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<<diff.count()<<" s.\n";
                     ft<<"--------------------------------\n";
                     }
                     ft.close();
                     mldcstudents.clear();
                     students.clear();
-                    gencount++;
-                choice=0;
-                break;}
-                else{
-                    specchoice = 0;
-                    printfail=5;
-                    choice = 0;
-                    break;
-                }
+                choice=-1;
+                break;
             case 7:
                 if (students.empty()) {
                     specchoice = 0;

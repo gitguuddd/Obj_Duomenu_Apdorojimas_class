@@ -4,8 +4,10 @@
 #include "Mutual.h"
 #include "Input.h"
 int ndcount=0;
-int num=0;
 int namenum;
+int num=0;
+std::deque<stud>::iterator upd;
+std::list<stud>::iterator upl;
 std::vector<stud>::iterator up;
 string filename;
 long long seed=high_resolution_clock::now().time_since_epoch().count();
@@ -36,6 +38,22 @@ void split(char pchoice){
     up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_vid2());}
     else if (pchoice=='m'){
         up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_mvid());}
+}
+void splitd(char pchoice){
+    test.vid2=4.999999999;
+    test.mvid=4.999999999;
+    if(pchoice=='v'){
+        upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,stud::less_than_vid2());}
+    else if (pchoice=='m'){
+        upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,stud::less_than_mvid());}
+}
+void splitl(char pchoice){
+    test.vid2=4.999999999;
+    test.mvid=4.999999999;
+    if(pchoice=='v'){
+        upl=std::upper_bound(studentsl.begin(),studentsl.end(),test,stud::less_than_vid2());}
+    else if (pchoice=='m'){
+        upl=std::upper_bound(studentsl.begin(),studentsl.end(),test,stud::less_than_mvid());}
 }
 stud Userinput() {
     stud student;
@@ -272,6 +290,165 @@ void readfile(string filename) {
     end=high_resolution_clock::now();
     diff=end-start;
 }
+void readfiled(string filename) {
+    start=high_resolution_clock::now();
+    std::ifstream fd((filename+".txt").c_str());
+    int i = studentsd.size();
+    int linecount = 1;
+    int countnd;
+    int tempnd;
+    bool fsio;
+    string line;
+    std::getline(fd, line);
+    while (std::getline(fd, line)) {
+        fsio = false;
+        countnd = 0;
+        std::istringstream scan(line);
+        try{
+            studentsd.push_back(stud());}
+        catch(std::exception e){
+            printf("Perzengtos studentu vektoriaus ribos\n");
+        }
+        scan >> studentsd[i].surname;
+        if (scan.fail()) {
+            scan.clear();
+            scan.ignore(4);
+            printf("%s faile ivyko klaida nuskaitant %d studento pavarde\n",filename.c_str(), linecount);
+        }
+        scan >> studentsd[i].name;
+        if (scan.fail()) {
+            scan.clear();
+            scan.ignore(4);
+            printf("%s faile ivyko klaida nuskaitant %d studento varda\n",filename.c_str(), linecount);
+        }
+        while (scan) {
+            scan >> tempnd;
+            if (scan.fail()) {
+                do {
+                    scan.clear();
+                    scan.ignore(4);
+                    printf("%s faile ivyko klaida nuskaitant %d studento %d pazymi\n",filename.c_str(), linecount,
+                           countnd + 1);
+                    try{
+                        studentsd[i].nd.push_back(0);}
+                    catch(std::exception e){
+                        printf("Perzengtos %d studento namu darbu vektoriaus ribos\n", linecount);
+                    }
+                    countnd++;
+                    if (scan.peek() != '\n'&&scan.peek() != EOF)
+                        scan >> tempnd;
+                    else {
+                        fsio = true;
+                        break;
+                    }
+                } while (scan.fail());
+
+            }
+            if (!fsio) {
+                if (tempnd < 0 || tempnd > 10) {
+                    tempnd = 0;
+                }
+                studentsd[i].sum += tempnd;
+                try{
+                    studentsd[i].nd.push_back(tempnd);}
+                catch(std::exception e){
+                    printf("Perzengtos %d studento namu darbu vektoriaus ribos\n",linecount);
+                }
+                countnd++;
+            }
+            if (scan.peek() == '\n' || scan.peek() == EOF)
+                break;
+
+        }
+        studentsd[i].ex = studentsd[i].nd.back();
+        studentsd[i].sum-=studentsd[i].nd.back();
+        studentsd[i].nd.pop_back();
+        linecount++;
+        i++;
+
+    }
+    fd.close();
+    end=high_resolution_clock::now();
+    diff=end-start;
+}
+void readfilel(string filename) {
+    start=high_resolution_clock::now();
+    std::ifstream fd((filename+".txt").c_str());
+    int i = students.size();
+    int linecount = 1;
+    int countnd;
+    int tempnd;
+    stud temp;
+    bool fsio;
+    string line;
+    std::getline(fd, line);
+    while (std::getline(fd, line)) {
+        fsio = false;
+        countnd = 0;
+        std::istringstream scan(line);
+        scan >> temp.surname;
+        if (scan.fail()) {
+            scan.clear();
+            scan.ignore(4);
+            printf("%s faile ivyko klaida nuskaitant %d studento pavarde\n",filename.c_str(), linecount);
+        }
+        scan >> temp.name;
+        if (scan.fail()) {
+            scan.clear();
+            scan.ignore(4);
+            printf("%s faile ivyko klaida nuskaitant %d studento varda\n",filename.c_str(), linecount);
+        }
+        while (scan) {
+            scan >> tempnd;
+            if (scan.fail()) {
+                do {
+                    scan.clear();
+                    scan.ignore(4);
+                    printf("%s faile ivyko klaida nuskaitant %d studento %d pazymi\n",filename.c_str(), linecount,
+                           countnd + 1);
+                    try{
+                        temp.nd.push_back(0);}
+                    catch(std::exception e){
+                        printf("Perzengtos %d studento namu darbu vektoriaus ribos\n", linecount);
+                    }
+                    countnd++;
+                    if (scan.peek() != '\n'&&scan.peek() != EOF)
+                        scan >> tempnd;
+                    else {
+                        fsio = true;
+                        break;
+                    }
+                } while (scan.fail());
+
+            }
+            if (!fsio) {
+                if (tempnd < 0 || tempnd > 10) {
+                    tempnd = 0;
+                }
+                temp.sum += tempnd;
+                try{
+                    temp.nd.push_back(tempnd);}
+                catch(std::exception e){
+                    printf("Perzengtos %d studento namu darbu vektoriaus ribos\n",linecount);
+                }
+                countnd++;
+            }
+            if (scan.peek() == '\n' || scan.peek() == EOF)
+                break;
+
+        }
+        temp.ex = temp.nd.back();
+        temp.sum-=temp.nd.back();
+        temp.nd.pop_back();
+        linecount++;
+        i++;
+        studentsl.push_back(temp);
+
+    }
+    fd.close();
+    end=high_resolution_clock::now();
+    diff=end-start;
+}
 void Genstudent(int gensize){
     start=high_resolution_clock::now();
     namenum=int(round(pow(10,gensize)));
@@ -285,13 +462,13 @@ void Genstudent(int gensize){
         end=high_resolution_clock::now();
         diff=end-start;
         cin >> ndcount;
-        ::msg = "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;199]\n";
-        while(ndcount<1||ndcount>199){
+        ::msg = "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n";
+        while(ndcount<1||ndcount>1000000){
             cin.setstate(std::ios_base::failbit);
             handleinput(ndcount, msg);}
         handleinput(ndcount, msg);
         start=high_resolution_clock::now();
-        for (int i = 0; i < namenum; i++) {
+        for (int i = 0; i < namenum+1; i++) {
             num = dist(mt);
             if (i == 0) {
                 fv<<"Pavarde"<<setw(27)<<"Vardas"<<setw(27);
@@ -314,9 +491,9 @@ void Genstudent(int gensize){
 }
 void splitnprint(string filename, char pchoice){
     start=high_resolution_clock::now();
-     maxname = 0;
-     maxsurname=0;
-     maxcount = 0;
+    maxname = 0;
+    maxsurname=0;
+    maxcount = 0;
     string subname=filename;
     students.shrink_to_fit();
     for (stud& stud : students) {
@@ -352,26 +529,26 @@ void splitnprint(string filename, char pchoice){
 
         }
         sort(students.begin(),students.end(),sortingvid);
-         split(pchoice);
+        split(pchoice);
         vector<stud>mldcstudents(up,students.end());
         students.resize((students.size()-mldcstudents.size()));
         filename=subname+"v_mldc.txt";
         fv.open(filename.c_str());
-        fv<<"Pavarde"<<setw(maxname)<<"Vardas"<<setw(maxname+maxsurname+1);
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
         fv<<"Galutinis (vid.)\n";
         fv<<"-------------------------------------------------------\n";
         for(stud& stud : mldcstudents){
-            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-6+(maxname-stud.name.length()));
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxsurname-4+(maxsurname-stud.surname.length()));
             fv<<stud.vid2<<setprecision(3)<<"\n";
         }
         fv.close();
         filename=subname+"v_L_laivas.txt";
         fv.open(filename.c_str());
-        fv<<"Pavarde"<<setw(maxname)<<"Vardas"<<setw(maxname+maxsurname+1);
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
         fv<<"Galutinis (vid.)\n";
         fv<<"-------------------------------------------------------\n";
         for(stud& stud : students){
-            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-6+(maxname-stud.name.length()));
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxsurname-4+(maxsurname-stud.surname.length()));
             fv<<stud.vid2<<setprecision(3)<<"\n";
         }
         fv.close();
@@ -392,21 +569,21 @@ void splitnprint(string filename, char pchoice){
         students.resize((students.size()-mldcstudents.size()));
         filename=subname+"m_mldc.txt";
         fv.open(filename.c_str());
-        fv<<"Pavarde"<<setw(maxname)<<"Vardas"<<setw(maxname+maxsurname+1);
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
         fv<<"Galutinis (med.)\n";
         fv<<"-------------------------------------------------------\n";
         for(stud& stud : mldcstudents){
-            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-6+(maxname-stud.name.length()));
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
             fv<<stud.mvid<<setprecision(3)<<"\n";
         }
         fv.close();
         filename=subname+"m_L_laivas.txt";
         fv.open(filename.c_str());
-        fv<<"Pavarde"<<setw(maxname)<<"Vardas"<<setw(maxname+maxsurname+1);
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
         fv<<"Galutinis (med.)\n";
         fv<<"-------------------------------------------------------\n";
         for(stud& stud : students){
-            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-6+(maxname-stud.name.length()));
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
             fv<<stud.mvid<<setprecision(3)<<"\n";
         }
         fv.close();
@@ -415,5 +592,212 @@ void splitnprint(string filename, char pchoice){
     end=high_resolution_clock::now();
     diff=end-start;
 }
+void splitnprintd(string filename, char pchoice){
+    start=high_resolution_clock::now();
+    maxname = 0;
+    maxsurname=0;
+    maxcount = 0;
+    string subname=filename;
+    studentsd.shrink_to_fit();
+    for (stud& stud : studentsd) {
+        stud.nd.shrink_to_fit();
+        if (stud.name.length() >= maxname)
+            maxname = stud.name.length();
+        if (stud.surname.length() >= maxsurname)
+            maxsurname = stud.surname.length();
+    }
+    if (maxsurname <= 7)
+        maxsurname = 7;
+    if (maxname <= 6)
+        maxname = 6;
+    if(pchoice=='v'){
+        maxcount = 0;
+        for (stud& stud : studentsd) {
+            if (stud.nd.size() >= maxcount)
+                maxcount = stud.nd.size();
+        }
+        for (stud& stud : studentsd) {
+            if (maxcount != 0) {
+                try{
+                    stud.vid = (double)stud.sum / (double)maxcount;}
+                catch(std::exception e){
+                    printf("buvo bandyta apskaiciuototi studentu su 0 nd vidurkius :( \n");
+                }
+                stud.vid2 = stud.vid*0.4 + stud.ex*0.6;
+            }
+            else {
+                stud.vid = 0;
+                stud.vid2 = stud.vid*0.4 + stud.ex*0.6;
+            }
+
+        }
+        sort(studentsd.begin(),studentsd.end(),sortingvid);
+        splitd(pchoice);
+        deque<stud>mldcstudentsd(upd,studentsd.end());
+        studentsd.resize((studentsd.size()-mldcstudentsd.size()));
+        filename=subname+"v_mldc.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (vid.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : mldcstudentsd){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.vid2<<setprecision(3)<<"\n";
+        }
+        fv.close();
+        filename=subname+"v_L_laivas.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (vid.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : studentsd){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.vid2<<setprecision(3)<<"\n";
+        }
+        fv.close();
+    }
+    else if(pchoice=='m'){
+        for (stud& stud : studentsd) {
+            sort(stud.nd.begin(), stud.nd.end());
+            if (stud.nd.size() % 2 != 0)
+                stud.med = stud.nd[round((double)stud.nd.size() / 2)-1 ];
+            else
+                stud.med = (double)(stud.nd[stud.nd.size() / 2 -1] + stud.nd[(stud.nd.size() / 2) ]) / 2;
+            stud.mvid = stud.med*0.4 + stud.ex*0.6;
+
+        }
+        sort(studentsd.begin(),studentsd.end(),sortingmvid);
+        splitd(pchoice);
+        deque<stud>mldcstudentsd(upd,studentsd.end());
+        studentsd.resize((studentsd.size()-mldcstudentsd.size()));
+        filename=subname+"m_mldc.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (med.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : mldcstudentsd){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.mvid<<setprecision(3)<<"\n";
+        }
+        fv.close();
+        filename=subname+"m_L_laivas.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (med.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : studentsd){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.mvid<<setprecision(3)<<"\n";
+        }
+        fv.close();
+
+    }
+    end=high_resolution_clock::now();
+    diff=end-start;
+}
+void splitnprintl(string filename, char pchoice){
+    start=high_resolution_clock::now();
+    maxname = 0;
+    maxsurname=0;
+    maxcount = 0;
+    string subname=filename;
+    for (stud& stud : studentsl) {
+        stud.nd.shrink_to_fit();
+        if (stud.name.length() >= maxname)
+            maxname = stud.name.length();
+        if (stud.surname.length() >= maxsurname)
+            maxsurname = stud.surname.length();
+    }
+    if (maxsurname <= 7)
+        maxsurname = 7;
+    if (maxname <= 6)
+        maxname = 6;
+    if(pchoice=='v'){
+        maxcount = 0;
+        for (stud& stud : studentsl) {
+            if (stud.nd.size() >= maxcount)
+                maxcount = stud.nd.size();
+        }
+        for (stud& stud : studentsl) {
+            if (maxcount != 0) {
+                try{
+                    stud.vid = (double)stud.sum / (double)maxcount;}
+                catch(std::exception e){
+                    printf("buvo bandyta apskaiciuototi studentu su 0 nd vidurkius :( \n");
+                }
+                stud.vid2 = stud.vid*0.4 + stud.ex*0.6;
+            }
+            else {
+                stud.vid = 0;
+                stud.vid2 = stud.vid*0.4 + stud.ex*0.6;
+            }
+
+        }
+        studentsl.sort(sortingvid);
+        splitl(pchoice);
+        list<stud>mldcstudentsl;
+        mldcstudentsl.splice(mldcstudentsl.begin(),studentsl,upl,studentsl.end());
+        filename=subname+"v_mldc.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (vid.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : mldcstudentsl){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.vid2<<setprecision(3)<<"\n";
+        }
+        fv.close();
+        filename=subname+"v_L_laivas.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+1);
+        fv<<"Galutinis (vid.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : studentsl){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.vid2<<setprecision(3)<<"\n";
+        }
+        fv.close();
+    }
+    else if(pchoice=='m'){
+        for (stud& stud : studentsl) {
+            sort(stud.nd.begin(), stud.nd.end());
+            if (stud.nd.size() % 2 != 0)
+                stud.med = stud.nd[round((double)stud.nd.size() / 2)-1 ];
+            else
+                stud.med = (double)(stud.nd[stud.nd.size() / 2 -1] + stud.nd[(stud.nd.size() / 2) ]) / 2;
+            stud.mvid = stud.med*0.4 + stud.ex*0.6;
+
+        }
+        studentsl.sort(sortingmvid);
+        splitl(pchoice);
+        list<stud>mldcstudentsl;
+        mldcstudentsl.splice(mldcstudentsl.begin(),studentsl,upl,studentsl.end());
+        filename=subname+"m_mldc.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (med.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : mldcstudentsl){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.mvid<<setprecision(3)<<"\n";
+        }
+        fv.close();
+        filename=subname+"m_L_laivas.txt";
+        fv.open(filename.c_str());
+        fv<<"Vardas"<<setw(maxname+2)<<"Pavarde"<<setw(maxname+maxsurname+3);
+        fv<<"Galutinis (med.)\n";
+        fv<<"-------------------------------------------------------\n";
+        for(stud& stud : studentsl){
+            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
+            fv<<stud.mvid<<setprecision(3)<<"\n";
+        }
+        fv.close();
+
+    }
+    end=high_resolution_clock::now();
+    diff=end-start;
+}
+
+
 
 
