@@ -10,7 +10,7 @@ Pavarde3    Vardas3     10   0    3    b    5    2    1    4    5
 ```
 - Paleidžiame programą
 ---
-##Naudojimosi instrukcija
+## Naudojimosi instrukcija
 - Paleidųs programą bus matomas toks vaizdas
 ```shell
 Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
