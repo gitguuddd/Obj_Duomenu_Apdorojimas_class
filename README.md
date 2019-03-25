@@ -189,7 +189,7 @@ if(pchoice=='v')
 - Pasirodo, kad ```Generuoti studentu faila (v0.5)``` funkcija visados generuodavo vienu studentu mažiau nei reikia. Tai sutvarkyta
 - Namų darbų skaičiaus maksimalus pasirinkimas padidintas iki 1000000
 - Keliose vietose panaikinti nereikalingi try-catch blokai
-- Po 0.4 studentų generavimo programa į menių negrįžta ir tiesiog baiga darbą.
+- Po 0.5 studentų generavimo programa į menių negrįžta ir tiesiog baiga darbą.
 
 **Testavimo rezultatai naudojant skirtingus STL'us**
 Vis dar naudojamas tas pats release profilis, -O3 flagas. Testuojama su 10 nd pažymių, bandomi abu atvejai (skaičiuoja pagal nd vidurkį/medianą).
