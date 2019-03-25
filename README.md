@@ -1,6 +1,6 @@
 ## Įdiegimo instrukcija
 1. Clone'inam repositoriją ```$ git clone https://github.com/gitguuddd/Obj_Duomenu_apdorojimas.git```
-2. Compile'inam programą paleisdami CMakeLists.tct failą
+2. Compile'inam programą paleisdami CMakeLists.txt failą
 3. Norint nuskaityti informaciją nuo failo reikia sukurti kursiokai.txt failą su tokia struktūra 
 ```shell
 Pavarde     Vardas      ND1  ND2  ND3  ND4  ND5  ND6  ND7  ND8  Egzaminas
