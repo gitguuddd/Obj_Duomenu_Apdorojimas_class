@@ -33,7 +33,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 **Pridėta**
 - Prie naudojamos ```c``` splitinimo strategijos pridėtos ```a``` ir ```b``` strategijos (apie jas - vėliau)
-- Splitinimo strategijos pasirinkimo funkcijas ```Stratpick```
+- Splitinimo strategijos pasirinkimo funkcija ```Stratpick```
 
 **Koreguota**
 - Sutvarkytas minor bug'as: išvedant skaičiavimus pagal mediana rašydavo, kad galutinis vertinimas buvo skaičiuotas pagal vidurkį
