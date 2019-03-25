@@ -7,11 +7,11 @@
 #include "Mutual.h"
 #include <random>
 #include <ctime>
-extern string filename;
 extern int namenum;
 extern int gensize;
 extern int ndcount;
 extern int num;
+extern char sar;
 extern std::vector<stud>::iterator up;
 extern long long seed;
 extern std::mt19937 mt;
@@ -23,15 +23,12 @@ stud GenStudent();
 void readfile(bool & isempty, int &readcount);
 bool sortingvid(const stud student1, const stud student2);
 bool sortingmvid(const stud student1, const stud student2);
-extern void readfile(string filename);
-extern void readfiled(string filename);
-extern void readfilel(string filename);
-extern void split(char pchoice);
-extern void splitd(char pchoice);
-extern void splitl(char pchoice);
-extern void splitnprint(string filename, char pchoice);
-extern void splitnprintd(string filename, char pchoice);
-extern void splitnprintl(string filename, char pchoice);
+extern void split(char pchoice, char strat, std::vector<stud>::iterator &up);
+extern void splitd(char pchoice, char strat, std::deque<stud>::iterator &upd);
+extern void splitl(char pchoice, char strat, std::list<stud>::iterator &upl);
+extern void splitnprint(char pchoice, char strat);
+extern void splitnprintd( char pchoice, char strat);
+extern void splitnprintl( char pchoice, char strat);
 
 
 

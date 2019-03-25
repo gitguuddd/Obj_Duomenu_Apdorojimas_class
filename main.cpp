@@ -3,6 +3,7 @@
 #include "Output.h"
 int main() {
     char STL;
+    char strat='c';
     int ind;
     int choice=0;
     int specchoice =-1;
@@ -18,7 +19,7 @@ int main() {
             printf("3. Skaityti is failo\n");
             printf("4. Atspausdinti (galutinis pagal nd mediana)\n");
             printf("5. Atspausdinti (galutinis pagal nd vidurki)\n");
-            printf("6. Generuoti studentu faila (v0.5)\n");
+            printf("6. Generuoti studentu faila (v1.0)\n");
             printf("7. Skelti studentus i maladec ir L-laivo sarasus, atspausdinti\n");
             cin >> choice;
             if (choice!=1&&choice!=2&&choice!=3&&choice!=4&&choice!=5&&choice!=6&&choice!=7) {
@@ -87,7 +88,8 @@ int main() {
                 }
             case 6:
                 STLpick(STL,ind);
-                    ft.open("V0.5_laikai.txt");
+                Stratpick(strat);
+                    ft.open("V1.0_laikai.txt");
                     (STL=='v')?ft<<"Pasirinktas konteineris - vektorius\n":
                         (STL=='d')?ft<<"Pasirinktas konteineris - dekas\n":
                         ft<<"Pasirinktas konteineris - listas\n";
@@ -102,18 +104,28 @@ int main() {
                         ft<<"--------------------------------\n";
                     Genstudent(i);
                     ft<<"Studentai sugeneruoti ir isvesti i faila per "<<diff.count()<<" s.\n";
-                       (STL=='v')?readfile(filename):
-                        (STL=='d')?readfiled(filename):
-                        readfilel(filename);
+                    if(STL=='v')
+                        students.reserve(namenum);
+                        try{
+                       (STL=='v')?readfile(students,filename):
+                        (STL=='d')?readfile(studentsd,filename):
+                        readfile(studentsl,filename);}
+                        catch(std::exception &e){
+                            printf("pzdc ant %d\n", studentsl.size());
+                        }
+                        if(STL=='v')
+                            students.shrink_to_fit();
+                            else if (STL=='d')
+                                students.shrink_to_fit();
                     ft<<"Studentai nuskaityti is failo  "<<filename<<" per "<<diff.count()<<" s.\n";
                     printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",filename.c_str());
                     cin>>pchoice;
                     while(pchoice!='v'&&pchoice!='m'){
                         printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
                         cin>>pchoice;
-                    }(STL=='v')?splitnprint(filename,pchoice):
-                        (STL=='d')?splitnprintd(filename, pchoice):
-                        splitnprintl(filename,pchoice);
+                    }(STL=='v')?splitnprint(pchoice, strat):
+                        (STL=='d')?splitnprintd( pchoice, strat):
+                        splitnprintl(pchoice, strat);
                     ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<<diff.count()<<" s.\n";
                     ft<<"--------------------------------\n";
                     }
@@ -130,6 +142,7 @@ int main() {
                     break;
                 }
                 else {
+                    Stratpick(strat);
                     filename=std::to_string(students.size())+"kursioku";
                     printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",filename.c_str());
                     cin>>pchoice;
@@ -137,7 +150,7 @@ int main() {
                         printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
                         cin>>pchoice;
                     }
-                    splitnprint(filename,pchoice);
+                    splitnprint(pchoice, strat);
                     choice = -1;
                     break;
                 }
