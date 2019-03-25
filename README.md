@@ -43,6 +43,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - README fail'e pridėtos naudojimosi, įdiegimo instrukcijos.
 
 **Testavimo rezultatai**
+- Kaip ir seniau, visi testai buvo vykdkyti Release profilyje su -O3 flag'u, kiekvienas studentas turi po 10 namų darbų pažymių
 - Visų pirma reikia apsibrėžti ```a, b ir c```splitinimo strategijas
 - Strategija ```a``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
 - Strategija ```b``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
