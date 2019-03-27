@@ -1,6 +1,6 @@
 ## Įdiegimo instrukcija
 1. Clone'inam repositoriją ```$ git clone https://github.com/gitguuddd/Obj_Duomenu_apdorojimas.git```
-2. Compile'inam programą paleisdami CMakeLists.tct failą
+2. Compile'inam programą paleisdami CMakeLists.txt failą
 3. Norint nuskaityti informaciją nuo failo reikia sukurti kursiokai.txt failą su tokia struktūra 
 ```shell
 Pavarde     Vardas      ND1  ND2  ND3  ND4  ND5  ND6  ND7  ND8  Egzaminas
@@ -52,7 +52,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 **Pridėta**
 - Prie naudojamos ```c``` splitinimo strategijos pridėtos ```a``` ir ```b``` strategijos (apie jas - vėliau)
-- Splitinimo strategijos pasirinkimo funkcijas ```Stratpick```
+- Splitinimo strategijos pasirinkimo funkcija ```Stratpick```
 
 **Koreguota**
 - Sutvarkytas minor bug'as: išvedant skaičiavimus pagal mediana rašydavo, kad galutinis vertinimas buvo skaičiuotas pagal vidurkį
@@ -62,6 +62,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - README fail'e pridėtos naudojimosi, įdiegimo instrukcijos.
 
 **Testavimo rezultatai**
+- Kaip ir seniau, visi testai buvo vykdkyti Release profilyje su -O3 flag'u, kiekvienas studentas turi po 10 namų darbų pažymių
 - Visų pirma reikia apsibrėžti ```a, b ir c```splitinimo strategijas
 - Strategija ```a``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
 - Strategija ```b``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
@@ -313,7 +314,7 @@ if(pchoice=='v')
 | 1000vid. B    | 0.031914 s.   | 0.032948 s.  | 0.030878 s.  |
 | 10000med. A   | 0.260302 s.   | 0.317148 s.  | 0.2702790 s. |
 | 10000vid. A   | 0.291251 s.   | 0.277272 s.  | 0.278252 s.  |
-| 10000med. B   | 0.266288 s.   | 0.302154 s.  | 0.274262     |
+| 10000med. B   | 0.266288 s.   | 0.302154 s.  | 0.274262 s.  |
 | 10000vid. B   | 0.281282 s.   | 0.268279 s.  | 0.279253 s.  |
 | 100000med. A  | 2.902221 s.   | 3.120653 s.  | 3.318164 s.  |
 | 100000vid. A  | 3.013925 s.   | 3.081752 s.  | 3.280935 s.  |
