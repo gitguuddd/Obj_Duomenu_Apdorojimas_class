@@ -11,7 +11,10 @@ Pavarde3    Vardas3     10   0    3    b    5    2    1    4    5
 - Paleidžiame programą
 ---
 ##Naudojimosi instrukcija
-- Paleidųs programą bus matomas toks vaizdas
+- Paleidųs programą programa paklaus vartotojo kokiu režimu jis nori vykdyti programą: išsamiu ar konkrečiu
+- Išsamus režimas pasižymi labai didele pasirinkimo galimybe - kiekvienam generuojamam  studentu failui galima priskirti skirtingą skaičių namų darbų, galutinio pažymio skaičiavimo būdą. Šis režimas yra apkrautas vartotojo įvestimi
+- Konkretus režimas kiek galima labiau sumažina vartotojo įvesčių kiekį - generuojant failus reikia tik vieną kartą įvesti namų darbų skaičių ir galutinio pažymio skaičiavimo būdą
+- Paleidųs programą ir pasirinkųs režimą bus matomas toks vaizdas
 ```shell
 Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 1. Ivesti studenta paciam
@@ -28,7 +31,23 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą
 ---
 ## Versijų istorija (changelog)
-### [v1.0](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
+### [v1.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.1)
+(2019-03-27)
+
+**Pridėta**
+- Funkcijos ```GavoSkola, raskMinkstus, raskMinkstusd, raskKietus, raskKietusd```
+- Papildomos užduoties siūlomi splitinimo variantai pridėti kaip papildoma ```d``` splitinimo strategija
+- Pridėta galimybė pasirinkti programos veikimo rėžima: išsamus/konkretus
+- Skeliant studentus naudojant papildomos užduoties algoritmus skėlimo laikai bus išvedami į ```Papildomos_uzduoties_laikai.txt``` failą
+- Kai vartotojas pats įveda vardą/pavardę programa tikrina ar varde/pavardėje yra tik raidės, atradųs kitokį simbolį vardas/pavardė yra keičiami į ```BadInput```
+
+**Koreguota**
+- Sutvarkyti keli README.md failo bug'ai
+- Pertvarkyta README.md failo struktūra
+
+
+---
+### [v1.0](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.0)
 (2019-03-25)
 
 **Pridėta**
@@ -46,7 +65,144 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Visų pirma reikia apsibrėžti ```a, b ir c```splitinimo strategijas
 - Strategija ```a``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
 - Strategija ```b``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
-- Strategija ```c``` - Pirminis studentų STL'as yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorius ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL'ą yra gaunamas ```L_laivas``` STL.
+- Strategija ```c``` - Pirminis studentų STL'as yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL'ą yra gaunamas ```L_laivas``` STL.
+
+---
+### [v0.5](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
+(2019-03-18)
+![alt text](liudeselis.jpg "Puikiai veikiantis template'as")
+![alt text](tenor.gif "My face when")
+
+**Pridėta**
+- ```splitnprint``` ir ```readfile``` funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template'us (žiūrėti viršuje :) )
+- ```STLpick``` funkcija, kuri leidžia vartotojui pasirinkti ar jis norės dirbti su vektoriumi/deku/listu
+- Naujuose inputuose sudėtas input handling'as
+- Į benchmark'o failą (v0.5_laikai.txt) išvedamas ir pasirinkto STL'o pavadinimas
+- Nustatyta, kad listas lūžta, kai perlipa 19800 saugomų studentų skačių, listo generavimas apribotas iki 10000 studentų.
+- ![alt text](meme3.jpg "Ane")
+
+**Koreguota**
+- Visur sutvarkytas lygiavimas
+- ```v0.4_laikai.txt``` keičiama į ```v0.5_laikai.txt```
+- ```Generuoti studentu faila (v0.4)``` keičiama į ```Generuoti studentu faila (v0.5)``` 
+- Pasirodo, kad ```Generuoti studentu faila (v0.5)``` funkcija visados generuodavo vienu studentu mažiau nei reikia. Tai sutvarkyta
+- Namų darbų skaičiaus maksimalus pasirinkimas padidintas iki 1000000
+- Keliose vietose panaikinti nereikalingi try-catch blokai
+- Po 0.5 studentų generavimo programa į menių negrįžta ir tiesiog baiga darbą.
+
+---
+### [v0.4](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4)
+(2019-03-11)
+![alt text](meme2.jpg "Taip, kaltas")
+
+**Pridėta**
+
+- ```Generuoti studentu faila (v0.4)``` meniu pasirinkimas kuris apjungia šias naujas funkcijas:
+- **overload'inta ```Genstudent``` funkcija**, kuri sugeneruoja nurodytą kiekį studentų
+   su atsitiktinais vardais, pavardėmis
+   , egzaminų įverčiais ir vartotojo nurodytu namų darbų įverčių kiekiu ir šiuos duomenis išveda į failus su atitinkamais pavadinimais ```generuojamu studentu kiekis + studentu.txt```
+- ```readfile``` **funkcija** kuri nuskaito duomenis iš sugeneruotų failų ir juos sudeda į students vektorių.
+- ```splitnprint``` **funkcija** kuri, pagal vartotojo pasirinkimą ([m]ediana/[v]idurkis) suskaičiuoja studentų vektoriuje saugomų studentų galutinius pažymius pagal namų darbų įverčių medianą/namų darbų įverčių vidurkį, 
+išrikiuoja stundentus pagal galutinį pažymį,
+ randa iteratorių ties kuriuo galutinis pažymys tampa lygus 5.0, panaudoja iteratorių skeliant studentų sąrašą į ```mldc``` studentus ir ```L_laivas``` studentus, juos atspausdina į failus su atitinkamais vardais ``` studentu skaičius + studentu + v/m + mldc/L_laivas```
+- Naudojant ```high_resolution_clock``` išmatuotas ```Genstudent```, ```readfile``` ir ```splitnprint``` veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000, 1000000), laikai išvedami į ```v0.4_laikai.txt``` failą
+- Naujose funkcijose pridėtas input/exception handling'as
+- Dabar galima skelti ir atspausdinti ir duomenis kurie buvo sugeneruoti/įvesti paties naudotojo arba nuskaityti iš kursiokai.txt failo
+
+**Koreguota**
+
+- Kursioko Igno D. patarimu mt19937 seedinimas pakeistas iš random device
+ į ```high_resolution_clock::now().time_since_epoch().count()```, nes pasirodo, kad mano kompiuteris neturi random device :(
+- Sutvarkyti keli minor bug'ai susyję su informacijos išvedimu konsolėje
+- Pakeistas README.md failas
+
+**Ką artimiausiame release reiktų pataisyti, bet ko tikriausiai nepataisysių** 
+- Skeliant vartotojo įvestus/sugeneruotus/nuskaitytus duomenis, sudaryti failai ne visados pasižymi puikiu lygiavimu
+- Sugeneruoti studentų failai (dar neperskelti) irgi nėra puikiai išlygiuoti, nes iškart generuojant ir išvedant nėra galimybės surasti maxname ir maxsurname reikšmių
+- Studentų sąrašų generavimas ir skėlimas prikuria labaiiii daug failų.
+- Dėl multiple definition errorų į ```input.h``` ir ```input.cpp``` teko perkelti splitnprint funkciją, nors ji pagal veikimo principą turėtų priklausyti ```output.h``` ir ```output.cpp``` failams
+- Per daug kintamųjų, kurie kaip extern'ai yra deklaruojami ```mutual.h``` 
+
+**Laiko matavimo rezultatai ir pavyzdžiai** 
+- Visi sarašai buvo sugeneruoti naudojant Release profilį ir -O3 flagą
+
+---
+### [v0.3](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.3)
+(2019-02-25)
+
+**Pridėta**
+- ```Input.h, Mutual.h, Output.h, Mutual.cpp, Output.cpp, Input.cpp```
+- Input handling (pagrinde ```cin.fail()```)
+- Naudojami ```vector.reserve()``` ir ```vector.shrink_to_fit()```
+- Exception handling (```try - catch```) ties ```students.push_back``` ir ```stud.nd.push_back```, nes pereita prie vektorių atminties rezervavimo
+- Input handling nuskaitant failą - galima nuskaityti namų darbų pažymius net ir jei jie yra ne skaičiai arba mazesni uz 0/ didesni uz 10 (aptikus - nulinami), jei netinkamas input yra ilgesnis nei 4 simboliai - didelė rizika sugadinti nuskaitytų duomenų tikslumą 
+- Nested switch meniu klaidų spausdinimui
+- Programos struktūros sekcija README.MD faile
+- ![alt text](Meme.jpg "Send Bob")
+
+**Koreguota**
+- Panaikinti goto, taip pat ir easter egg (LINEKAPUT:), perdaryta switch logika.
+- Pasirodo, kad senesnių versijų duomenys nebuvo labai tikslūs, duomenys patikslinti.
+- kursiokai.txt failas tikslingai sucorruptintas norint išbandyti input handling'a.
+---
+### [v0.2](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.2)
+(2019-02-18)
+
+**Pridėta**
+ - Kursiokai.txt
+ - Rūšiavimas pagal studento vardą ir pavardę
+ - Nuskaitymas iš failo
+ - Galimybė visais būdais gautus duomenis atspausdinti viename output sąraše
+ - Primityvus switch'o error handling'as naudojant goto
+ - Easter egg
+ 
+ **Koreguota**
+ - Pakeistas README.md failas
+ 
+ **Žinomi trūkumai/ką reikia kuo greičiau ištaisyti**
+ - Goto switche reikia pakeisti į normalų refactoringa dirbant prie v0.3
+ - Studentų rikiavimas veiks keistokai jei bus naudojami ne vienodo ilgio vardai ir pavardės.
+ - Nemažai vietų trūksta exception/error handling'o
+---
+### [v0.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.1)
+(2019-02-18)
+
+**Pridėta**
+- CMake failas
+- Pirmininis programos ```cpp``` failas
+- Alternatyvios programos (su masyvu ) ```cpp``` failas (veikiantis bardakas)
+
+**Koreguota**
+- Pakeistas README.md failas
+---
+## Benchmark'ai
+
+**Truputis informacijos norint suprasti benchmarkus**
+- Visi testai yra vykdomi Release profilyje, naudojant -O3 kompiliatoriaus flag'ą.
+- Visi testai vykdomi su 10 namų darbų.
+- Egzistuoja keturios skėlimo strategijos ```A, B, C, D```
+- Strategija ```A``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
+- Strategija ```B``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
+- Strategija ```C``` - Pirminis studentų STL'as yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL'ą yra gaunamas ```L_laivas``` STL.
+- Strategija ```D``` - Papildomos užduoties siūlomi skėlimo algoritmai:```m``` algoritmas, kuris skolininkus  perkelia į atskirą STL'ą, šiuos studentus ištrina iš pirminio STL'o per ```erase``` funkciją, ```k``` algoritmas, kuris skolininkus irgi perkelia į atskirą STL'ą, kietus studentus perkelia į pirminio STL'o priekį ir naudojant ```resize``` ir ```shrink_to_fit``` funkcijas iš šio STL'o ištrina perteklinius kietus studentus/skolininkus ir atlaisvina atmintį 
+- ```vid``` ir ```med``` atitinkamai reiškia, kad teste galutinis pažymys buvo skaičiuotas pagal namų darbų įverčių vidurkį arba medianą
+
+**v1.1**
+**Papidomos užduoties skėlimo algoritmų (D strategijos) laikai dirbant su vector arba deque**
+
+| STL'as    | std::vector<> | std::deque<> |
+|-----------|---------------|--------------|
+| 10000 m   | 4.71733 s.    | 1.65675 s.   |
+| 10000 k   | 11.7855 s.    | 0.004923 s.  |
+| 100000 m  | 497.472 s.    | 175.256 s.   |
+| 100000 k  | 3144.7 s.     | 0.061832 s.  |
+| 1000000 m | inf.          | inf.         |
+| 1000000 k | inf.          | 0.600361 s.  |
+
+- Iš lentelės duomenų matome, kad ```m``` algoritmas vektoriui buvo palankesnis nei ```k``` algoritmas.Tai galima paaiškinti tuo, kad ```k``` algoritme naudojamas kėlimas į priekį vektoriui yra O(N) sudėtingumo funkcija ir gerokai apsunkina vektoriaus darba - labai daug laiko užima saugomų objektų perstumdymas.
+- Tačiau deque atveju ```k``` algoritmas buvo totalus game winner, nes deque turi ```push_front``` funkciją ir ją labai sėkmingai panaudoja ```k``` algoritmą.Tai yra vienintelė kombinacija, kuri pabaigė darbą su 1000000 studentų. 
+
+**v1.0**
 
 **Skirtingų STL'u naudojamos atminties kiekis pritaikant a strategiją**
 
@@ -59,7 +215,6 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 | 10000 skirtumas                                  |    + 3.2 MB   |   + 3.9 MB   |   + 2.4 MB  |
 | 100000 skirtumas                                 |   + 34.1 MB   |   + 30.8 MB  |  + 36.9 MB  |
 | 1000000 skirtumas                                |   + 616.2 MB  |  + 293.4 MB  |  + 322.6 MB |
-
 - Iš lentelės duomenų matome, kad ```vector```  STL'as yra labai jautrus tokiam atminties švaistymui
 
 **Programos benchmark'as prieš optimizuojant a ir b strategijas**
@@ -168,31 +323,9 @@ if(pchoice=='v')
 | 1000000vid. A | 29.14299 s.   | 30.59215 s.  | 29.58191 s.  |
 | 1000000med. B | 29.73743 s.   | 29.01442 s.  | 29.41837 s.  |
 | 1000000vid. B | 28.89283 s.   | 30.00679 s.  | 29.0454 s.   |
----
-### [v0.5](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
-(2019-03-18)
-![alt text](liudeselis.jpg "Puikiai veikiantis template'as")
-![alt text](tenor.gif "My face when")
 
-**Pridėta**
-- ```splitnprint``` ir ```readfile``` funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template'us (žiūrėti viršuje :) )
-- ```STLpick``` funkcija, kuri leidžia vartotojui pasirinkti ar jis norės dirbti su vektoriumi/deku/listu
-- Naujuose inputuose sudėtas input handling'as
-- Į benchmark'o failą (v0.5_laikai.txt) išvedamas ir pasirinkto STL'o pavadinimas
-- Nustatyta, kad listas lūžta, kai perlipa 19800 saugomų studentų skačių, listo generavimas apribotas iki 10000 studentų.
-- ![alt text](meme3.jpg "Ane")
-
-**Koreguota**
-- Visur sutvarkytas lygiavimas
-- ```v0.4_laikai.txt``` keičiama į ```v0.5_laikai.txt```
-- ```Generuoti studentu faila (v0.4)``` keičiama į ```Generuoti studentu faila (v0.5)``` 
-- Pasirodo, kad ```Generuoti studentu faila (v0.5)``` funkcija visados generuodavo vienu studentu mažiau nei reikia. Tai sutvarkyta
-- Namų darbų skaičiaus maksimalus pasirinkimas padidintas iki 1000000
-- Keliose vietose panaikinti nereikalingi try-catch blokai
-- Po 0.5 studentų generavimo programa į menių negrįžta ir tiesiog baiga darbą.
-
+**v0.5**
 **Testavimo rezultatai naudojant skirtingus STL'us**
-Vis dar naudojamas tas pats release profilis, -O3 flagas. Testuojama su 10 nd pažymių, bandomi abu atvejai (skaičiuoja pagal nd vidurkį/medianą).
 
 | STL'as     | std::vector<> | std::deque<> | std::list<>  |
 |------------|---------------|--------------|--------------|
@@ -209,96 +342,12 @@ Vis dar naudojamas tas pats release profilis, -O3 flagas. Testuojama su 10 nd pa
 | 1000000vid | 37.74918 s.   | 42.60728 s.  | Nėra         |
 | 1000000med | 41.558277 s.  | 37.02453 s.  | Nėra         |
 
----
-### [v0.4](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4)
-(2019-03-11)
-![alt text](meme2.jpg "Taip, kaltas")
-
-**Pridėta**
-
-- ```Generuoti studentu faila (v0.4)``` meniu pasirinkimas kuris apjungia šias naujas funkcijas:
-- **overload'inta ```Genstudent``` funkcija**, kuri sugeneruoja nurodytą kiekį studentų
-   su atsitiktinais vardais, pavardėmis
-   , egzaminų įverčiais ir vartotojo nurodytu namų darbų įverčių kiekiu ir šiuos duomenis išveda į failus su atitinkamais pavadinimais ```generuojamu studentu kiekis + studentu.txt```
-- ```readfile``` **funkcija** kuri nuskaito duomenis iš sugeneruotų failų ir juos sudeda į students vektorių.
-- ```splitnprint``` **funkcija** kuri, pagal vartotojo pasirinkimą ([m]ediana/[v]idurkis) suskaičiuoja studentų vektoriuje saugomų studentų galutinius pažymius pagal namų darbų įverčių medianą/namų darbų įverčių vidurkį, 
-išrikiuoja stundentus pagal galutinį pažymį,
- randa iteratorių ties kuriuo galutinis pažymys tampa lygus 5.0, panaudoja iteratorių skeliant studentų sąrašą į ```mldc``` studentus ir ```L_laivas``` studentus, juos atspausdina į failus su atitinkamais vardais ``` studentu skaičius + studentu + v/m + mldc/L_laivas```
-- Naudojant ```high_resolution_clock``` išmatuotas ```Genstudent```, ```readfile``` ir ```splitnprint``` veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000, 1000000), laikai išvedami į ```v0.4_laikai.txt``` failą
-- Naujose funkcijose pridėtas input/exception handling'as
-- Dabar galima skelti ir atspausdinti ir duomenis kurie buvo sugeneruoti/įvesti paties naudotojo arba nuskaityti iš kursiokai.txt failo
-
-**Koreguota**
-
-- Kursioko Igno D. patarimu mt19937 seedinimas pakeistas iš random device
- į ```high_resolution_clock::now().time_since_epoch().count()```, nes pasirodo, kad mano kompiuteris neturi random device :(
-- Sutvarkyti keli minor bug'ai susyję su informacijos išvedimu konsolėje
-- Pakeistas README.md failas
-
-**Ką artimiausiame release reiktų pataisyti, bet ko tikriausiai nepataisysių** 
-- Skeliant vartotojo įvestus/sugeneruotus/nuskaitytus duomenis, sudaryti failai ne visados pasižymi puikiu lygiavimu
-- Sugeneruoti studentų failai (dar neperskelti) irgi nėra puikiai išlygiuoti, nes iškart generuojant ir išvedant nėra galimybės surasti maxname ir maxsurname reikšmių
-- Studentų sąrašų generavimas ir skėlimas prikuria labaiiii daug failų.
-- Dėl multiple definition errorų į ```input.h``` ir ```input.cpp``` teko perkelti splitnprint funkciją, nors ji pagal veikimo principą turėtų priklausyti ```output.h``` ir ```output.cpp``` failams
-- Per daug kintamųjų, kurie kaip extern'ai yra deklaruojami ```mutual.h``` 
-
-**Laiko matavimo rezultatai ir pavyzdžiai** 
-- Visi sarašai buvo sugeneruoti naudojant Release profilį ir -O3 flagą
+**v0.4**
 - **Laiko matavimo rezultatų failo vaizdas visuose sąrašuose generuojant po 10 namų darbų pažymių ir pasirinkus galutinio pažymio skaičiavimą pagal vidurkį** 
 ![alt text](vid10.png ":O")
 - **Laiko matavimo rezultatų failo vaizdas visuose sąrašuose generuojant po 10 namų darbų pažymių ir pasirinkus galutinio pažymio skaičiavimą pagal medianą**
 ![alt text](med10.png ":)")
-
-
-
----
-### [v0.3](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.3)
-(2019-02-25)
-
-**Pridėta**
-- ```Input.h, Mutual.h, Output.h, Mutual.cpp, Output.cpp, Input.cpp```
-- Input handling (pagrinde ```cin.fail()```)
-- Naudojami ```vector.reserve()``` ir ```vector.shrink_to_fit()```
-- Exception handling (```try - catch```) ties ```students.push_back``` ir ```stud.nd.push_back```, nes pereita prie vektorių atminties rezervavimo
-- Input handling nuskaitant failą - galima nuskaityti namų darbų pažymius net ir jei jie yra ne skaičiai arba mazesni uz 0/ didesni uz 10 (aptikus - nulinami), jei netinkamas input yra ilgesnis nei 4 simboliai - didelė rizika sugadinti nuskaitytų duomenų tikslumą 
-- Nested switch meniu klaidų spausdinimui
-- Programos struktūros sekcija README.MD faile
-- ![alt text](Meme.jpg "Send Bob")
-
-**Koreguota**
-- Panaikinti goto, taip pat ir easter egg (LINEKAPUT:), perdaryta switch logika.
-- Pasirodo, kad senesnių versijų duomenys nebuvo labai tikslūs, duomenys patikslinti.
-- kursiokai.txt failas tikslingai sucorruptintas norint išbandyti input handling'a.
----
-### [v0.2](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.2)
-(2019-02-18)
-
-**Pridėta**
- - Kursiokai.txt
- - Rūšiavimas pagal studento vardą ir pavardę
- - Nuskaitymas iš failo
- - Galimybė visais būdais gautus duomenis atspausdinti viename output sąraše
- - Primityvus switch'o error handling'as naudojant goto
- - Easter egg
  
- **Koreguota**
- - Pakeistas README.md failas
- 
- **Žinomi trūkumai/ką reikia kuo greičiau ištaisyti**
- - Goto switche reikia pakeisti į normalų refactoringa dirbant prie v0.3
- - Studentų rikiavimas veiks keistokai jei bus naudojami ne vienodo ilgio vardai ir pavardės.
- - Nemažai vietų trūksta exception/error handling'o
----
-### [v0.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.1)
-(2019-02-18)
-
-**Pridėta**
-- CMake failas
-- Pirmininis programos ```cpp``` failas
-- Alternatyvios programos (su masyvu ) ```cpp``` failas (veikiantis bardakas)
-
-**Koreguota**
-- Pakeistas README.md failas
 ---
 ## Programos struktūra
 - ```Input.h``` ir ```Input.cpp``` funkcijos/kintamieji/include'ai susyję su duomenų įvedimu

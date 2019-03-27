@@ -9,7 +9,6 @@
 #include <ctime>
 extern int namenum;
 extern int gensize;
-extern int ndcount;
 extern int num;
 extern char sar;
 extern std::vector<stud>::iterator up;

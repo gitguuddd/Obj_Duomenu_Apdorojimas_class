@@ -13,6 +13,8 @@
 #include <cmath>
 #include <list>
 #include <fstream>
+#include <cctype>
+#include <typeinfo>
 #include <sstream>
 #include <algorithm>
 using std::setw;
@@ -24,7 +26,11 @@ using std::deque;
 using std::list;
 using std::stable_partition;
 using namespace std::chrono;
+extern char kiec;
+extern char issamiai;
+extern bool pap;
 extern int maxname;
+extern int ndcount;
 extern int maxsurname;
 extern int maxcount;
 extern string filename;
@@ -61,9 +67,10 @@ struct stud {
         }
     };
 };
-extern void STLpick(char &STL, int & ind);
+extern void STLpick(char &STL, bool pap);
 extern void Stratpick(char &strat);
 extern vector<stud> students;
+extern vector<stud> minksti;
 extern vector<stud> mldcstudents;
 extern vector <stud> mldc;
 extern vector <stud> L_laivs;
@@ -74,11 +81,37 @@ extern list <stud> mldcl;
 extern list <stud> L_laivsl;
 extern list<stud>::iterator upl;
 extern deque<stud> studentsd;
+extern deque<stud> minkstid;
 extern deque<stud> mldcstudentsd;
 extern deque <stud> mldcd;
 extern deque <stud> L_laivsd;
 extern deque<stud>::iterator upd;
 extern stud test;
+template<template<class,class> class STL, class type, class Allocator>
+extern bool GavoSkola(STL<type, Allocator>  & kontikas, char pchoice){if(pchoice=='v'){
+        if(kontikas.vid2< 4.99999999)
+            return true;
+        else if(kontikas.vid2>4.9999999)
+            return false;
+        else if(kontikas.vid2==4.999999)
+            return false;
+    }
+    else if(pchoice=='m'){
+        if(kontikas.mvid<4.99999999){
+            return true;
+        }
+        else if(kontikas.mvid>4.9999999){
+            return false;
+        }
+        else if (kontikas.mvid==4.999999)
+            return false;
+    }
+}
+extern vector<stud> raskMinkstus(vector<stud> & students, char pchoice);
+extern vector<stud> raskKietus(vector<stud> & students, char pchoice);
+extern deque<stud> raskMinkstusd(deque<stud> & studentsd, char pchoice);
+extern deque<stud> raskKietusd(deque<stud> & studentsd, char pchoice);
+extern bool non_alpha;
 void Stratpick(char &strat);
 template <typename T1, typename T2>
 extern void handleinput( T1 &input, T2 message) {
@@ -89,6 +122,18 @@ extern void handleinput( T1 &input, T2 message) {
             std::cout << message;
             cin >> input;
         } while (cin.fail());}
+}
+template <typename T1>
+extern void handlename( T1 &input) {
+    if(typeid(input).name()==typeid(msg).name()){
+        non_alpha=std::find_if(input.begin(), input.end(),
+                               [](char c) { return !std::isalpha(c); }) != input.end();
+        if(non_alpha){
+            printf("Aptiktas klaidingas vardas/pavarde, irasomas sablonas\n");
+            input="BadInput";
+        }
+
+    }
 }
 template<template<class,class> class STL, class type, class Allocator>
         extern void printtofile (STL<type, Allocator>  & kontikas, char pchoice, char sar){

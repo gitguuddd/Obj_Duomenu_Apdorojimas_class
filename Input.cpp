@@ -3,7 +3,6 @@
 //
 #include "Mutual.h"
 #include "Input.h"
-int ndcount=0;
 int namenum;
 int num=0;
 std::deque<stud>::iterator upd;
@@ -55,8 +54,20 @@ void split(char pchoice, char strat, std::vector<stud>::iterator &up){
     if(pchoice=='v'){
     up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_vid2());}
     else if (pchoice=='m'){
-        up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_mvid());}
-}}
+        up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_mvid());}}
+    else if(strat=='d'){
+        if (issamiai!='k'){printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
+        cin>>kiec;
+        while(kiec!='k'&&kiec!='m'){
+            printf("Netinkama ivestis, galimi variantai: trinti [m]inkstus/ i prieki perkelti [k]ietus\n");
+            cin>>kiec;
+        }}
+        if(kiec=='m')
+            minksti=raskMinkstus(students,pchoice);
+        else if(kiec=='k')
+            minksti=raskKietus(students,pchoice);
+    }
+}
 void splitd(char pchoice, char strat, std::deque<stud>::iterator &upd){
     test.vid2=4.999999999;
     test.mvid=4.999999999;
@@ -76,6 +87,19 @@ void splitd(char pchoice, char strat, std::deque<stud>::iterator &upd){
         upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,stud::less_than_vid2());}
     else if (pchoice=='m'){
         upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,stud::less_than_mvid());}
+    }
+    else if(strat=='d'){
+       if(issamiai!='k') {printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
+        cin>>kiec;
+        while(kiec!='k'&&kiec!='m'){
+            printf("Netinkama ivestis, galimi variantai: trinti [m]inkstus/ i prieki perkelti [k]ietus\n");
+            cin>>kiec;
+        }}
+        if(kiec=='m')
+            minkstid=raskMinkstusd(studentsd,pchoice);
+            else if(kiec=='k')
+                minkstid=raskKietusd(studentsd,pchoice);
+
     }
 }
 void splitl(char pchoice, char strat, std::list<stud>::iterator &upl){
@@ -107,11 +131,11 @@ stud Userinput() {
     printf("Iveskite studento varda\n");
     msg = "Klaida ivedant studento varda, bandykite is naujo";
     cin >> student.name;
-    handleinput(student.name, msg);
+    handlename(student.name);
     printf("Iveskite studento pavarde\n");
     msg = "Klaida ivedant studento pavarde, bandykite is naujo";
     cin >> student.surname;
-    handleinput(student.surname, msg);
+    handlename(student.surname);
     printf("Iveskite studento egzamino ivertinima\n");
     msg = "Klaida ivedant studento egzamino ivertinima, bandykite is naujo\n";
     cin >> student.ex;
@@ -254,6 +278,7 @@ void readfile(bool & isempty, int &readcount) {
 }
 void Genstudent(int gensize){
     start=high_resolution_clock::now();
+    diff={};
     namenum=int(round(pow(10,gensize)));
     filename=std::to_string(namenum)+"studentu";
     fv.open((filename+".txt").c_str());
@@ -261,16 +286,17 @@ void Genstudent(int gensize){
         printf("Failas %s nerastas/neisejo sukurti",filename.c_str());
         fv.clear();}
     else {
-        printf("Kiek namu darbu pazymiu generuoti studentu faile %s ?\n", filename.c_str());
+    if(issamiai!='k'){
         end=high_resolution_clock::now();
         diff=end-start;
+        printf("Kiek namu darbu pazymiu generuoti studentu faile %s ?\n", filename.c_str());
         cin >> ndcount;
         ::msg = "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n";
         while(ndcount<1||ndcount>1000000){
             cin.setstate(std::ios_base::failbit);
             handleinput(ndcount, msg);}
         handleinput(ndcount, msg);
-        start=high_resolution_clock::now();
+        start=high_resolution_clock::now();}
         for (int i = 0; i < namenum+1; i++) {
             num = dist(mt);
             if (i == 0) {
@@ -293,6 +319,7 @@ void Genstudent(int gensize){
     }
 }
 void splitnprint(char pchoice, char strat){
+    if(strat!='d'){
     start=high_resolution_clock::now();
     names(students);
     if(pchoice=='v'){
@@ -341,9 +368,19 @@ void splitnprint(char pchoice, char strat){
 
     }
     end=high_resolution_clock::now();
-    diff=end-start;
+    diff=end-start;}
+    else if (strat=='d'){
+        names(students);
+        calc(students,pchoice);
+        split(pchoice,strat, up);
+        sar='m';
+        printtofile(students,pchoice,sar);
+        sar='v';
+        printtofile(minksti,pchoice,sar);
+    }
 }
 void splitnprintd( char pchoice, char strat){
+    if(strat!='d'){
     start=high_resolution_clock::now();
     names(studentsd);
     if(pchoice=='v'){
@@ -392,7 +429,16 @@ void splitnprintd( char pchoice, char strat){
 
     }
     end=high_resolution_clock::now();
-    diff=end-start;
+    diff=end-start;}
+    else if (strat=='d'){
+        names(studentsd);
+            calc(studentsd,pchoice);
+            splitd(pchoice,strat, upd);
+        sar='m';
+        printtofile(studentsd,pchoice,sar);
+        sar='v';
+        printtofile(minkstid,pchoice,sar);
+    }
 }
 void splitnprintl( char pchoice, char strat){
     start=high_resolution_clock::now();
@@ -442,4 +488,6 @@ void splitnprintl( char pchoice, char strat){
     }
     end=high_resolution_clock::now();
     diff=end-start;
+
+
 }
