@@ -10,7 +10,7 @@ Pavarde3    Vardas3     10   0    3    b    5    2    1    4    5
 ```
 - Paleidžiame programą
 ---
-##Naudojimosi instrukcija
+## Naudojimosi instrukcija
 - Paleidųs programą programa paklaus vartotojo kokiu režimu jis nori vykdyti programą: išsamiu ar konkrečiu
 - Išsamus režimas pasižymi labai didele pasirinkimo galimybe - kiekvienam generuojamam  studentu failui galima priskirti skirtingą skaičių namų darbų, galutinio pažymio skaičiavimo būdą. Šis režimas yra apkrautas vartotojo įvestimi
 - Konkretus režimas kiek galima labiau sumažina vartotojo įvesčių kiekį - generuojant failus reikia tik vieną kartą įvesti namų darbų skaičių ir galutinio pažymio skaičiavimo būdą
@@ -60,13 +60,6 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Paspartintas readinimas iš failo: eilutės duomenys nuskaitomi į temp struktūra. Priėjųs eilutės galą, struktūra yra pushbackinama STL'e.
 - Pasikartojantis kodas printinimo, skaičiavimo, vardų analižės vietose pakeistas kreipimusi į template funkcijas ```printtofile ,calc , names```
 - README fail'e pridėtos naudojimosi, įdiegimo instrukcijos.
-
-**Testavimo rezultatai**
-- Kaip ir seniau, visi testai buvo vykdkyti Release profilyje su -O3 flag'u, kiekvienas studentas turi po 10 namų darbų pažymių
-- Visų pirma reikia apsibrėžti ```a, b ir c```splitinimo strategijas
-- Strategija ```a``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
-- Strategija ```b``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
-- Strategija ```c``` - Pirminis studentų STL'as yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL'ą yra gaunamas ```L_laivas``` STL.
 
 ---
 ### [v0.5](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
