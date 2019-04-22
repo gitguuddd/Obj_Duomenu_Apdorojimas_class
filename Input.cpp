@@ -14,47 +14,45 @@ std::mt19937 mt(seed);
 std::uniform_real_distribution<double> dist(1.0, 100000.0);
 std::uniform_real_distribution<double> dist2(1.0, 10.0);
 bool sortingmvid(const stud student1, const stud student2){
-    if(student1.mvid<student2.mvid)
+    if(student1.getmvid()<student2.getmvid())
         return true;
-    else if(student1.mvid>student2.mvid)
+    else if(student1.getmvid()>student2.getmvid())
         return false;
-    else if(student1.mvid==student2.mvid)
+    else if(student1.getmvid()==student2.getmvid())
         return false;
 }
 bool sortingvid(const stud student1, const stud student2){
-        if (student1.vid2 < student2.vid2)
+        if (student1.getvid()< student2.getvid())
             return true;
-        else if (student1.vid2 > student2.vid2)
+        else if (student1.getvid() > student2.getvid())
             return false;
-        else if(student1.vid2==student2.vid2)
+        else if(student1.getvid()==student2.getvid())
             return false;
 
 }
 void split(char pchoice, char strat, std::vector<stud>::iterator &up){
-    test.vid2=4.999999999;
-    test.mvid=4.999999999;
     if (strat == 'a'){
         mldc.reserve(namenum/2);
         L_laivs.reserve(namenum/2);
         if(pchoice=='v'){
             if(pchoice=='v')
-                up=stable_partition(students.begin(),students.end(),[](auto v) {return v.vid2<test.vid2;});}
+                up=stable_partition(students.begin(),students.end(),[](stud v) {return v.getvid()<test.getvid();});}
             else if(pchoice=='m')
-                up=stable_partition(students.begin(),students.end(),[](auto v) {return v.mvid<test.mvid;});
+                up=stable_partition(students.begin(),students.end(),[](stud v) {return v.getmvid()<test.getmvid();});
         mldc.shrink_to_fit();
         L_laivs.shrink_to_fit();
     }
     else if(strat=='b'){
         if(pchoice=='v'){
             if(pchoice=='v')
-                up=stable_partition(students.begin(),students.end(),[](auto v) {return v.vid2<test.vid2;});}
+                up=stable_partition(students.begin(),students.end(),[](stud v) {return v.getvid()<test.getvid();});}
         else if(pchoice=='m')
-            up=stable_partition(students.begin(),students.end(),[](auto v) {return v.mvid<test.mvid;});}
+            up=stable_partition(students.begin(),students.end(),[](stud v) {return v.getmvid()<test.getmvid();});}
     else if(strat == 'c'){
     if(pchoice=='v'){
-    up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_vid2());}
+    up=std::upper_bound(students.begin(),students.end(),test,less_than_vid());}
     else if (pchoice=='m'){
-        up=std::upper_bound(students.begin(),students.end(),test,stud::less_than_mvid());}}
+        up=std::upper_bound(students.begin(),students.end(),test,less_than_mvid());}}
     else if(strat=='d'){
         if (issamiai!='k'){printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
         cin>>kiec;
@@ -69,24 +67,22 @@ void split(char pchoice, char strat, std::vector<stud>::iterator &up){
     }
 }
 void splitd(char pchoice, char strat, std::deque<stud>::iterator &upd){
-    test.vid2=4.999999999;
-    test.mvid=4.999999999;
     if(strat=='a'){
         if(pchoice=='v')
-        upd=stable_partition(studentsd.begin(),studentsd.end(),[](auto v) {return v.vid2<test.vid2;});
+        upd=stable_partition(studentsd.begin(),studentsd.end(),[](stud v) {return v.getvid()<test.getvid();});
         else if(pchoice=='m')
-            upd=stable_partition(studentsd.begin(),studentsd.end(),[](auto v) {return v.mvid<test.mvid;});}
+            upd=stable_partition(studentsd.begin(),studentsd.end(),[](stud v) {return v.getmvid()<test.getmvid();});}
     else if(strat=='b'){
         if(pchoice=='v'){
             if(pchoice=='v')
-                upd=stable_partition(studentsd.begin(),studentsd.end(),[](auto v) {return v.vid2<test.vid2;});}
+                upd=stable_partition(studentsd.begin(),studentsd.end(),[](stud v) {return v.getvid()<test.getvid();});}
             else if(pchoice=='m')
-                upd=stable_partition(studentsd.begin(),studentsd.end(),[](auto v) {return v.mvid<test.mvid;});}
+                upd=stable_partition(studentsd.begin(),studentsd.end(),[](stud v) {return v.getmvid()<test.getmvid();});}
     else if (strat=='c'){
     if(pchoice=='v'){
-        upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,stud::less_than_vid2());}
+        upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,less_than_vid());}
     else if (pchoice=='m'){
-        upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,stud::less_than_mvid());}
+        upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,less_than_mvid());}
     }
     else if(strat=='d'){
        if(issamiai!='k') {printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
@@ -97,66 +93,63 @@ void splitd(char pchoice, char strat, std::deque<stud>::iterator &upd){
         }}
         if(kiec=='m')
             minkstid=raskMinkstusd(studentsd,pchoice);
-            else if(kiec=='k')
+        else if(kiec=='k')
                 minkstid=raskKietusd(studentsd,pchoice);
 
     }
 }
 void splitl(char pchoice, char strat, std::list<stud>::iterator &upl){
-    test.vid2=4.999999999;
-    test.mvid=4.999999999;
     if (strat=='a'){
         if(pchoice=='v'){
             if(pchoice=='v')
-                upl=stable_partition(studentsl.begin(),studentsl.end(),[](auto v) {return v.vid2<test.vid2;});}
+                upl=stable_partition(studentsl.begin(),studentsl.end(),[](stud v) {return v.getvid()<test.getvid();});}
             else if(pchoice=='m')
-                upl=stable_partition(studentsl.begin(),studentsl.end(),[](auto v) {return v.mvid<test.mvid;});}
+                upl=stable_partition(studentsl.begin(),studentsl.end(),[](stud v) {return v.getmvid()<test.getmvid();});}
     else if(strat=='b'){
         if(pchoice=='v'){
             if(pchoice=='v')
-                upl=stable_partition(studentsl.begin(),studentsl.end(),[](auto v) {return v.vid2<test.vid2;});}
+                upl=stable_partition(studentsl.begin(),studentsl.end(),[](stud v) {return v.getvid()<test.getvid();});}
             else if(pchoice=='m')
-                upl=stable_partition(studentsl.begin(),studentsl.end(),[](auto v) {return v.mvid<test.mvid;});}
+                upl=stable_partition(studentsl.begin(),studentsl.end(),[](stud v) {return v.getmvid()<test.getmvid();});}
     else if(strat=='c'){
     if(pchoice=='v'){
-        upl=std::upper_bound(studentsl.begin(),studentsl.end(),test,stud::less_than_vid2());}
+        upl=std::upper_bound(studentsl.begin(),studentsl.end(),test,less_than_vid());}
     else if (pchoice=='m'){
-        upl=std::upper_bound(studentsl.begin(),studentsl.end(),test,stud::less_than_mvid());}
+        upl=std::upper_bound(studentsl.begin(),studentsl.end(),test,less_than_mvid());}
     }
 }
 stud Userinput() {
     stud student;
-    student.nd.reserve(200);
+    string tempname;
+    string tempsurname;
+    int tempex;
     int nd = 1;
     printf("Iveskite studento varda\n");
     msg = "Klaida ivedant studento varda, bandykite is naujo";
-    cin >> student.name;
-    handlename(student.name);
+    cin >> tempname;
+    handlename(tempname);
+    student.setname(tempname);
     printf("Iveskite studento pavarde\n");
     msg = "Klaida ivedant studento pavarde, bandykite is naujo";
-    cin >> student.surname;
-    handlename(student.surname);
+    cin >> tempsurname;
+    handlename(tempsurname);
+    student.setsurname(tempsurname);
     printf("Iveskite studento egzamino ivertinima\n");
     msg = "Klaida ivedant studento egzamino ivertinima, bandykite is naujo\n";
-    cin >> student.ex;
-    handleinput(student.ex, msg);
-    if(student.ex<0||student.ex>10){
+    cin >> tempex;
+    handleinput(tempex, msg);
+    if(tempex<0||tempex>10){
         printf("Ivestas egzamino pazymys iseina is pazymio ribu, egzamino ivertinimas nulinamas\n");
-        student.ex=0;
+        tempex=0;
     }
+    student.setex(tempex);
     printf("Iveskite studento namu darbu pazymius, skaiciaus -1 ivestis uzbaigia ivesti\n");
     while (nd != -1) {
         msg = "Klaida ivedant studento namu darbu ivertinima, bandykite is naujo (-1 baigia ivesti)";
         cin >> nd;
         handleinput(nd, msg);
-        if (nd >= 0 && nd < 11) {
-            student.sum += nd;
-            try{
-            student.nd.push_back(nd);}
-            catch(std::exception e){
-                printf("Perzengtos %d studento namu darbu vektoriaus ribos",students.size()+1);
-            }
-        }
+        if (nd >= 0 && nd < 11)
+        student.setnd(nd);
         else if (nd > 10 || nd < -1)
             printf("\n Ivesta netinkama reiksme, teskite pildyma ivesdami skaiciu is intervalo [0;10] arba iveskite -1 (baigti) \n");
 
@@ -166,17 +159,21 @@ stud Userinput() {
 }
 stud GenStudent() {
     stud student;
-    student.nd.reserve(200);
     msg = "Ivedete ne skaiciu, bandykite is naujo (0 baigia ivesti)";
     int nd = 1;
     int temp;
+    string tempname;
+    string tempsurname;
+    int tempex;
     int num =dist(mt);
-    student.name = "Vardas" + std::to_string(num);
-    printf("Studento vardas: %s\n", student.name.c_str());
-    student.surname = "Pavarde" + std::to_string(num);
-    printf("Studento pavarde: %s\n", student.surname.c_str());
-    student.ex = dist2(mt);
-    printf("Studento egzamino ivertinimas: %d \n", student.ex);
+    tempname = "Vardas" + std::to_string(num);
+    student.setname(tempname);
+    printf("Studento vardas: %s\n", tempname.c_str());
+    tempsurname = "Pavarde" + std::to_string(num);
+    student.setsurname(tempsurname);
+    printf("Studento pavarde: %s\n", tempsurname.c_str());
+    student.setex(dist2(mt));
+    printf("Studento egzamino ivertinimas: %d \n", student.getex());
     printf("Iveskite bet koki  skaiciu, kad sugeneruotumete pazymi,  skaiciaus 0 ivestis uzbaigia ivesti\n");
     while (nd != 0) {
         cin >> nd;
@@ -184,11 +181,7 @@ stud GenStudent() {
         temp = nd;
         nd = dist2(mt);
         printf("Sugeneruotas pazymys: %d\n", nd);
-        student.sum += nd;
-        try{
-        student.nd.push_back(nd);}
-        catch(std::exception e){
-            printf("Perzengtos %d studento namu darbu vektoriaus ribos\n",students.size()+1);}
+        student.setnd(nd);
         nd = temp;
     }
     return student;
@@ -198,6 +191,8 @@ void readfile(bool & isempty, int &readcount) {
     int i = students.size();
     int linecount = 1;
     int countnd;
+    string tempsur;
+    string tempname;
     int tempnd;
     bool fsio;
     string line;
@@ -206,24 +201,22 @@ void readfile(bool & isempty, int &readcount) {
         fsio = false;
         countnd = 0;
         std::istringstream scan(line);
-        try{
-            students.push_back(stud());}
-        catch(std::exception e){
-            printf("Perzengtos studentu vektoriaus ribos\n");
-        }
-        students[i].nd.reserve(200);
-        scan >> students[i].surname;
+        scan >> tempname;
         if (scan.fail()) {
             scan.clear();
             scan.ignore(4);
             printf("kursiokai.txt faile ivyko klaida nuskaitant %d studento pavarde\n", linecount);
         }
-        scan >> students[i].name;
+        else
+            students[i].setname(tempname);
+        scan >> tempsur;
         if (scan.fail()) {
             scan.clear();
             scan.ignore(4);
             printf("kursiokai.txt faile ivyko klaida nuskaitant %d studento varda\n", linecount);
         }
+        else
+            students[i].setsurname(tempsur);
         while (scan) {
             scan >> tempnd;
             if (scan.fail()) {
@@ -232,11 +225,6 @@ void readfile(bool & isempty, int &readcount) {
                     scan.ignore(4);
                     printf("kursiokai.txt faile ivyko klaida nuskaitant %d studento %d pazymi\n", linecount,
                            countnd + 1);
-                    try{
-                        students[i].nd.push_back(0);}
-                    catch(std::exception e){
-                        printf("Perzengtos %d studento namu darbu vektoriaus ribos\n",linecount);
-                    }
                     countnd++;
                     if (scan.peek() != '\n'&&scan.peek() != EOF)
                         scan >> tempnd;
@@ -251,21 +239,15 @@ void readfile(bool & isempty, int &readcount) {
                 if (tempnd < 0 || tempnd > 10) {
                     tempnd = 0;
                 }
-                students[i].sum += tempnd;
-                try{
-                    students[i].nd.push_back(tempnd);}
-                catch(std::exception e){
-                    printf("Perzengtos %d studento namu darbu vektoriaus ribos\n",linecount);
-                }
+                    students[i].setnd(tempnd);
+
                 countnd++;
             }
             if (scan.peek() == '\n' || scan.peek() == EOF)
                 break;
 
         }
-        students[i].ex = students[i].nd.back();
-        students[i].sum-=students[i].nd.back();
-        students[i].nd.pop_back();
+        students[i].setex();
         linecount++;
         i++;
 

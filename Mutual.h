@@ -17,13 +17,16 @@
 #include <typeinfo>
 #include <sstream>
 #include <algorithm>
+#include <numeric>
 using std::setw;
 using std::setprecision;
 using std::string;
 using std::cin;
+using std::move;
 using std::vector;
 using std::deque;
 using std::list;
+using std::istream;
 using std::stable_partition;
 using namespace std::chrono;
 extern char kiec;
@@ -45,27 +48,55 @@ extern std::ofstream ft;
 extern high_resolution_clock::time_point start;
 extern high_resolution_clock::time_point end;
 extern duration<long double> diff;
-struct stud {
-    string name;
-    string surname;
-    vector<int> nd;
-    int ex;
-    double vid;
-    double med;
-    double mvid;
-    double vid2;
-    int sum = 0;
-    struct less_than_vid2{
-        bool operator()(const  stud & a, const stud & b){
-            return a.vid2<b.vid2;
+class stud {
+private:
+    string name_;
+    string surname_;
+    vector<int> nd_;
+    int ex_;
+    double mvid_;
+    double vid_;
+public:
+    stud(): name_("vardas"), surname_("pavarde"), ex_(0), mvid_(4.999999999), vid_(4.999999999){nd_.reserve(200);};
+    inline void setname (string name){name_=move(name);}
+    inline void setsurname (string surname){surname_=move(surname);}
+    inline void setnd (int nd){nd_.push_back(nd);}
+    inline void setex (int ex){ex_=ex;}
+    inline void setex (){ex_=nd_.back();
+        nd_.pop_back();
+        nd_.shrink_to_fit();}
+    inline void setvid (int max){
+        if(max!=0)
+            vid_=((double)accumulate(nd_.begin(),nd_.end(),0)/(double)max)*0.4+ex_*0.6;
+        else
+            vid_=ex_*0.6;}
+    inline void setmvid (){
+        sort(nd_.begin(), nd_.end());
+        if (nd_.size() % 2 != 0)
+            mvid_ = nd_[round((double)nd_.size() / 2)-1 ]*0.4+ex_*0.6;
+        else
+            mvid_ = ((double)(nd_[nd_.size() / 2 -1] + nd_[(nd_.size() / 2) ]) / 2)*0.4+ex_*0.6;
+    }
+    inline string getname() const {return name_;}
+    //inline int getnamelength() const{return name_.length();}
+    inline string getsurname() const {return surname_;}
+    //inline int getsurnamelength() const{return surname_.length();}
+    inline int getex() const {return ex_;}
+    inline double getmvid() const {return mvid_;}
+    inline double getvid() const {return vid_;}
+    inline int getndsize() const {return nd_.size();}
+    ~stud(){};
 
-        }
-    };
-    struct less_than_mvid{
-        bool operator()(const  stud & a, const stud & b){
-            return a.mvid<b.mvid;
-        }
-    };
+};
+  struct less_than_mvid{
+    bool operator()(const  stud & a, const stud & b){
+        return a.getmvid()<b.getmvid();
+    }
+};
+struct less_than_vid {
+    bool operator()(const  stud & a, const stud & b){
+        return a.getvid()<b.getvid();
+    }
 };
 extern void STLpick(char &STL, bool pap);
 extern void Stratpick(char &strat);
@@ -87,26 +118,6 @@ extern deque <stud> mldcd;
 extern deque <stud> L_laivsd;
 extern deque<stud>::iterator upd;
 extern stud test;
-template<template<class,class> class STL, class type, class Allocator>
-extern bool GavoSkola(STL<type, Allocator>  & kontikas, char pchoice){if(pchoice=='v'){
-        if(kontikas.vid2< 4.99999999)
-            return true;
-        else if(kontikas.vid2>4.9999999)
-            return false;
-        else if(kontikas.vid2==4.999999)
-            return false;
-    }
-    else if(pchoice=='m'){
-        if(kontikas.mvid<4.99999999){
-            return true;
-        }
-        else if(kontikas.mvid>4.9999999){
-            return false;
-        }
-        else if (kontikas.mvid==4.999999)
-            return false;
-    }
-}
 extern vector<stud> raskMinkstus(vector<stud> & students, char pchoice);
 extern vector<stud> raskKietus(vector<stud> & students, char pchoice);
 extern deque<stud> raskMinkstusd(deque<stud> & studentsd, char pchoice);
@@ -150,13 +161,13 @@ template<template<class,class> class STL, class type, class Allocator>
     }
     if(pchoice == 'v'){
     for(stud& stud : kontikas){
-        fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
-        fv<<stud.vid2<<setprecision(3)<<"\n";
+        fv<<stud.getname()<<setw(maxname+2)<<std::right<<stud.getsurname()<<setw(maxname-4+(maxname-stud.getname().length()));
+        fv<<stud.getvid()<<setprecision(3)<<"\n";
     }}
     else if(pchoice == 'm'){
         for(stud& stud : kontikas){
-            fv<<stud.name<<setw(maxname+2)<<std::right<<stud.surname<<setw(maxname-4+(maxname-stud.name.length()));
-            fv<<stud.mvid<<setprecision(3)<<"\n";
+            fv<<stud.getname()<<setw(maxname+2)<<std::right<<stud.getsurname()<<setw(maxname-4+(maxname-stud.getname().length()));
+            fv<<stud.getmvid()<<setprecision(3)<<"\n";
         }
     }
     fv.close();
@@ -166,36 +177,15 @@ template<template<class,class> class STL, class type, class Allocator>
             if(pchoice=='v'){
                 maxcount = 0;
                 for (stud& stud : kontikas) {
-                    if (stud.nd.size() >= maxcount)
-                        maxcount = stud.nd.size();
+                    if (stud.getndsize() >= maxcount)
+                        maxcount = stud.getndsize();
                 }
-                for (stud& stud : kontikas) {
-                    if (maxcount != 0) {
-                        try{
-                            stud.vid = (double)stud.sum / (double)maxcount;}
-                        catch(std::exception e){
-                            printf("buvo bandyta apskaiciuototi studentu su 0 nd vidurkius :( \n");
-                            stud.vid=0;
-                        }
-                        stud.vid2 = stud.vid*0.4 + stud.ex*0.6;
-                    }
-                    else {
-                        stud.vid = 0;
-                        stud.vid2 = stud.vid*0.4 + stud.ex*0.6;
-                    }
-
-                }
+                for (stud& stud : kontikas)
+                    stud.setvid(maxcount);
         }
     if(pchoice=='m'){
-        for (stud& stud : kontikas) {
-            sort(stud.nd.begin(), stud.nd.end());
-            if (stud.nd.size() % 2 != 0)
-                stud.med = stud.nd[round((double)stud.nd.size() / 2)-1 ];
-            else
-                stud.med = (double)(stud.nd[stud.nd.size() / 2 -1] + stud.nd[(stud.nd.size() / 2) ]) / 2;
-            stud.mvid = stud.med*0.4 + stud.ex*0.6;
-
-        }
+        for (stud& stud : kontikas)
+            stud.setmvid();
     }}
 template<template<class,class> class STL, class type, class Allocator>
         extern void names(STL<type, Allocator> & kontikas){
@@ -204,11 +194,10 @@ template<template<class,class> class STL, class type, class Allocator>
     maxcount = 0;
     subname=filename;
     for (stud& stud : kontikas) {
-        stud.nd.shrink_to_fit();
-        if (stud.name.length() >= maxname)
-            maxname = stud.name.length();
-        if (stud.surname.length() >= maxsurname)
-            maxsurname = stud.surname.length();
+        if (stud.getname().length() >= maxname)
+            maxname = stud.getname().length();
+        if (stud.getsurname().length() >= maxsurname)
+            maxsurname = stud.getsurname().length();
     }
     if (maxsurname <= 7)
         maxsurname = 7;
@@ -222,6 +211,8 @@ template<template<class,class> class STL, class type, class Allocator>
     int linecount = 1;
     int countnd;
     int tempnd;
+    string tempname;
+    string tempsurname;
     stud temp;
     bool fsio;
     string line;
@@ -230,13 +221,15 @@ template<template<class,class> class STL, class type, class Allocator>
         fsio = false;
         countnd = 0;
         std::istringstream scan(line);
-        scan >> temp.surname;
+        scan >> tempsurname;
+        temp.setsurname(tempsurname);
         if (scan.fail()) {
             scan.clear();
             scan.ignore(4);
             printf("%s faile ivyko klaida nuskaitant %d studento pavarde\n",filename.c_str(), linecount);
         }
-        scan >> temp.name;
+        scan >> tempname;
+        temp.setname(tempname);
         if (scan.fail()) {
             scan.clear();
             scan.ignore(4);
@@ -250,11 +243,7 @@ template<template<class,class> class STL, class type, class Allocator>
                     scan.ignore(4);
                     printf("%s faile ivyko klaida nuskaitant %d studento %d pazymi\n",filename.c_str(), linecount,
                            countnd + 1);
-                    try{
-                        temp.nd.push_back(0);}
-                    catch(std::exception &e){
-                        printf("Perzengtos %d studento namu darbu vektoriaus ribos\n", linecount);
-                    }
+                        temp.setnd(0);
                     countnd++;
                     if (scan.peek() != '\n'&&scan.peek() != EOF)
                         scan >> tempnd;
@@ -269,24 +258,17 @@ template<template<class,class> class STL, class type, class Allocator>
                 if (tempnd < 0 || tempnd > 10) {
                     tempnd = 0;
                 }
-                temp.sum += tempnd;
-                try{
-                    temp.nd.push_back(tempnd);}
-                catch(std::exception &e){
-                    printf("Perzengtos %d studento namu darbu vektoriaus ribos\n",linecount);
-                }
+                    temp.setnd(tempnd);
                 countnd++;
             }
             if (scan.peek() == '\n' || scan.peek() == EOF)
                 break;
 
         }
-        temp.ex = temp.nd.back();
-        temp.sum-=temp.nd.back();
-        temp.nd.pop_back();
+        temp.setex();
         linecount++;
         kontikas.push_back(temp);
-        temp = {};
+        temp={};
     }
     fd.close();
     end=high_resolution_clock::now();

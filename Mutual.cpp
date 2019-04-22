@@ -63,21 +63,21 @@ void Stratpick(char &strat){
 }
 bool GavoSkola(const stud student1, char pchoice){
     if(pchoice=='v'){
-        if(student1.vid2< 4.99999999)
+        if(student1.getvid()< 4.99999999)
             return true;
-        else if(student1.vid2>4.9999999)
+        else if(student1.getvid()>4.999999999)
             return false;
-        else if(student1.vid2==4.999999)
+        else if(student1.getvid()==4.999999999)
             return false;
     }
     else if(pchoice=='m'){
-        if(student1.mvid<4.99999999){
+        if(student1.getmvid()<4.99999999){
             return true;
         }
-        else if(student1.mvid>4.9999999){
+        else if(student1.getmvid()>4.9999999){
             return false;
         }
-        else if (student1.mvid==4.999999)
+        else if (student1.getmvid()==4.999999)
             return false;
     }
 }
