@@ -38,7 +38,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 **Koreguota**
 - ```stud``` struktūra pakeičiama į ```stud``` klasę
-- Iš klasės narių fainaikinti tarpiniai ```vid``` ir ```mvid``` kintamieji, nes galutinio balo(vidurkis) ir galutinio balo(mediana) skaičiavimai vyksta setteriuose
+- Iš klasės narių panaikinti tarpiniai ```vid``` ir ```mvid``` kintamieji, nes galutinio balo(vidurkis) ir galutinio balo(mediana) skaičiavimai vyksta setteriuose
 - Pagal ```Clang-tidy``` rekomendacijas keliose vietose panaudotas ```std::move```
 - Panaikinta daug perteklinių try-catch blokų
 
