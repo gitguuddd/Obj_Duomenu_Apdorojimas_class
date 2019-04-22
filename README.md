@@ -209,12 +209,16 @@ išrikiuoja stundentus pagal galutinį pažymį,
 | 100000 v  | 3.94281 s.          | 1.73632 s.         |
 | 1000000 v | 39.8862 s.          | 35.73931 s.        |
 
+- Iš lentelės duomenų matome, kad ```stud``` realizacija per klasę sugebėjo paspartinti A strategiją.
+
 **Programos veikimo laikų palyginimas naudojant skirtingus optimizavimo flag'us**
 
 |           | -O1         | -O2         | -O3         |
 |-----------|-------------|-------------|-------------|
 | 100000 v  | 3.799484 s. | 3.532669 s. | 3.595513 s. |
 | 1000000 v | 41.12474 s. | 40.11205 s. | 34.53586 s. |
+
+- Kaip ir reikėjo tikėtis - O3 optimizacijos flag'as labiausiai padėjo programai. Neaiškumą lyginant 100000v -O2 ir 100000v -O3 galima paaiškinti tuo, kad duomenų tikslumui koją galėjo pakišti atsitiktinis kompiuteriuo apkrovos kitimas.
 
 - ![alt text](Time.jpg "Blogi laikai, seniai karo nebuvo...")
 
