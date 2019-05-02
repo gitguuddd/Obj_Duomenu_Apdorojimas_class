@@ -34,6 +34,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ---
 ### [v1.2](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.2)
 (2019-05-02)
+
 ![alt text](Operator.png "A mym")
 
 **Pridėta**
