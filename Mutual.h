@@ -18,6 +18,8 @@
 #include <sstream>
 #include <algorithm>
 #include <numeric>
+#include "./classes/stud/stud.h"
+#include "./classes/Timer/Timer.h"
 using std::setw;
 using std::setprecision;
 using std::string;
@@ -30,6 +32,7 @@ using std::istream;
 using std::stable_partition;
 using namespace std::chrono;
 extern char kiec;
+extern Timer t;
 extern char issamiai;
 extern bool pap;
 extern int maxname;
@@ -45,59 +48,7 @@ extern int maxname, maxsurname, maxcount;
 extern const double numb;
 extern std::ofstream fv;
 extern std::ofstream ft;
-extern high_resolution_clock::time_point start;
-extern high_resolution_clock::time_point end;
-extern duration<long double> diff;
-class stud {
-private:
-    string name_;
-    string surname_;
-    vector<int> nd_;
-    int ex_;
-    double mvid_;
-    double vid_;
-public:
-    stud(): name_("vardas"), surname_("pavarde"), ex_(0), mvid_(4.999999999), vid_(4.999999999){nd_.reserve(200);};
-    inline void setname (string name){name_=move(name);}
-    inline void setsurname (string surname){surname_=move(surname);}
-    inline void setnd (int nd){nd_.push_back(nd);}
-    inline void setex (int ex){ex_=ex;}
-    inline void setex (){ex_=nd_.back();
-        nd_.pop_back();
-        nd_.shrink_to_fit();}
-    inline void setvid (int max){
-        if(max!=0)
-            vid_=((double)accumulate(nd_.begin(),nd_.end(),0)/(double)max)*0.4+ex_*0.6;
-        else
-            vid_=ex_*0.6;}
-    inline void setmvid (){
-        sort(nd_.begin(), nd_.end());
-        if (nd_.size() % 2 != 0)
-            mvid_ = nd_[round((double)nd_.size() / 2)-1 ]*0.4+ex_*0.6;
-        else
-            mvid_ = ((double)(nd_[nd_.size() / 2 -1] + nd_[(nd_.size() / 2) ]) / 2)*0.4+ex_*0.6;
-    }
-    inline string getname() const {return name_;}
-    //inline int getnamelength() const{return name_.length();}
-    inline string getsurname() const {return surname_;}
-    //inline int getsurnamelength() const{return surname_.length();}
-    inline int getex() const {return ex_;}
-    inline double getmvid() const {return mvid_;}
-    inline double getvid() const {return vid_;}
-    inline int getndsize() const {return nd_.size();}
-    ~stud(){};
-
-};
-  struct less_than_mvid{
-    bool operator()(const  stud & a, const stud & b){
-        return a.getmvid()<b.getmvid();
-    }
-};
-struct less_than_vid {
-    bool operator()(const  stud & a, const stud & b){
-        return a.getvid()<b.getvid();
-    }
-};
+extern long double diff;
 extern void STLpick(char &STL, bool pap);
 extern void Stratpick(char &strat);
 extern vector<stud> students;
@@ -206,7 +157,7 @@ template<template<class,class> class STL, class type, class Allocator>
         }
 template<template<class,class> class STL, class type, class Allocator>
         extern void readfile(STL<type, Allocator> & kontikas, string filename){
-    start=high_resolution_clock::now();
+    t.reset();
     std::ifstream fd((filename+".txt").c_str());
     int linecount = 1;
     int countnd;
@@ -271,7 +222,6 @@ template<template<class,class> class STL, class type, class Allocator>
         temp={};
     }
     fd.close();
-    end=high_resolution_clock::now();
-    diff=end-start;
+    diff=t.elapsed();
         }
 #endif //OBJ_DUOMENU_APDOROJIMAS_MUTUAL_H

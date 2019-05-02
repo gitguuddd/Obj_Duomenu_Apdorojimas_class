@@ -31,7 +31,22 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą
 ---
 ## Versijų istorija (changelog)
+---
+### [v1.2](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.2)
+(2019-05-02)
+![alt text](Operator.png "A mym")
 
+**Pridėta**
+- ```Rule of five``` ```stud``` klasės operatoriai
+- Įvairūs ```stud``` klasės palyginimo operatoriai
+
+**Koreguota**
+- Programos veikimo laiko skaičiavimas dabar realizuojamas per ```Timer.h``` klasę
+- stud klasė ir jos funkcijos iš ```Mutual.h``` ir ```Mutual.cpp``` iškeliamos į ```stud.h``` ir ```stud.cpp```
+- ```stud.h, stud.cpp, Timer.h``` failai laikomi classes aplankale
+- Programos metu sugeneruoti failai saugomi ```build``` aplankale
+- Dokumentacijoje atnaujinta informacija apie programos struktūrą
+---
 ### [v1.1](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.1)
 (2019-04-23)
 
@@ -390,3 +405,5 @@ if(pchoice=='v')
 - ```Output.h```ir ```Output.cpp``` funkcijos/kintamieji/include'ai susyję su duomenų išvedimu
 - ```Mutual.h```ir ```Mutual.cpp``` funkcijos/kintamieji/include'ai bendri visai programai (```#include iostream```,```handleinput()``` )
 - ```main.cpp``` pagrindinis failas - meniu
+- ```stud.h``` ir ```stud.cpp``` stud klasei reikalingi include`ai ir funkcijos
+- ```Timer.h``` timer klasė

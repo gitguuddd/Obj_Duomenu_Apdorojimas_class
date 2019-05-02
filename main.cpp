@@ -75,7 +75,7 @@ int main() {
                     break;
                 }
                 else {
-                    sort(students.begin(), students.end(), sorting);
+                    sort(students.begin(), students.end(), sortingmvid);
                     print(students, 'm');
                     choice = -1;
                     break;
@@ -88,7 +88,7 @@ int main() {
                     break;
                 }
                 else {
-                    sort(students.begin(), students.end(), sorting);
+                    sort(students.begin(), students.end(), sortingvid);
                     print(students, 'v');
                     choice = -1;
                     break;
@@ -97,7 +97,7 @@ int main() {
                 Stratpick(strat);
                 if(strat!='d'){
                 STLpick(STL, pap);
-                    ft.open("V1.0_laikai.txt");
+                    ft.open("V1.2_laikai.txt");
                     (STL=='v')?ft<<"Pasirinktas konteineris - vektorius\n":
                         (STL=='d')?ft<<"Pasirinktas konteineris - dekas\n":
                         ft<<"Pasirinktas konteineris - listas\n";
@@ -126,7 +126,7 @@ int main() {
                         ft<<int(round(pow(10,i)))<<"studentu\n";
                         ft<<"--------------------------------\n";
                     Genstudent(i);
-                    ft<<"Studentai sugeneruoti ir isvesti i faila per "<<diff.count()<<" s.\n";
+                    ft<<"Studentai sugeneruoti ir isvesti i faila per "<<diff<<" s.\n";
                     if(STL=='v')
                         students.reserve(namenum);
                        (STL=='v')?readfile(students,filename):
@@ -136,7 +136,7 @@ int main() {
                             students.shrink_to_fit();
                             else if (STL=='d')
                                 studentsd.shrink_to_fit();
-                    ft<<"Studentai nuskaityti is failo  "<<filename<<" per "<<diff.count()<<" s.\n";
+                    ft<<"Studentai nuskaityti is failo  "<<filename<<" per "<<diff<<" s.\n";
                     if(issamiai!='k'){
                     printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",filename.c_str());
                     cin>>pchoice;
@@ -146,7 +146,7 @@ int main() {
                     }}(STL=='v')?splitnprint(pchoice, strat):
                         (STL=='d')?splitnprintd( pchoice, strat):
                         splitnprintl(pchoice, strat);
-                    ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<<diff.count()<<" s.\n";
+                    ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<<diff<<" s.\n";
                     ft<<"--------------------------------\n";
                         if(issamiai=='k')
                         printf("Darbas baigtas su failu %s \n", subname.c_str());
@@ -208,7 +208,7 @@ int main() {
                         }(STL=='v')?splitnprint(pchoice,strat):splitnprintd(pchoice,strat);
                         if(issamiai=='k')
                         printf("Darbas baigtas su  %s \n", subname.c_str());
-                        ft<<"Papildomos uzduoties split'inimo algoritmas uztruko "<<diff.count()<<" s.\n";
+                        ft<<"Papildomos uzduoties split'inimo algoritmas uztruko "<<diff<<" s.\n";
                         ft<<"--------------------------------\n";}
                     ft.close();
                     choice= -1;

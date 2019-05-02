@@ -3,6 +3,7 @@
 //
 #include "Mutual.h"
 #include "Input.h"
+#include "./classes/stud/stud.h"
 int namenum;
 int num=0;
 std::deque<stud>::iterator upd;
@@ -184,6 +185,8 @@ stud GenStudent() {
         student.setnd(nd);
         nd = temp;
     }
+    if(student.getndsize()>1)
+    student.pushb();
     return student;
 }
 void readfile(bool & isempty, int &readcount) {
@@ -259,7 +262,7 @@ void readfile(bool & isempty, int &readcount) {
     fd.close();
 }
 void Genstudent(int gensize){
-    start=high_resolution_clock::now();
+    t.reset();
     diff={};
     namenum=int(round(pow(10,gensize)));
     filename=std::to_string(namenum)+"studentu";
@@ -269,8 +272,7 @@ void Genstudent(int gensize){
         fv.clear();}
     else {
     if(issamiai!='k'){
-        end=high_resolution_clock::now();
-        diff=end-start;
+        diff=t.elapsed();
         printf("Kiek namu darbu pazymiu generuoti studentu faile %s ?\n", filename.c_str());
         cin >> ndcount;
         ::msg = "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n";
@@ -278,7 +280,7 @@ void Genstudent(int gensize){
             cin.setstate(std::ios_base::failbit);
             handleinput(ndcount, msg);}
         handleinput(ndcount, msg);
-        start=high_resolution_clock::now();}
+        t.reset();}
         for (int i = 0; i < namenum+1; i++) {
             num = dist(mt);
             if (i == 0) {
@@ -296,13 +298,12 @@ void Genstudent(int gensize){
             }
         }
         fv.close();
-        end=high_resolution_clock::now();
-        diff=diff+(end-start);
+        diff=diff+t.elapsed();
     }
 }
 void splitnprint(char pchoice, char strat){
     if(strat!='d'){
-    start=high_resolution_clock::now();
+    t.reset();
     names(students);
     if(pchoice=='v'){
         calc(students,pchoice);
@@ -349,8 +350,7 @@ void splitnprint(char pchoice, char strat){
         printtofile(students,pchoice,sar);}
 
     }
-    end=high_resolution_clock::now();
-    diff=end-start;}
+    diff=t.elapsed();}
     else if (strat=='d'){
         names(students);
         calc(students,pchoice);
@@ -363,7 +363,7 @@ void splitnprint(char pchoice, char strat){
 }
 void splitnprintd( char pchoice, char strat){
     if(strat!='d'){
-    start=high_resolution_clock::now();
+    t.reset();
     names(studentsd);
     if(pchoice=='v'){
         calc(studentsd,pchoice);
@@ -410,8 +410,7 @@ void splitnprintd( char pchoice, char strat){
         printtofile(studentsd,pchoice,sar);}
 
     }
-    end=high_resolution_clock::now();
-    diff=end-start;}
+    diff=t.elapsed();}
     else if (strat=='d'){
         names(studentsd);
             calc(studentsd,pchoice);
@@ -423,7 +422,7 @@ void splitnprintd( char pchoice, char strat){
     }
 }
 void splitnprintl( char pchoice, char strat){
-    start=high_resolution_clock::now();
+   t.reset();
     names(studentsl);
     if(pchoice=='v'){
         calc(studentsl,pchoice);
@@ -468,8 +467,7 @@ void splitnprintl( char pchoice, char strat){
         printtofile(studentsl,pchoice,sar);}
 
     }
-    end=high_resolution_clock::now();
-    diff=end-start;
+    diff=t.elapsed();
 
 
 }

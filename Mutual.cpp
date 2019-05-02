@@ -3,6 +3,7 @@
 //
 
 #include "Mutual.h"
+#include "./classes/stud/stud.h"
 vector<stud> students;
 vector<stud> minksti;
 vector<stud>mldcstudents;
@@ -29,9 +30,8 @@ char pchoice;
 char kiec;
 char issamiai;
 int maxname, maxsurname, maxcount;
-high_resolution_clock::time_point start;
-high_resolution_clock::time_point end;
-duration<long double> diff;
+Timer t;
+long double diff;
 void STLpick(char &STL,  bool pap){
     if(pap==false){
     printf("Su kuriuo STL konteineriu norite dirbti ? [d]eque/[v]ector/[l]ist\n");
@@ -82,7 +82,7 @@ bool GavoSkola(const stud student1, char pchoice){
     }
 }
 vector<stud> raskMinkstus(vector<stud> & students, char pchoice){
-    start=high_resolution_clock::now();
+    t.reset();
     vector<stud> minksti;
     vector<stud>::size_type i = 0;
     while (i != students.size()) {
@@ -92,12 +92,11 @@ vector<stud> raskMinkstus(vector<stud> & students, char pchoice){
         } else
             ++i;
     }
-    end=high_resolution_clock::now();
-    diff=end-start;
+    diff=t.elapsed();
     return minksti;
 }
 deque<stud> raskMinkstusd(deque<stud> & studentsd, char pchoice){
-    start=high_resolution_clock::now();
+    t.reset();
     deque<stud> minksti;
     deque<stud>::size_type i = 0;
     while (i != studentsd.size()) {
@@ -107,12 +106,11 @@ deque<stud> raskMinkstusd(deque<stud> & studentsd, char pchoice){
         } else
             ++i;
     }
-    end=high_resolution_clock::now();
-    diff=end-start;
+    diff=t.elapsed();
     return minksti;
 }
 deque<stud> raskKietusd(deque<stud> & studentsd, char pchoice){
-    start=high_resolution_clock::now();
+    t.reset();
     deque<stud> minksti;
     deque<stud>::size_type i = 0;
     int dydis= studentsd.size();
@@ -128,12 +126,11 @@ deque<stud> raskKietusd(deque<stud> & studentsd, char pchoice){
     }
     studentsd.resize((studentsd.size()-dydis));
     studentsd.shrink_to_fit();
-    end=high_resolution_clock::now();
-    diff=end-start;
+    diff=t.elapsed();
     return minksti;
 }
 vector<stud> raskKietus(vector<stud> & students, char pchoice){
-    start=high_resolution_clock::now();
+    t.reset();
     vector<stud> minksti;
     vector<stud>::size_type i = 0;
     int dydis=students.size();
@@ -148,7 +145,6 @@ vector<stud> raskKietus(vector<stud> & students, char pchoice){
     }
     students.resize((students.size()-dydis));
     students.shrink_to_fit();
-    end=high_resolution_clock::now();
-    diff=end-start;
+    diff=t.elapsed();
     return minksti;
 }

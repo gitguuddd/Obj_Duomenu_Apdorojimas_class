@@ -3,7 +3,8 @@
 //
 #include "Mutual.h"
 #include "Output.h"
-bool sorting(const stud student1, const stud student2) {
+#include "classes/stud/stud.h"
+bool sorting(const stud &student1, const stud &student2) {
     if (student1.getsurname() != student2.getsurname())
         return (student1.getsurname() < student2.getsurname());
     if (student1.getname() != student2.getname())
