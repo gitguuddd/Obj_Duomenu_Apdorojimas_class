@@ -35,7 +35,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ### [v1.2](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.2)
 (2019-05-02)
 
-![alt text](Operator.png "A mym")
+![alt text](./Memes/Operator.png "A mym")
 
 **Pridėta**
 - ```Rule of five``` ```stud``` klasės operatoriai
@@ -77,6 +77,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 **Koreguota**
 - Sutvarkyti keli README.md failo bug'ai
 - Pertvarkyta README.md failo struktūra
+- visi README.md paveiksliukai sukelti į ```Memes``` folderį
 
 
 ---
@@ -97,8 +98,8 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ---
 ### [v0.5](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
 (2019-03-18)
-![alt text](liudeselis.jpg "Puikiai veikiantis template'as")
-![alt text](tenor.gif "My face when")
+![alt text](./Memes/liudeselis.jpg "Puikiai veikiantis template'as")
+![alt text](./Memes/tenor.gif "My face when")
 
 **Pridėta**
 - ```splitnprint``` ir ```readfile``` funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template'us (žiūrėti viršuje :) )
@@ -106,7 +107,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Naujuose inputuose sudėtas input handling'as
 - Į benchmark'o failą (v0.5_laikai.txt) išvedamas ir pasirinkto STL konteinerio pavadinimas
 - Nustatyta, kad listas lūžta, kai perlipa 19800 saugomų studentų skačių, listo generavimas apribotas iki 10000 studentų.
-- ![alt text](meme3.jpg "Ane")
+- ![alt text](./Memes/meme3.jpg "Ane")
 
 **Koreguota**
 - Visur sutvarkytas lygiavimas
@@ -120,7 +121,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ---
 ### [v0.4](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4)
 (2019-03-11)
-![alt text](meme2.jpg "Taip, kaltas")
+![alt text](./Memes/meme2.jpg "Taip, kaltas")
 
 **Pridėta**
 
@@ -165,7 +166,7 @@ išrikiuoja stundentus pagal galutinį pažymį,
 - Input handling nuskaitant failą - galima nuskaityti namų darbų pažymius net ir jei jie yra ne skaičiai arba mazesni uz 0/ didesni uz 10 (aptikus - nulinami), jei netinkamas input yra ilgesnis nei 4 simboliai - didelė rizika sugadinti nuskaitytų duomenų tikslumą 
 - Nested switch meniu klaidų spausdinimui
 - Programos struktūros sekcija README.MD faile
-- ![alt text](Meme.jpg "Send Bob")
+- ![alt text](./Memes/Meme.jpg "Send Bob")
 
 **Koreguota**
 - Panaikinti goto, taip pat ir easter egg (LINEKAPUT:), perdaryta switch logika.
@@ -236,7 +237,7 @@ išrikiuoja stundentus pagal galutinį pažymį,
 
 - Kaip ir reikėjo tikėtis - O3 optimizacijos flag'as labiausiai padėjo programai. Neaiškumą lyginant 100000v -O2 ir 100000v -O3 galima paaiškinti tuo, kad duomenų tikslumui koją galėjo pakišti atsitiktinis kompiuteriuo apkrovos kitimas.
 
-- ![alt text](Time.jpg "Blogi laikai, seniai karo nebuvo...")
+- ![alt text](./Memes/Time.jpg "Blogi laikai, seniai karo nebuvo...")
 
 **v1.0.1**
 
@@ -396,9 +397,9 @@ if(pchoice=='v')
 
 **v0.4**
 - **Laiko matavimo rezultatų failo vaizdas visuose sąrašuose generuojant po 10 namų darbų pažymių ir pasirinkus galutinio pažymio skaičiavimą pagal vidurkį** 
-![alt text](vid10.png ":O")
+![alt text](./Memes/.png ":O")
 - **Laiko matavimo rezultatų failo vaizdas visuose sąrašuose generuojant po 10 namų darbų pažymių ir pasirinkus galutinio pažymio skaičiavimą pagal medianą**
-![alt text](med10.png ":)")
+![alt text](./Memes/med10.png ":)")
  
 ---
 ## Programos struktūra
