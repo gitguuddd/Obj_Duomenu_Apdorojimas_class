@@ -2,8 +2,8 @@
 // Created by Mindaugas K on 2/25/2019.
 //
 
-#include "Mutual.h"
-#include "./classes/stud/stud.h"
+#include "../Headers/Mutual.h"
+#include "../classes/stud/stud.h"
 vector<stud> students;
 vector<stud> minksti;
 vector<stud>mldcstudents;

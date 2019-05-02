@@ -1,7 +1,7 @@
 //
 // Created by Mindaugas K on 4/29/2019.
 //
-#include "../../Mutual.h"
+#include "../../Headers/Mutual.h"
 #include "stud.h"
  void stud::setex (){
     ex_=nd_.back();

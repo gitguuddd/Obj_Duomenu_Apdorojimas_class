@@ -1,6 +1,6 @@
-#include "Mutual.h"
-#include "Input.h"
-#include "Output.h"
+#include "./Headers/Mutual.h"
+#include "./Headers/Input.h"
+#include "./Headers/Output.h"
 int main() {
     char STL;
     bool pap= false;

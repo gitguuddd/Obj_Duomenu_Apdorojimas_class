@@ -18,8 +18,8 @@
 #include <sstream>
 #include <algorithm>
 #include <numeric>
-#include "./classes/stud/stud.h"
-#include "./classes/Timer/Timer.h"
+#include "../classes/stud/stud.h"
+#include "../classes/Timer/Timer.h"
 using std::setw;
 using std::setprecision;
 using std::string;

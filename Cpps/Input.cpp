@@ -1,9 +1,9 @@
 //
 // Created by Mindaugas K on 2/25/2019.
 //
-#include "Mutual.h"
-#include "Input.h"
-#include "./classes/stud/stud.h"
+#include "../Headers/Mutual.h"
+#include "../Headers/Input.h"
+#include "../classes/stud/stud.h"
 int namenum;
 int num=0;
 std::deque<stud>::iterator upd;

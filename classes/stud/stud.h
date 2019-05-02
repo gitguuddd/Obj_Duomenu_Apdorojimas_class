@@ -4,7 +4,7 @@
 
 #ifndef OBJ_DUOMENU_APDOROJIMAS_STUD_H
 #define OBJ_DUOMENU_APDOROJIMAS_STUD_H
-#include "../../Mutual.h"
+#include "../../Headers//Mutual.h"
 using std::string;
 using std::vector;
 
