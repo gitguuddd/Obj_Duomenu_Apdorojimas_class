@@ -5,7 +5,6 @@
 #ifndef OBJ_DUOMENU_APDOROJIMAS_TIMER_H
 #define OBJ_DUOMENU_APDOROJIMAS_TIMER_H
 #include <chrono>
-
 class Timer {
 private:
     std::chrono::time_point<std::chrono::high_resolution_clock> start;

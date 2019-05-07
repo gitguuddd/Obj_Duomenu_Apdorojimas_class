@@ -3,7 +3,7 @@
 //
 
 #include "../Headers/Mutual.h"
-#include "../classes/stud/stud.h"
+#include "../classes/ImportantValues/ImportantValues.h"
 vector<stud> students;
 vector<stud> minksti;
 vector<stud>mldcstudents;
@@ -19,46 +19,47 @@ deque<stud> mldcstudentsd;
 deque <stud> mldcd;
 deque <stud> L_laivsd;
 stud test;
-int ndcount;
 bool non_alpha;
-string filename;
-string subname;
-string msg;
 std::ofstream fv;
 std::ofstream ft;
-char pchoice;
-char kiec;
-char issamiai;
-int maxname, maxsurname, maxcount;
 Timer t;
 long double diff;
-void STLpick(char &STL,  bool pap){
+void handlend( string message) {
+    if(cin.fail()){
+        do {
+            cin.clear();
+            cin.ignore(256,'\n');
+            std::cout << message;
+            v.setndcount();
+        } while (cin.fail());}
+}
+void STLpick(bool pap){
     if(pap==false){
     printf("Su kuriuo STL konteineriu norite dirbti ? [d]eque/[v]ector/[l]ist\n");
-    cin>>STL;
-    while(STL!='d'&&STL!='v'&&STL!='l'){
+    v.setSTL();
+    while(v.getSTL()!='d'&&v.getSTL()!='v'&&v.getSTL()!='l'){
         printf("Netinkama ivestis, bandykite is naujo\n");
-        cin>>STL;
+        v.setSTL();
     }}
     else if(pap==true){
         printf("Su kuriuo STL konteineriu norite dirbti ? [d]eque/[v]ector\n");
-        cin>>STL;
-        while(STL!='d'&&STL!='v'){
+        v.setSTL();
+        while(v.getSTL()!='d'&&v.getSTL()!='v'){
             printf("Netinkama ivestis, bandykite is naujo\n");
-            cin>>STL;
+            v.setSTL();
         }
     }
 }
-void Stratpick(char &strat){
+void Stratpick(){
     printf("Kuria skelimo strategija naudosite noredami perskelti studentus?\n");
     printf(" [a] - sukurti du naujus STL'us ir i juos atrinkti tinkamus studentus\n");
     printf(" [b] - sukurti viena nauja STL'a, sename STL'e istrinti naujame STL'e esancius studentus\n");
     printf(" [c] - isrikiuoti studentus, rasti iteratoriu i (i>=5), naudojant iteratoriu sukurti nauja STL'a\n");
     printf(" [d] - dirbti su papildomos uzduoties siulomais sprendimais\n");
-    cin>>strat;
-    while(strat!='a'&&strat!='b'&&strat!='c'&&strat!='d'){
+    v.setstrat();
+    while(v.getstrat()!='a'&&v.getstrat()!='b'&&v.getstrat()!='c'&&v.getstrat()!='d'){
         printf("Netinkama ivestis, bandykite is naujo - a, b, c arba d\n");
-        cin>>strat;
+        v.setstrat();
     }
 }
 bool GavoSkola(const stud student1, char pchoice){

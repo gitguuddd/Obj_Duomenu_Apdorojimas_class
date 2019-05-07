@@ -2,14 +2,11 @@
 // Created by Mindaugas K on 2/25/2019.
 //
 #include "../Headers/Mutual.h"
+#include "../classes/ImportantValues/ImportantValues.h"
 #include "../Headers/Input.h"
-#include "../classes/stud/stud.h"
-int namenum;
-int num=0;
 std::deque<stud>::iterator upd;
 std::list<stud>::iterator upl;
 std::vector<stud>::iterator up;
-char sar;
 long long seed=high_resolution_clock::now().time_since_epoch().count();
 std::mt19937 mt(seed);
 std::uniform_real_distribution<double> dist(1.0, 100000.0);
@@ -33,8 +30,8 @@ bool sortingvid(const stud student1, const stud student2){
 }
 void split(char pchoice, char strat, std::vector<stud>::iterator &up){
     if (strat == 'a'){
-        mldc.reserve(namenum/2);
-        L_laivs.reserve(namenum/2);
+        mldc.reserve(v.getnamenum()/2);
+        L_laivs.reserve(v.getnamenum()/2);
         if(pchoice=='v'){
             if(pchoice=='v')
                 up=stable_partition(students.begin(),students.end(),[](stud v) {return v.getvid()<test.getvid();});}
@@ -55,15 +52,15 @@ void split(char pchoice, char strat, std::vector<stud>::iterator &up){
     else if (pchoice=='m'){
         up=std::upper_bound(students.begin(),students.end(),test,less_than_mvid());}}
     else if(strat=='d'){
-        if (issamiai!='k'){printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
-        cin>>kiec;
-        while(kiec!='k'&&kiec!='m'){
+        if (v.getissamiai()!='k'){printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
+        v.setkiec();
+        while(v.getkiec()!='k'&&v.getkiec()!='m'){
             printf("Netinkama ivestis, galimi variantai: trinti [m]inkstus/ i prieki perkelti [k]ietus\n");
-            cin>>kiec;
+            v.setkiec();
         }}
-        if(kiec=='m')
+        if(v.getkiec()=='m')
             minksti=raskMinkstus(students,pchoice);
-        else if(kiec=='k')
+        else if(v.getkiec()=='k')
             minksti=raskKietus(students,pchoice);
     }
 }
@@ -86,15 +83,15 @@ void splitd(char pchoice, char strat, std::deque<stud>::iterator &upd){
         upd=std::upper_bound(studentsd.begin(),studentsd.end(),test,less_than_mvid());}
     }
     else if(strat=='d'){
-       if(issamiai!='k') {printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
-        cin>>kiec;
-        while(kiec!='k'&&kiec!='m'){
+       if(v.getissamiai()!='k') {printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
+        v.setkiec();
+        while(v.getkiec()!='k'&&v.getkiec()!='m'){
             printf("Netinkama ivestis, galimi variantai: trinti [m]inkstus/ i prieki perkelti [k]ietus\n");
-            cin>>kiec;
+            v.setkiec();
         }}
-        if(kiec=='m')
+        if(v.getkiec()=='m')
             minkstid=raskMinkstusd(studentsd,pchoice);
-        else if(kiec=='k')
+        else if(v.getkiec()=='k')
                 minkstid=raskKietusd(studentsd,pchoice);
 
     }
@@ -126,19 +123,19 @@ stud Userinput() {
     int tempex;
     int nd = 1;
     printf("Iveskite studento varda\n");
-    msg = "Klaida ivedant studento varda, bandykite is naujo";
+    v.setmsg("Klaida ivedant studento varda, bandykite is naujo");
     cin >> tempname;
     handlename(tempname);
     student.setname(tempname);
     printf("Iveskite studento pavarde\n");
-    msg = "Klaida ivedant studento pavarde, bandykite is naujo";
+    v.setmsg("Klaida ivedant studento pavarde, bandykite is naujo");
     cin >> tempsurname;
     handlename(tempsurname);
     student.setsurname(tempsurname);
     printf("Iveskite studento egzamino ivertinima\n");
-    msg = "Klaida ivedant studento egzamino ivertinima, bandykite is naujo\n";
+    v.setmsg("Klaida ivedant studento egzamino ivertinima, bandykite is naujo\n");
     cin >> tempex;
-    handleinput(tempex, msg);
+    handleinput(tempex, v.getmsg());
     if(tempex<0||tempex>10){
         printf("Ivestas egzamino pazymys iseina is pazymio ribu, egzamino ivertinimas nulinamas\n");
         tempex=0;
@@ -146,9 +143,9 @@ stud Userinput() {
     student.setex(tempex);
     printf("Iveskite studento namu darbu pazymius, skaiciaus -1 ivestis uzbaigia ivesti\n");
     while (nd != -1) {
-        msg = "Klaida ivedant studento namu darbu ivertinima, bandykite is naujo (-1 baigia ivesti)";
+        v.setmsg("Klaida ivedant studento namu darbu ivertinima, bandykite is naujo (-1 baigia ivesti)");
         cin >> nd;
-        handleinput(nd, msg);
+        handleinput(nd, v.getmsg());
         if (nd >= 0 && nd < 11)
         student.setnd(nd);
         else if (nd > 10 || nd < -1)
@@ -160,7 +157,7 @@ stud Userinput() {
 }
 stud GenStudent() {
     stud student;
-    msg = "Ivedete ne skaiciu, bandykite is naujo (0 baigia ivesti)";
+    v.setmsg("Ivedete ne skaiciu, bandykite is naujo (0 baigia ivesti)");
     int nd = 1;
     int temp;
     string tempname;
@@ -175,10 +172,10 @@ stud GenStudent() {
     printf("Studento pavarde: %s\n", tempsurname.c_str());
     student.setex(dist2(mt));
     printf("Studento egzamino ivertinimas: %d \n", student.getex());
-    printf("Iveskite bet koki  skaiciu, kad sugeneruotumete pazymi,  skaiciaus 0 ivestis uzbaigia ivesti\n");
+    printf("Iveskite bet koki  skaiciu, kad sugeneruotumete pazymi,  skaicius 0 ivestis uzbaigia ivesti\n");
     while (nd != 0) {
         cin >> nd;
-            handleinput(nd, msg);
+            handleinput(nd, v.getmsg());
         temp = nd;
         nd = dist2(mt);
         printf("Sugeneruotas pazymys: %d\n", nd);
@@ -191,71 +188,21 @@ stud GenStudent() {
 }
 void readfile(bool & isempty, int &readcount) {
     std::ifstream fd("kursiokai.txt");
-    int i = students.size();
-    int linecount = 1;
-    int countnd;
-    string tempsur;
-    string tempname;
-    int tempnd;
-    bool fsio;
+    v.linecount=0;
+    stud temp;
     string line;
     std::getline(fd, line);
     while (std::getline(fd, line)) {
-        fsio = false;
-        countnd = 0;
+        v.fsio = false;
+        v.countnd = 0;
         std::istringstream scan(line);
-        scan >> tempname;
-        if (scan.fail()) {
-            scan.clear();
-            scan.ignore(4);
-            printf("kursiokai.txt faile ivyko klaida nuskaitant %d studento pavarde\n", linecount);
-        }
-        else
-            students[i].setname(tempname);
-        scan >> tempsur;
-        if (scan.fail()) {
-            scan.clear();
-            scan.ignore(4);
-            printf("kursiokai.txt faile ivyko klaida nuskaitant %d studento varda\n", linecount);
-        }
-        else
-            students[i].setsurname(tempsur);
-        while (scan) {
-            scan >> tempnd;
-            if (scan.fail()) {
-                do {
-                    scan.clear();
-                    scan.ignore(4);
-                    printf("kursiokai.txt faile ivyko klaida nuskaitant %d studento %d pazymi\n", linecount,
-                           countnd + 1);
-                    countnd++;
-                    if (scan.peek() != '\n'&&scan.peek() != EOF)
-                        scan >> tempnd;
-                    else {
-                        fsio = true;
-                        break;
-                    }
-                } while (scan.fail());
-
-            }
-            if (!fsio) {
-                if (tempnd < 0 || tempnd > 10) {
-                    tempnd = 0;
-                }
-                    students[i].setnd(tempnd);
-
-                countnd++;
-            }
-            if (scan.peek() == '\n' || scan.peek() == EOF)
-                break;
-
-        }
-        students[i].setex();
-        linecount++;
-        i++;
-
+        scan>>temp;
+        temp.setex();
+        v.linecount++;
+        students.push_back(temp);
+        temp={};
     }
-    if (linecount == 1)
+    if (v.linecount == 1)
         isempty = true;
     else
         readcount++;
@@ -263,42 +210,42 @@ void readfile(bool & isempty, int &readcount) {
 }
 void Genstudent(int gensize){
     t.reset();
-    diff={};
-    namenum=int(round(pow(10,gensize)));
-    filename=std::to_string(namenum)+"studentu";
-    fv.open((filename+".txt").c_str());
+    v.setdiff(0);
+    v.setnamenum(int(round(pow(10,gensize))));
+    v.setfilename(std::to_string(v.getnamenum())+"studentu");
+    fv.open((v.getfilename()+".txt").c_str());
     if(fv.fail()){
-        printf("Failas %s nerastas/neisejo sukurti",filename.c_str());
+        printf("Failas %s nerastas/neisejo sukurti",v.getfilename().c_str());
         fv.clear();}
     else {
-    if(issamiai!='k'){
-        diff=t.elapsed();
-        printf("Kiek namu darbu pazymiu generuoti studentu faile %s ?\n", filename.c_str());
-        cin >> ndcount;
-        ::msg = "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n";
-        while(ndcount<1||ndcount>1000000){
+    if(v.getissamiai()!='k'){
+        v.setdiff(t.elapsed());
+        printf("Kiek namu darbu pazymiu generuoti studentu faile %s ?\n", v.getfilename().c_str());
+        v.setndcount();
+        v.setmsg("Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n");
+        while(v.getndcount()<1||v.getndcount()>1000000){
             cin.setstate(std::ios_base::failbit);
-            handleinput(ndcount, msg);}
-        handleinput(ndcount, msg);
+            handlend(v.getmsg());}
+        handlend(v.getmsg());
         t.reset();}
-        for (int i = 0; i < namenum+1; i++) {
-            num = dist(mt);
+        for (int i = 0; i < v.getnamenum()+1; i++) {
+            v.setnum(dist(mt));
             if (i == 0) {
                 fv<<"Pavarde"<<setw(27)<<"Vardas"<<setw(27);
-                for (int j = 1; j <= ndcount; j++) {
+                for (int j = 1; j <= v.getndcount(); j++) {
                     fv<<"ND"<<j<<setw(4);
                 }
                 fv<<" Egzaminas\n";
             } else {
-                fv<<"Pavarde"<<num<<setw(22)<<"Vardas"<<num<<setw(21);
-                for (int j = 1; j <= ndcount; j++) {
+                fv<<"Pavarde"<<v.getnum()<<setw(22)<<"Vardas"<<v.getnum()<<setw(21);
+                for (int j = 1; j <= v.getndcount(); j++) {
                     fv<<int(dist2(mt))<<setw(5);
                 }
                 fv<<int(dist2(mt))<<"\n";
             }
         }
         fv.close();
-        diff=diff+t.elapsed();
+        v.setdiff(v.getdiff()+t.elapsed());
     }
 }
 void splitnprint(char pchoice, char strat){
@@ -311,21 +258,21 @@ void splitnprint(char pchoice, char strat){
         sort(students.begin(),students.end(),sortingvid);
         split(pchoice,strat, up);
         if(strat=='a'){
-            sar='m';
+            v.setsar('m');
             vector<stud>mldc(up, students.end());
-            printtofile(mldc,pchoice,sar);
-            sar='v';
+            printtofile(mldc,pchoice,v.getsar());
+            v.setsar('v');
             vector<stud>L_laivs(students.begin(), up);
-            printtofile(L_laivs,pchoice,sar);
+            printtofile(L_laivs,pchoice,v.getsar());
             mldc.clear();
             L_laivs.clear();}
         else{
-            sar='m';
+            v.setsar('m');
             vector<stud>mldcstudents(up,students.end());
-            printtofile(mldcstudents,pchoice,sar);
-            sar='v';
+            printtofile(mldcstudents,pchoice,v.getsar());
+            v.setsar('v');
             students.resize((students.size()-mldcstudents.size()));
-            printtofile(students,pchoice,sar);}
+            printtofile(students,pchoice,v.getsar());}
     }
     else if(pchoice=='m'){
         calc(students,pchoice);
@@ -333,32 +280,32 @@ void splitnprint(char pchoice, char strat){
         sort(students.begin(),students.end(),sortingmvid);
         split(pchoice,strat, up);
         if(strat=='a'){
-            sar='m';
+            v.setsar('m');
             vector<stud>mldc(up, students.end());
-            printtofile(mldc,pchoice,sar);
-            sar='v';
+            printtofile(mldc,pchoice,v.getsar());
+            v.setsar('v');
             vector<stud>L_laivs(students.begin(), up);
-            printtofile(L_laivs,pchoice,sar);
+            printtofile(L_laivs,pchoice,v.getsar());
             mldc.clear();
             L_laivs.clear();}
         else{
-        sar='m';
+        v.setsar('m');
         vector<stud>mldcstudents(up,students.end());
-        printtofile(mldcstudents,pchoice,sar);
-        sar='v';
+        printtofile(mldcstudents,pchoice,v.getsar());
+        v.setsar('v');
         students.resize((students.size()-mldcstudents.size()));
-        printtofile(students,pchoice,sar);}
+        printtofile(students,pchoice,v.getsar());}
 
     }
-    diff=t.elapsed();}
+    v.setdiff(t.elapsed());}
     else if (strat=='d'){
         names(students);
         calc(students,pchoice);
         split(pchoice,strat, up);
-        sar='m';
-        printtofile(students,pchoice,sar);
-        sar='v';
-        printtofile(minksti,pchoice,sar);
+        v.setsar('m');
+        printtofile(students,pchoice,v.getsar());
+        v.setsar('v');
+        printtofile(minksti,pchoice,v.getsar());
     }
 }
 void splitnprintd( char pchoice, char strat){
@@ -371,21 +318,21 @@ void splitnprintd( char pchoice, char strat){
         sort(studentsd.begin(),studentsd.end(),sortingvid);
         splitd(pchoice,strat, upd);
         if(strat=='a'){
-            sar='m';
+            v.setsar('m');
             deque<stud>mldcd(upd,studentsd.end());
-            printtofile(mldcd,pchoice,sar);
-            sar='v';
+            printtofile(mldcd,pchoice,v.getsar());
+            v.setsar('v');
             deque<stud>L_laivsd(studentsd.begin(), upd);
-            printtofile(L_laivsd,pchoice,sar);
+            printtofile(L_laivsd,pchoice,v.getsar());
             mldcd.clear();
             L_laivsd.clear();}
         else{
-        sar='m';
+        v.setsar('m');
         deque<stud>mldcstudentsd(upd,studentsd.end());
-        printtofile(mldcstudentsd,pchoice,sar);
-        sar='v';
+        printtofile(mldcstudentsd,pchoice,v.getsar());
+        v.setsar('v');
         studentsd.resize((studentsd.size()-mldcstudentsd.size()));
-        printtofile(studentsd,pchoice,sar);}
+        printtofile(studentsd,pchoice,v.getsar());}
     }
     else if(pchoice=='m'){
         calc(studentsd,pchoice);
@@ -393,32 +340,32 @@ void splitnprintd( char pchoice, char strat){
         sort(studentsd.begin(),studentsd.end(),sortingmvid);
         splitd(pchoice, strat, upd);
         if(strat=='a'){
-            sar='m';
+            v.setsar('m');
             deque<stud>mldcd(upd,studentsd.end());
-            printtofile(mldcd,pchoice,sar);
-            sar='v';
+            printtofile(mldcd,pchoice,v.getsar());
+            v.setsar('v');
             deque<stud>L_laivsd(studentsd.begin(), upd);
-            printtofile(L_laivsd,pchoice,sar);
+            printtofile(L_laivsd,pchoice,v.getsar());
             mldcd.clear();
             L_laivsd.clear();}
         else{
-        sar='m';
+        v.setsar('m');
         deque<stud>mldcstudentsd(upd,studentsd.end());
-        printtofile(mldcstudentsd,pchoice,sar);
-        sar='v';
+        printtofile(mldcstudentsd,pchoice,v.getsar());
+        v.setsar('v');
         studentsd.resize((studentsd.size()-mldcstudentsd.size()));
-        printtofile(studentsd,pchoice,sar);}
+        printtofile(studentsd,pchoice,v.getsar());}
 
     }
-    diff=t.elapsed();}
+    v.setdiff(t.elapsed());}
     else if (strat=='d'){
         names(studentsd);
             calc(studentsd,pchoice);
             splitd(pchoice,strat, upd);
-        sar='m';
-        printtofile(studentsd,pchoice,sar);
-        sar='v';
-        printtofile(minkstid,pchoice,sar);
+        v.setsar('m');
+        printtofile(studentsd,pchoice,v.getsar());
+        v.setsar('v');
+        printtofile(minkstid,pchoice,v.getsar());
     }
 }
 void splitnprintl( char pchoice, char strat){
@@ -430,20 +377,20 @@ void splitnprintl( char pchoice, char strat){
         studentsl.sort(sortingvid);
         splitl(pchoice, strat, upl);
         if(strat=='a'){
-            sar='m';
+            v.setsar('m');
             mldcl.splice(mldcl.begin(),studentsl,upl,studentsl.end());
-            printtofile(mldcl,pchoice,sar);
-            sar='v';
+            printtofile(mldcl,pchoice,v.getsar());
+            v.setsar('v');
             list<stud>L_laivsl(studentsl.begin(), studentsl.end());
-            printtofile(L_laivsl,pchoice,sar);
+            printtofile(L_laivsl,pchoice,v.getsar());
             mldcl.clear();
             L_laivsl.clear();}
         else{
-        sar='m';
+        v.setsar('m');
         mldcstudentsl.splice(mldcstudentsl.begin(),studentsl,upl,studentsl.end());
-        printtofile(mldcstudentsl,pchoice,sar);
-        sar='v';
-        printtofile(studentsl,pchoice,sar);}
+        printtofile(mldcstudentsl,pchoice,v.getsar());
+        v.setsar('v');
+        printtofile(studentsl,pchoice,v.getsar());}
     }
     else if(pchoice=='m'){
         calc(studentsl,pchoice);
@@ -451,23 +398,23 @@ void splitnprintl( char pchoice, char strat){
         studentsl.sort(sortingmvid);
         splitl(pchoice, strat, upl);
         if(strat=='a'){
-            sar='m';
+            v.setsar('m');
             mldcl.splice(mldcl.begin(),studentsl,upl,studentsl.end());
-            printtofile(mldcl,pchoice,sar);
-            sar='v';
+            printtofile(mldcl,pchoice,v.getsar());
+            v.setsar('v');
             list<stud>L_laivsl(studentsl.begin(), studentsl.end());
-            printtofile(L_laivsl,pchoice,sar);
+            printtofile(L_laivsl,pchoice,v.getsar());
         mldcl.clear();
         L_laivsl.clear();}
         else{
-        sar='m';
+        v.setsar('m');
         mldcstudentsl.splice(mldcstudentsl.begin(),studentsl,upl,studentsl.end());
-        printtofile(mldcstudentsl,pchoice,sar);
-        sar='v';
-        printtofile(studentsl,pchoice,sar);}
+        printtofile(mldcstudentsl,pchoice,v.getsar());
+        v.setsar('v');
+        printtofile(studentsl,pchoice,v.getsar());}
 
     }
-    diff=t.elapsed();
+    v.setdiff(t.elapsed());
 
 
 }

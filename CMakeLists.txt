@@ -5,4 +5,4 @@ set(CMAKE_CXX_FLAGS "-O3 ")
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Obj_Duomenu_apdorojimas main.cpp Headers/Input.h Headers/Output.h Cpps/Input.cpp Cpps/Output.cpp Headers/Mutual.h Cpps/Mutual.cpp classes/stud/stud.h classes/stud/stud.cpp classes/Timer/Timer.h)
+add_executable(Obj_Duomenu_apdorojimas main.cpp Headers/Input.h Headers/Output.h Cpps/Input.cpp Cpps/Output.cpp Headers/Mutual.h Cpps/Mutual.cpp classes/stud/stud.h classes/stud/stud.cpp classes/Timer/Timer.h classes/Humie/Humie.h classes/ImportantValues/ImportantValues.h classes/ImportantValues/ImportantValues.cpp classes/Humie/Humie.cpp)

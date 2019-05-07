@@ -31,6 +31,31 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą
 ---
 ## Versijų istorija (changelog)
+
+---
+### [v1.5](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.5)
+(2019-05-07)
+
+![alt text](./Memes/top-gear.jpeg)
+**Pridėta**
+- ```stud``` derived klasės abstrakti bazinė klasė ```Humie```
+- ```ImportantValues``` klasė kurioje saugomi ir apsaugomi seniau per visą programą buvę išmėtyti globalūs kintamieji
+- ```stud``` klasės >> ir << operatoriai
+- ```stud``` klasės ```scanname``` ir ```scansurname``` funkcijos
+- ```handlend``` funkcija skirta ```ndcount``` kintamojo įvedimo į ```ImportantValues``` tikrinimui
+
+**Koreguota**
+- Iš ```stud``` klasės į ```Humie``` klasę perkelti ```name_, surname_, nd_``` kintamieji ir su jais susyjusios funkcijos. Taip užtikrinama, kad ```Humie``` klasė saugos įvestus duomenis, o ```stud``` klasė - išvedimui paruoštus duomenis
+- Panaikinti beveik visi padriki globalūs kintamieji (palikti globalūs vektoriai, dekai, listai ir t.t). Minėti kintamieji perkelti į ```ImportantValues``` klasę
+- Dėl sutikto "circular include" teko pertvarkyt headeriuose include'intus kitus headerius :(
+- Realizuotų >> ir << ```stud``` klasės operatorių deka buvo pertvarkytos template'inė ```readfile``` , nuskaitymo nuo ```kursiokai.txt``` failo ```readfile```, template'inė spausdinimo į failą ```printtofile``` funkcijos
+- Į github pridėtas ```build``` aplankas su jame esančiu kursiokai.txt failu
+- Atnaujinta programos struktūra
+
+**Žinomos problemos/ką galima pagerinti**
+- Vis dar galima patobulinti programos struktūrą
+- pavadinimų ir funkcijų standartai :DD
+
 ---
 ### [v1.2](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.2)
 (2019-05-02)
@@ -408,4 +433,6 @@ if(pchoice=='v')
 - ```Mutual.h```ir ```Mutual.cpp``` funkcijos/kintamieji/include'ai bendri visai programai (```#include iostream```,```handleinput()``` )
 - ```main.cpp``` pagrindinis failas - meniu
 - ```stud.h``` ir ```stud.cpp``` stud klasei reikalingi include`ai ir funkcijos
+- ```ImportantValues.h``` ir ```ImportantValues.cpp``` sklandų programos veikimą užtikrinantys kintamieji ir su jais dirbančios funkcijos
+- ```Humie.h``` ir ```Humie.cpp``` Humie klasei reikalingi include`ai ir funkcijos
 - ```Timer.h``` timer klasė

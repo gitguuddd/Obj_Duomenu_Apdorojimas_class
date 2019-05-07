@@ -1,9 +1,7 @@
 //
 // Created by Mindaugas K on 4/29/2019.
-//
 #include "../../Headers/Mutual.h"
-#include "stud.h"
- void stud::setex (){
+void stud::setex (){
     ex_=nd_.back();
     nd_.pop_back();
     nd_.shrink_to_fit();}
@@ -21,7 +19,7 @@ void stud::setmvid (){
         mvid_ = ((double)(nd_[nd_.size() / 2 -1] + nd_[(nd_.size() / 2) ]) / 2)*0.4+ex_*0.6;
     nd_.clear();
 }
-stud::stud(const stud& s):name_{s.name_},surname_{s.surname_},vid_{s.vid_},mvid_{s.mvid_},ex_{s.ex_},nd_{s.nd_}{
+stud::stud(const stud& s):Humie(s.name_,s.surname_,s.nd_),vid_{s.vid_},mvid_{s.mvid_},ex_{s.ex_}{
 }
 stud& stud::operator=(const stud& s){
     if(&s==this)return *this;
@@ -35,7 +33,7 @@ stud& stud::operator=(const stud& s){
     vid_=s.vid_;
     return *this;
 }
-stud::stud(stud&& s)noexcept:name_{s.name_},surname_{s.surname_},vid_{s.vid_},mvid_{s.mvid_},ex_{s.ex_},nd_{move(s.nd_)}{
+stud::stud(stud&& s)noexcept:Humie(s.nd_,s.name_,s.surname_),vid_{s.vid_},mvid_{s.mvid_},ex_{s.ex_}{
     s.name_.clear();
     s.surname_.clear();
     s.ex_=0;
@@ -59,36 +57,36 @@ stud& stud::operator=(stud&& s)noexcept{
     return *this;
 }
 bool stud::operator!=(const stud &A) {
-    if(pchoice=='v')
+    if(v.getpchoice()=='v')
         return vid_!=A.getvid();
     else
         return mvid_!=A.getmvid();
 }
 bool stud::operator==(const stud &A) {
-    if(pchoice=='v')
+    if(v.getpchoice()=='v')
         return vid_==A.getvid();
     else
         return mvid_==A.getmvid();}
 bool stud::operator>=(const stud &A) {
-    if(pchoice=='v')
+    if(v.getpchoice()=='v')
         return vid_>=A.getvid();
     else
         return mvid_>=A.getmvid();
 }
 bool stud::operator<=(const stud &A) {
-    if(pchoice=='v')
+    if(v.getpchoice()=='v')
         return vid_<=A.getvid();
     else
         return mvid_<=A.getmvid();
 }
 bool stud::operator>(const stud &A) {
-    if(pchoice=='v')
+    if(v.getpchoice()=='v')
         return vid_>A.getvid();
     else
         return mvid_>A.getmvid();
 }
 bool stud::operator<(const stud &A) {
-    if(pchoice=='v')
+    if(v.getpchoice()=='v')
         return vid_<A.getvid();
     else
         return mvid_<A.getmvid();

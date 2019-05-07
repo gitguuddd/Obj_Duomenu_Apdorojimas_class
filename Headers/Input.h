@@ -4,13 +4,8 @@
 
 #ifndef OBJ_DUOMENU_APDOROJIMAS_HEADERS_H
 #define OBJ_DUOMENU_APDOROJIMAS_HEADERS_H
-#include "Mutual.h"
 #include <random>
 #include <ctime>
-extern int namenum;
-extern int gensize;
-extern int num;
-extern char sar;
 extern std::vector<stud>::iterator up;
 extern long long seed;
 extern std::mt19937 mt;
