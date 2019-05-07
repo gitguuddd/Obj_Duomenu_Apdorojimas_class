@@ -50,7 +50,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Dėl sutikto "circular include" teko pertvarkyt headeriuose include'intus kitus headerius :(
 - Realizuotų >> ir << ```stud``` klasės operatorių deka buvo pertvarkytos template'inė ```readfile``` , nuskaitymo nuo ```kursiokai.txt``` failo ```readfile```, template'inė spausdinimo į failą ```printtofile``` funkcijos
 - Į github pridėtas ```build``` aplankas su jame esančiu kursiokai.txt failu
-- Atnaujinta programos struktūra
+- Atnaujinta informacija apie programos struktūra
 
 **Žinomos problemos/ką galima pagerinti**
 - Vis dar galima patobulinti programos struktūrą
