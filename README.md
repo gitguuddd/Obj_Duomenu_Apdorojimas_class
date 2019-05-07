@@ -54,7 +54,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 **Žinomos problemos/ką galima pagerinti**
 - Vis dar galima patobulinti programos struktūrą
-- pavadinimų ir funkcijų standartai :DD
+- Kintamųjų ir funkcijų pavadinimų standartai :DD
 
 ---
 ### [v1.2](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.2)
