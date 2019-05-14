@@ -2,24 +2,23 @@
 #include "./Headers/Input.h"
 #include "./Headers/Output.h"
 int main() {
-    v.setpap(false);
-    v.setstrat2('c');
-    v.setnum(0);
-    int ind;
+    v.set_pap(false);
+    v.set_strat2('c');
+    v.set_num(0);
     int choice=0;
-    int specchoice =-1;
-    int printfail=0;
-    int readcount=0;
-    bool isempty=false;
+    int spec_choice =-1;
+    int print_fail=0;
+    int read_count=0;
+    bool is_empty=false;
     printf("Pasirinkite programos rezima: [i]ssamus, [k]onkretus ?");
-    v.setissamiai();
-    while(v.getissamiai()!='i'&&v.getissamiai()!='k'){
+    v.set_issamiai();
+    while(v.get_issamiai()!='i'&& v.get_issamiai()!='k'){
         printf("Neteisinga ivestis, galimi variantai: [i]ssamus, [k]onkretus\n");
-        v.setissamiai();
+        v.set_issamiai();
     }
     students.reserve(100);
     while (choice == 0 || choice == 5 || choice == 4) {
-        if (specchoice == -1) {
+        if (spec_choice == -1) {
             printf("Saugomi %d studentu(o) duomenys, pasirinkite ka daryti toliau:\n", students.size());
             printf("1. Ivesti studenta paciam\n");
             printf("2. Generuoti studenta\n");
@@ -42,7 +41,7 @@ int main() {
         switch (choice) {
             case 1:
                 try{
-                students.push_back(Userinput());}
+                students.push_back(user_input());}
                 catch(std::exception e){
                     printf("Perzengtos studentu vektoriaus ribos\n");
                 }
@@ -50,164 +49,169 @@ int main() {
                 break;
             case 2:
                 try{
-                students.push_back(GenStudent());}
+                students.push_back(gen_student());}
                 catch(std::exception e){
-                    printf("Perzengtos studentu vektoriaus riblos\n");
+                    printf("Perzengtos studentu vektoriaus ribos\n");
                 }
                 choice = 0;
                 break;
             case 3:
-                if (readcount == 0) {
-                    readfile(isempty, readcount);
+                if (read_count == 0) {
+                    read_file2(is_empty, read_count);
                 }
                 else
-                    printfail=3;
+                    print_fail=3;
                 choice = 0;
-                if (isempty)
-                    printfail=32;
-                    specchoice = 0;
+                if (is_empty)
+                    print_fail=32;
+                    spec_choice = 0;
                 break;
             case 4:
                 if (students.empty()) {
-                    specchoice = 0;
+                    spec_choice = 0;
                     choice = 0;
-                    printfail=4;
+                    print_fail=4;
                     break;
                 }
                 else {
-                    sort(students.begin(), students.end(), sortingmvid);
+                    sort(students.begin(), students.end(), sorting_mvid);
                     print(students, 'm');
                     choice = -1;
                     break;
                 }
             case 5:
                 if (students.empty()) {
-                    specchoice = 0;
-                    printfail=4;
+                    spec_choice = 0;
+                    print_fail=4;
                     choice = 0;
                     break;
                 }
                 else {
-                    sort(students.begin(), students.end(), sortingvid);
+                    sort(students.begin(), students.end(), sorting_vid);
                     print(students, 'v');
                     choice = -1;
                     break;
                 }
             case 6:
-                Stratpick();
-                if(v.getstrat()!='d'){
-                STLpick(v.getpap());
-                    ft.open("V1.5_laikai.txt");
-                    (v.getSTL()=='v')?ft<<"Pasirinktas konteineris - vektorius\n":
-                        (v.getSTL()=='d')?ft<<"Pasirinktas konteineris - dekas\n":
+                t_strat_pick();
+                if(v.get_strat()!='d'){
+                    t_STL_pick(v.get_pap());
+                    ft.open("V2.0_laikai.txt");
+                    (v.get_STL()=='v')?ft<<"Pasirinktas konteineris - vektorius\n":
+                        (v.get_STL()=='d')?ft<<"Pasirinktas konteineris - dekas\n":
                         ft<<"Pasirinktas konteineris - listas\n";
-                    if(v.getissamiai()=='k'){
+                    if(v.get_issamiai()=='k'){
                         printf("Kiek namu darbu pazymiu generuoti studentu failuose ?\n");
-                        v.setndcount();
-                        v.setmsg("Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n");
-                        while(v.getndcount()<1||v.getndcount()>1000000){
+                        v.set_nd_count();
+                        v.set_msg(
+                                "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n");
+                        while(v.get_nd_count()<1|| v.get_nd_count()>1000000){
                             cin.setstate(std::ios_base::failbit);
-                            handlend(v.getmsg());}
-                        handlend(v.getmsg());
+                            handle_nd(v.get_msg());}
+                        handle_nd(v.get_msg());
 
                         printf("Galutini pazymi studentu failuose skaiciuoti pagal [v]idurki/[m]ediana ?\n");
-                        v.setpchoice();
-                        while(v.getpchoice()!='v'&&v.getpchoice()!='m'){
+                        v.set_pchoice();
+                        while(v.get_pchoice()!='v'&& v.get_pchoice()!='m'){
                             printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
-                            v.setpchoice();}
+                            v.set_pchoice();}
                     }
                     for(int i=1;i<=6;i++){
                         students.clear();
-                        studentsl.clear();
-                        studentsd.clear();
-                        mldcstudents.clear();
-                        mldcstudentsl.clear();
-                        mldcstudentsd.clear();
+                        students_l.clear();
+                        students_d.clear();
+                        mldc_students.clear();
+                        mldc_students_l.clear();
+                        mldc_students_d.clear();
                         ft<<int(round(pow(10,i)))<<"studentu\n";
                         ft<<"--------------------------------\n";
-                    Genstudent(i);
-                    ft<<"Studentai sugeneruoti ir isvesti i faila per "<<v.getdiff()<<" s.\n";
-                    if(v.getSTL()=='v')
-                        students.reserve(v.getnamenum());
-                       (v.getSTL()=='v')?readfile(students,v.getfilename()):
-                        (v.getSTL()=='d')?readfile(studentsd,v.getfilename()):
-                        readfile(studentsl,v.getfilename());
-                        if(v.getSTL()=='v')
+                        gen_student(i);
+                    ft<<"Studentai sugeneruoti ir isvesti i faila per "<< v.get_diff()<<" s.\n";
+                    if(v.get_STL()=='v')
+                        students.reserve(v.get_name_num());
+                       (v.get_STL()=='v')? read_file(students, v.get_file_name()):
+                        (v.get_STL()=='d')? read_file(students_d, v.get_file_name()):
+                        read_file(students_l, v.get_file_name());
+                        if(v.get_STL()=='v')
                             students.shrink_to_fit();
-                            else if (v.getSTL()=='d')
-                                studentsd.shrink_to_fit();
-                    ft<<"Studentai nuskaityti is failo  "<<v.getfilename()<<" per "<<v.getdiff()<<" s.\n";
-                    if(v.getissamiai()!='k'){
-                    printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",v.getfilename().c_str());
-                    v.setpchoice();
-                    while(v.getpchoice()!='v'&&v.getpchoice()!='m'){
+                            else if (v.get_STL()=='d')
+                                students_d.shrink_to_fit();
+                    ft<<"Studentai nuskaityti is failo  "<< v.get_file_name()<<" per "<< v.get_diff()<<" s.\n";
+                    if(v.get_issamiai()!='k'){
+                    printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n", v.get_file_name().c_str());
+                        v.set_pchoice();
+                    while(v.get_pchoice()!='v'&& v.get_pchoice()!='m'){
                         printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
-                        v.setpchoice();
-                    }}(v.getSTL()=='v')?splitnprint(v.getpchoice(), v.getstrat()):
-                        (v.getSTL()=='d')?splitnprintd( v.getpchoice(), v.getstrat()):
-                        splitnprintl(v.getpchoice(), v.getstrat());
-                    ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<<v.getdiff()<<" s.\n";
+                        v.set_pchoice();
+                    }}(v.get_STL()=='v')? split_n_print(v.get_pchoice(), v.get_strat()):
+                        (v.get_STL()=='d')? split_n_print_d(v.get_pchoice(), v.get_strat()):
+                        split_n_print_l(v.get_pchoice(), v.get_strat());
+                    ft<<"Studentai perskelti i mldc ir L_laivo sarasus, bei atspausdinti atitinkamuose failuose per "<< v.get_diff()<<" s.\n";
                     ft<<"--------------------------------\n";
-                        if(v.getissamiai()=='k')
-                        printf("Darbas baigtas su failu %s \n", v.getsubname().c_str());
+                        if(v.get_issamiai()=='k')
+                        printf("Darbas baigtas su failu %s \n", v.get_subname().c_str());
                     }
                     ft.close();
-                    mldcstudents.clear();
+                    mldc_students.clear();
                     students.clear();
                 choice=-1;
                 break;}
                 else{
-                    v.setpap(true);
-                    STLpick(v.getpap());
-                    if(v.getissamiai()=='k'){
+                    v.set_pap(true);
+                    t_STL_pick(v.get_pap());
+                    if(v.get_issamiai()=='k'){
                         printf("Kiek namu darbu pazymiu generuoti studentu failuose ?\n");
-                        v.setndcount();
-                        v.setmsg("Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n");
-                        while(v.getndcount()<1||v.getndcount()>1000000){
+                        v.set_nd_count();
+                        v.set_msg(
+                                "Ivestis neteisinga, bandykite dar karta/ namu darbu kiekis nepriklauso intervalui [1;1000000]\n");
+                        while(v.get_nd_count()<1|| v.get_nd_count()>1000000){
                             cin.setstate(std::ios_base::failbit);
-                            handlend(v.getmsg());}
-                        handlend(v.getmsg());
+                            handle_nd(v.get_msg());}
+                        handle_nd(v.get_msg());
                         printf("Galutini pazymi studentu failuose skaiciuoti pagal [v]idurki/[m]ediana ?\n");
-                        v.setpchoice();
-                        while(v.getpchoice()!='v'&&v.getpchoice()!='m'){
+                        v.set_pchoice();
+                        while(v.get_pchoice()!='v'&& v.get_pchoice()!='m'){
                             printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
-                            v.setpchoice();}
+                            v.set_pchoice();}
                         printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
-                        v.setkiec();
-                        while(v.getkiec()!='k'&&v.getkiec()!='m'){
+                        v.set_kiec();
+                        while(v.get_kiec()!='k'&& v.get_kiec()!='m'){
                             printf("Netinkama ivestis, galimi variantai: trinti [m]inkstus/perkelti [k]ietus\n");
-                            v.setkiec();
+                            v.set_kiec();
                         }
                     }
                     ft.open("Papildomos_uzduoties_laikai.txt");
-                    (v.getSTL()=='v')?ft<<"Pasirinktas konteineris - vektorius\n":ft<<"Pasirinktas konteineris - dekas\n";
+                    (v.get_STL()=='v')?ft<<"Pasirinktas konteineris - vektorius\n":ft<<"Pasirinktas konteineris - dekas\n";
                     for(int i=1;i<=5;i++){
                         students.clear();
                         minksti.clear();
-                        studentsd.clear();
-                        minkstid.clear();
+                        students_d.clear();
+                        minksti_d.clear();
                         ft<<int(round(pow(10,i)))<<"studentu\n";
                         ft<<"--------------------------------\n";
-                        Genstudent(i);
-                        if(v.getSTL()=='v')
-                            students.reserve(v.getnamenum());
-                        (v.getSTL()=='v')?readfile(students,v.getfilename()):readfile(studentsd,v.getfilename());
-                        if(v.getSTL()=='v')
+                        gen_student(i);
+                        if(v.get_STL()=='v')
+                            students.reserve(v.get_name_num());
+                        (v.get_STL()=='v')? read_file(students, v.get_file_name()): read_file(students_d,
+                                                                                               v.get_file_name());
+                        if(v.get_STL()=='v')
                             students.shrink_to_fit();
                         else
-                            studentsd.shrink_to_fit();
-                        if(v.getissamiai()!='k') {
+                            students_d.shrink_to_fit();
+                        if(v.get_issamiai()!='k') {
                             printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",
-                                   v.getfilename().c_str());
-                            v.setpchoice();
-                            while (v.getpchoice() != 'v' && v.getpchoice() != 'm') {
+                                   v.get_file_name().c_str());
+                            v.set_pchoice();
+                            while (v.get_pchoice() != 'v' && v.get_pchoice() != 'm') {
                                 printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
-                                v.setpchoice();
+                                v.set_pchoice();
                             }
-                        }(v.getSTL()=='v')?splitnprint(v.getpchoice(),v.getstrat()):splitnprintd(v.getpchoice(),v.getstrat());
-                        if(v.getissamiai()=='k')
-                        printf("Darbas baigtas su  %s \n", v.getsubname().c_str());
-                        ft<<"Papildomos uzduoties split'inimo algoritmas uztruko "<<v.getdiff()<<" s.\n";
+                        }(v.get_STL()=='v')? split_n_print(v.get_pchoice(), v.get_strat()): split_n_print_d(
+                                v.get_pchoice(),
+                                v.get_strat());
+                        if(v.get_issamiai()=='k')
+                        printf("Darbas baigtas su  %s \n", v.get_subname().c_str());
+                        ft<<"Papildomos uzduoties split'inimo algoritmas uztruko "<< v.get_diff()<<" s.\n";
                         ft<<"--------------------------------\n";}
                     ft.close();
                     choice= -1;
@@ -215,33 +219,33 @@ int main() {
                 }
             case 7:
                 if (students.empty()) {
-                    specchoice = 0;
+                    spec_choice = 0;
                     choice = 0;
-                    printfail=4;
+                    print_fail=4;
                     break;
                 }
                 else {
-                    Stratpick();
-                    v.setfilename(std::to_string(students.size())+"kursioku");
-                    printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n",v.getfilename().c_str());
-                    v.setpchoice();
-                    while(v.getpchoice()!='v'&&v.getpchoice()!='m'){
+                    t_strat_pick();
+                    v.set_file_name(std::to_string(students.size()) + "kursioku");
+                    printf("Galutini pazymi %s faile skaiciuoti pagal [v]idurki/[m]ediana ?\n", v.get_file_name().c_str());
+                    v.set_pchoice();
+                    while(v.get_pchoice()!='v'&& v.get_pchoice()!='m'){
                         printf("Netinkama ivestis, galimi variantai: [v]idurkis/[m]ediana\n");
-                        v.setpchoice();
+                        v.set_pchoice();
                     }
-                   if(v.getstrat()=='d'&& v.getissamiai()=='k') {printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
-                    v.setkiec();
-                    while(v.getkiec()!='k'&&v.getkiec()!='m'){
+                   if(v.get_strat()=='d'&& v.get_issamiai()=='k') {printf("Papildomai uzduociai trinti [m]inkstus/ i prieki perkelti [k]ietus?\n");
+                       v.set_kiec();
+                    while(v.get_kiec()!='k'&& v.get_kiec()!='m'){
                         printf("Netinkama ivestis, galimi variantai: trinti [m]inkstus/perkelti [k]ietus\n");
-                        v.setkiec();
+                        v.set_kiec();
                     }}
-                    splitnprint(v.getpchoice(), v.getstrat());
+                    split_n_print(v.get_pchoice(), v.get_strat());
                     choice = -1;
                     break;
                 }
 
             default:
-                switch(printfail){
+                switch(print_fail){
                     case 3:
                         printf("Sis failas jau buvo nuskaitytas\n");
                         break;
@@ -253,9 +257,9 @@ int main() {
                         break;
                     
                 }
-                specchoice = -1;
+                spec_choice = -1;
                 choice = 0;
-                printfail=0;
+                print_fail=0;
         }
     }
     return 0;

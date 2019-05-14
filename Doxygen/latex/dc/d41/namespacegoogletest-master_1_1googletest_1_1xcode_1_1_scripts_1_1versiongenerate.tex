@@ -1,0 +1,128 @@
+\hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate}{}\section{googletest-\/master.googletest.\+xcode.\+Scripts.\+versiongenerate Namespace Reference}
+\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate}\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_aad54ebc7b97c4470cd2909b8b1e64f04}{input\+\_\+dir}} = sys.\+argv\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ae5cb033e11d85bd6958fb632ea0a90e1}{output\+\_\+dir}} = sys.\+argv\mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f37f17d0275f802f955fd2f49e13f9d}{config\+\_\+file}} = open(\char`\"{}\%s/configure.\+ac\char`\"{} \% input\+\_\+dir, \textquotesingle{}r\textquotesingle{})
+\item 
+int \mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a84162d104e9a0426bb747ca62fac346f}{buffer\+\_\+size}} = 1024
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f1e107ea3b6d23c6373ad9b4704e8be}{opening\+\_\+string}} = config\+\_\+file.\+read(\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a84162d104e9a0426bb747ca62fac346f}{buffer\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a8634acf78b3d63d86af57f0f26f54fbc}{version\+\_\+expression}}
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_af52deb41272385600c5b464ee5d8d0ed}{version\+\_\+values}} = version\+\_\+expression.\+search(\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f1e107ea3b6d23c6373ad9b4704e8be}{opening\+\_\+string}})
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_aa282013fe0422c36c685288c3d6e8077}{major\+\_\+version}} = version\+\_\+values.\+group(1)
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_abf2bc0a85ae4b036d835d14b6633b0e6}{minor\+\_\+version}} = version\+\_\+values.\+group(2)
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ab0c82f8d81eab9ec7a8a86e62666ca71}{fix\+\_\+version}} = version\+\_\+values.\+group(3)
+\item 
+string \mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ad6a7eb7a90caa5d8cf20303dbb00de8c}{file\+\_\+data}}
+\item 
+\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ad94122d5a75c9b1dafb9c082cd1d5a74}{version\+\_\+file}} = open(\char`\"{}\%s/Version.\+h\char`\"{} \% output\+\_\+dir, \textquotesingle{}w\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a84162d104e9a0426bb747ca62fac346f}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a84162d104e9a0426bb747ca62fac346f}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!buffer\_size@{buffer\_size}}
+\index{buffer\_size@{buffer\_size}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{buffer\_size}{buffer\_size}}
+{\footnotesize\ttfamily int googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+buffer\+\_\+size = 1024}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f37f17d0275f802f955fd2f49e13f9d}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f37f17d0275f802f955fd2f49e13f9d}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!config\_file@{config\_file}}
+\index{config\_file@{config\_file}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{config\_file}{config\_file}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+config\+\_\+file = open(\char`\"{}\%s/configure.\+ac\char`\"{} \% input\+\_\+dir, \textquotesingle{}r\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ad6a7eb7a90caa5d8cf20303dbb00de8c}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ad6a7eb7a90caa5d8cf20303dbb00de8c}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!file\_data@{file\_data}}
+\index{file\_data@{file\_data}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{file\_data}{file\_data}}
+{\footnotesize\ttfamily string googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+file\+\_\+data}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{"""//}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{// DO NOT MODIFY THIS FILE (but you can delete it)}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{//}}
+\DoxyCodeLine{4 \textcolor{stringliteral}{// This file is autogenerated by the versiongenerate.py script. This script}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{// is executed in a "Run Script" build phase when creating gtest.framework. This}}
+\DoxyCodeLine{6 \textcolor{stringliteral}{// header file is not used during compilation of C-source. Rather, it simply}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{// defines some version strings for substitution in the Info.plist. Because of}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{// this, we are not restricted to C-syntax nor are we using include guards.}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{//}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{\#define GTEST\_VERSIONINFO\_SHORT \%s.\%s}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{\#define GTEST\_VERSIONINFO\_LONG \%s.\%s.\%s}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{"""} \% (major\_version, minor\_version, major\_version, minor\_version, fix\_version)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ab0c82f8d81eab9ec7a8a86e62666ca71}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ab0c82f8d81eab9ec7a8a86e62666ca71}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!fix\_version@{fix\_version}}
+\index{fix\_version@{fix\_version}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{fix\_version}{fix\_version}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+fix\+\_\+version = version\+\_\+values.\+group(3)}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_aad54ebc7b97c4470cd2909b8b1e64f04}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_aad54ebc7b97c4470cd2909b8b1e64f04}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!input\_dir@{input\_dir}}
+\index{input\_dir@{input\_dir}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{input\_dir}{input\_dir}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+input\+\_\+dir = sys.\+argv\mbox{[}1\mbox{]}}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_aa282013fe0422c36c685288c3d6e8077}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_aa282013fe0422c36c685288c3d6e8077}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!major\_version@{major\_version}}
+\index{major\_version@{major\_version}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{major\_version}{major\_version}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+major\+\_\+version = version\+\_\+values.\+group(1)}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_abf2bc0a85ae4b036d835d14b6633b0e6}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_abf2bc0a85ae4b036d835d14b6633b0e6}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!minor\_version@{minor\_version}}
+\index{minor\_version@{minor\_version}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{minor\_version}{minor\_version}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+minor\+\_\+version = version\+\_\+values.\+group(2)}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f1e107ea3b6d23c6373ad9b4704e8be}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f1e107ea3b6d23c6373ad9b4704e8be}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!opening\_string@{opening\_string}}
+\index{opening\_string@{opening\_string}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{opening\_string}{opening\_string}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+opening\+\_\+string = config\+\_\+file.\+read(\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a84162d104e9a0426bb747ca62fac346f}{buffer\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ae5cb033e11d85bd6958fb632ea0a90e1}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ae5cb033e11d85bd6958fb632ea0a90e1}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!output\_dir@{output\_dir}}
+\index{output\_dir@{output\_dir}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{output\_dir}{output\_dir}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+output\+\_\+dir = sys.\+argv\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a8634acf78b3d63d86af57f0f26f54fbc}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a8634acf78b3d63d86af57f0f26f54fbc}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!version\_expression@{version\_expression}}
+\index{version\_expression@{version\_expression}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{version\_expression}{version\_expression}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+version\+\_\+expression}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  re.compile(\textcolor{stringliteral}{r"AC\_INIT\(\backslash\)(.*?\(\backslash\)[(\(\backslash\)d+)\(\backslash\).(\(\backslash\)d+)\(\backslash\).(\(\backslash\)d+)\(\backslash\)].*?\(\backslash\))"},}
+\DoxyCodeLine{2                                 re.DOTALL)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ad94122d5a75c9b1dafb9c082cd1d5a74}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_ad94122d5a75c9b1dafb9c082cd1d5a74}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!version\_file@{version\_file}}
+\index{version\_file@{version\_file}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{version\_file}{version\_file}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+version\+\_\+file = open(\char`\"{}\%s/Version.\+h\char`\"{} \% output\+\_\+dir, \textquotesingle{}w\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_af52deb41272385600c5b464ee5d8d0ed}\label{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_af52deb41272385600c5b464ee5d8d0ed}} 
+\index{googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}!version\_values@{version\_values}}
+\index{version\_values@{version\_values}!googletest-\/master.googletest.xcode.Scripts.versiongenerate@{googletest-\/master.googletest.xcode.Scripts.versiongenerate}}
+\subsubsection{\texorpdfstring{version\_values}{version\_values}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+xcode.\+Scripts.\+versiongenerate.\+version\+\_\+values = version\+\_\+expression.\+search(\mbox{\hyperlink{namespacegoogletest-master_1_1googletest_1_1xcode_1_1_scripts_1_1versiongenerate_a2f1e107ea3b6d23c6373ad9b4704e8be}{opening\+\_\+string}})}
+

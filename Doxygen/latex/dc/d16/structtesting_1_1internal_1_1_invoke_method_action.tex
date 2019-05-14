@@ -1,0 +1,117 @@
+\hypertarget{structtesting_1_1internal_1_1_invoke_method_action}{}\section{testing\+::internal\+::Invoke\+Method\+Action$<$ Class, Method\+Ptr $>$ Class Template Reference}
+\label{structtesting_1_1internal_1_1_invoke_method_action}\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+
+
+{\ttfamily \#include $<$gmock-\/actions.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\auto \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a152a1d71805ff44a9ad9fcd01a506eb8}{operator()}} (\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} \&\&... args) const -\/$>$ decltype((\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}{obj\+\_\+ptr}}-\/$>$ $\ast$\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}{method\+\_\+ptr}})(std\+::forward$<$ \mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} $>$(args)...))
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\auto \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a152a1d71805ff44a9ad9fcd01a506eb8}{operator()}} (\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} \&\&... args) const -\/$>$ decltype((\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}{obj\+\_\+ptr}}-\/$>$ $\ast$\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}{method\+\_\+ptr}})(std\+::forward$<$ \mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} $>$(args)...))
+\item 
+\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a16e545f6166e2d54eeafdc2ab3adf06b}{Invoke\+Method\+Action}} (Class $\ast$\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}{obj\+\_\+ptr}}, Method\+Ptr \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}{method\+\_\+ptr}})
+\item 
+{\footnotesize template$<$typename Result , typename Argument\+Tuple $>$ }\\Result \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_aed6971c668bc2c7671d512306b25b1ab}{Perform}} (const Argument\+Tuple \&args) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Class $\ast$const \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}{obj\+\_\+ptr}}
+\item 
+const Method\+Ptr \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}{method\+\_\+ptr}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ade6d5b1ee276aedac65290465a447a87}{G\+T\+E\+S\+T\+\_\+\+D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+}} (\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{Invoke\+Method\+Action}})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Method\+Ptr \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ad87861bde8960e57a429b3cf5ba70133}{method\+\_\+ptr\+\_\+}}
+\item 
+Class $\ast$const \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ac857e8bad8f6417640145ab1f5740963}{obj\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_a16e545f6166e2d54eeafdc2ab3adf06b}\label{structtesting_1_1internal_1_1_invoke_method_action_a16e545f6166e2d54eeafdc2ab3adf06b}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!InvokeMethodAction@{InvokeMethodAction}}
+\index{InvokeMethodAction@{InvokeMethodAction}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{InvokeMethodAction()}{InvokeMethodAction()}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{Invoke\+Method\+Action}} (\begin{DoxyParamCaption}\item[{Class $\ast$}]{obj\+\_\+ptr,  }\item[{Method\+Ptr}]{method\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_ade6d5b1ee276aedac65290465a447a87}\label{structtesting_1_1internal_1_1_invoke_method_action_ade6d5b1ee276aedac65290465a447a87}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!GTEST\_DISALLOW\_ASSIGN\_@{GTEST\_DISALLOW\_ASSIGN\_}}
+\index{GTEST\_DISALLOW\_ASSIGN\_@{GTEST\_DISALLOW\_ASSIGN\_}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{GTEST\_DISALLOW\_ASSIGN\_()}{GTEST\_DISALLOW\_ASSIGN\_()}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::G\+T\+E\+S\+T\+\_\+\+D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_a152a1d71805ff44a9ad9fcd01a506eb8}\label{structtesting_1_1internal_1_1_invoke_method_action_a152a1d71805ff44a9ad9fcd01a506eb8}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+template$<$typename... Args$>$ \\
+auto \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} \&\&...}]{args }\end{DoxyParamCaption}) const -\/$>$ decltype((\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}{obj\+\_\+ptr}}-\/$>$$\ast$\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}{method\+\_\+ptr}})(std\+::forward$<$\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}}$>$(args)...)) \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_a152a1d71805ff44a9ad9fcd01a506eb8}\label{structtesting_1_1internal_1_1_invoke_method_action_a152a1d71805ff44a9ad9fcd01a506eb8}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+template$<$typename... Args$>$ \\
+auto \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} \&\&...}]{args }\end{DoxyParamCaption}) const -\/$>$ decltype((\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}{obj\+\_\+ptr}}-\/$>$$\ast$\mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}{method\+\_\+ptr}})(std\+::forward$<$\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}}$>$(args)...)) \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_aed6971c668bc2c7671d512306b25b1ab}\label{structtesting_1_1internal_1_1_invoke_method_action_aed6971c668bc2c7671d512306b25b1ab}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!Perform@{Perform}}
+\index{Perform@{Perform}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{Perform()}{Perform()}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+template$<$typename Result , typename Argument\+Tuple $>$ \\
+Result \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::Perform (\begin{DoxyParamCaption}\item[{const Argument\+Tuple \&}]{args }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}\label{structtesting_1_1internal_1_1_invoke_method_action_a3101d543f56f7d010fac4d8eaa03acfb}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!method\_ptr@{method\_ptr}}
+\index{method\_ptr@{method\_ptr}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{method\_ptr}{method\_ptr}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+const Method\+Ptr \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::method\+\_\+ptr}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_ad87861bde8960e57a429b3cf5ba70133}\label{structtesting_1_1internal_1_1_invoke_method_action_ad87861bde8960e57a429b3cf5ba70133}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!method\_ptr\_@{method\_ptr\_}}
+\index{method\_ptr\_@{method\_ptr\_}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{method\_ptr\_}{method\_ptr\_}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+const Method\+Ptr \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::method\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}\label{structtesting_1_1internal_1_1_invoke_method_action_ae869b08a351641854e94380227affbc8}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!obj\_ptr@{obj\_ptr}}
+\index{obj\_ptr@{obj\_ptr}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{obj\_ptr}{obj\_ptr}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+Class $\ast$const \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::obj\+\_\+ptr}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_invoke_method_action_ac857e8bad8f6417640145ab1f5740963}\label{structtesting_1_1internal_1_1_invoke_method_action_ac857e8bad8f6417640145ab1f5740963}} 
+\index{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}!obj\_ptr\_@{obj\_ptr\_}}
+\index{obj\_ptr\_@{obj\_ptr\_}!testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$@{testing::internal::InvokeMethodAction$<$ Class, MethodPtr $>$}}
+\subsubsection{\texorpdfstring{obj\_ptr\_}{obj\_ptr\_}}
+{\footnotesize\ttfamily template$<$class Class , typename Method\+Ptr $>$ \\
+Class$\ast$ const \mbox{\hyperlink{structtesting_1_1internal_1_1_invoke_method_action}{testing\+::internal\+::\+Invoke\+Method\+Action}}$<$ Class, Method\+Ptr $>$\+::obj\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/googletest-\/master/googlemock/include/gmock/\mbox{\hyperlink{googletest-master_2googlemock_2include_2gmock_2gmock-actions_8h}{gmock-\/actions.\+h}}\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/release-\/1.\+8.\+1/googlemock/include/gmock/\mbox{\hyperlink{_obj__test_2lib_2googletest-release-1_88_81_2googlemock_2include_2gmock_2gmock-more-actions_8h}{gmock-\/more-\/actions.\+h}}\end{DoxyCompactItemize}

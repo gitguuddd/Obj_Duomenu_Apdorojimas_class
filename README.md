@@ -33,22 +33,34 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ## Versijų istorija (changelog)
 
 ---
+### [v2.0](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v2.0)
+**Pridėta**
+- Doxygen dokumentacija (Latex ir HTML formatai) Doxygen aplankale
+- ```Obj_test``` aplankalas kuriame saugomi unit testai, paleidžiami per runBasicClasstests. Testai ir jų rezultatai aprašyti benchmark skiltyje. Unit testams naudojamas gtest 1.8.1
+
+**Koreguota**
+- Refactorinta visa programa naudojant snake_case ir kitus c++ kodo rašymo standartus
+- Restrukturizuota programa - dėl gtest visi programai reikalingi failai išskyrus main.cpp randami ```code``` aplankale
+- ```Humie``` padaryta abstrakčia klase
+- Pakoreguotas spausdinimo lygiavimas
+
+---
 ### [v1.5](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.5)
 (2019-05-07)
 
 ![alt text](./Memes/top-gear.jpeg)
 **Pridėta**
-- ```stud``` derived klasės abstrakti bazinė klasė ```Humie```
-- ```ImportantValues``` klasė kurioje saugomi ir apsaugomi seniau per visą programą buvę išmėtyti globalūs kintamieji
-- ```stud``` klasės >> ir << operatoriai
-- ```stud``` klasės ```scanname``` ir ```scansurname``` funkcijos
-- ```handlend``` funkcija skirta ```ndcount``` kintamojo įvedimo į ```ImportantValues``` tikrinimui
+- ```Stud``` derived klasės abstrakti bazinė klasė ```Humie```
+- ```Important_Values``` klasė kurioje saugomi ir apsaugomi seniau per visą programą buvę išmėtyti globalūs kintamieji
+- ```Stud``` klasės >> ir << operatoriai
+- ```Stud``` klasės ```scan_name``` ir ```scan_surname``` funkcijos
+- ```handle_nd``` funkcija skirta ```ndcount``` kintamojo įvedimo į ```Important_Values``` tikrinimui
 
 **Koreguota**
-- Iš ```stud``` klasės į ```Humie``` klasę perkelti ```name_, surname_, nd_``` kintamieji ir su jais susyjusios funkcijos. Taip užtikrinama, kad ```Humie``` klasė saugos įvestus duomenis, o ```stud``` klasė - išvedimui paruoštus duomenis
-- Panaikinti beveik visi padriki globalūs kintamieji (palikti globalūs vektoriai, dekai, listai ir t.t). Minėti kintamieji perkelti į ```ImportantValues``` klasę
+- Iš ```Stud``` klasės į ```Humie``` klasę perkelti ```m_name, m_surname, m_nd``` kintamieji ir su jais susyjusios funkcijos. Taip užtikrinama, kad ```Humie``` klasė saugos įvestus duomenis, o ```Stud``` klasė - išvedimui paruoštus duomenis
+- Panaikinti beveik visi padriki globalūs kintamieji (palikti globalūs vektoriai, dekai, listai ir t.t). Minėti kintamieji perkelti į ```Important_Values``` klasę
 - Dėl sutikto "circular include" teko pertvarkyt headeriuose include'intus kitus headerius :(
-- Realizuotų >> ir << ```stud``` klasės operatorių deka buvo pertvarkytos template'inė ```readfile``` , nuskaitymo nuo ```kursiokai.txt``` failo ```readfile```, template'inė spausdinimo į failą ```printtofile``` funkcijos
+- Realizuotų >> ir << ```Stud``` klasės operatorių deka buvo pertvarkytos template'inė ```read_file2``` , nuskaitymo nuo ```kursiokai.txt``` failo ```read_file2```, template'inė spausdinimo į failą ```print_to_file``` funkcijos
 - Į github pridėtas ```build``` aplankas su jame esančiu kursiokai.txt failu
 - Atnaujinta informacija apie programos struktūra
 
@@ -63,13 +75,13 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ![alt text](./Memes/Operator.png "A mym")
 
 **Pridėta**
-- ```Rule of five``` ```stud``` klasės operatoriai
-- Įvairūs ```stud``` klasės palyginimo operatoriai
+- ```Rule of five``` ```Stud``` klasės operatoriai
+- Įvairūs ```Stud``` klasės palyginimo operatoriai
 
 **Koreguota**
 - Programos veikimo laiko skaičiavimas dabar realizuojamas per ```Timer.h``` klasę
-- stud klasė ir jos funkcijos iš ```Mutual.h``` ir ```Mutual.cpp``` iškeliamos į ```stud.h``` ir ```stud.cpp```
-- ```stud.h, stud.cpp, Timer.h``` failai laikomi classes aplankale
+- Stud klasė ir jos funkcijos iš ```Mutual.h``` ir ```Mutual.cpp``` iškeliamos į ```Stud.h``` ir ```Stud.cpp```
+- ```Stud.h, Stud.cpp, Timer.h``` failai laikomi classes aplankale
 - Programos metu sugeneruoti failai saugomi ```build``` aplankale
 - Dokumentacijoje atnaujinta informacija apie programos struktūrą
 ---
@@ -78,7 +90,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 
 **Koreguota**
-- ```stud``` struktūra pakeičiama į ```stud``` klasę
+- ```Stud``` struktūra pakeičiama į ```Stud``` klasę
 - Iš klasės narių panaikinti tarpiniai ```vid``` ir ```mvid``` kintamieji, nes galutinio balo(vidurkis) ir galutinio balo(mediana) skaičiavimai vyksta setteriuose
 - Pagal ```Clang-tidy``` rekomendacijas keliose vietose panaudotas ```std::move```
 - Panaikinta daug perteklinių try-catch blokų
@@ -93,7 +105,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 (2019-03-27)
 
 **Pridėta**
-- Funkcijos ```GavoSkola, raskMinkstus, raskMinkstusd, raskKietus, raskKietusd```
+- Funkcijos ```t_gavo_skola, rask_Minkstus, rask_Minkstus_d, rask_Kietus, rask_Kietus_d```
 - Papildomos užduoties siūlomi splitinimo variantai pridėti kaip papildoma ```d``` splitinimo strategija
 - Pridėta galimybė pasirinkti programos veikimo rėžima: išsamus/konkretus
 - Skeliant studentus naudojant papildomos užduoties algoritmus skėlimo laikai bus išvedami į ```Papildomos_uzduoties_laikai.txt``` failą
@@ -111,13 +123,13 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 **Pridėta**
 - Prie naudojamos ```c``` splitinimo strategijos pridėtos ```a``` ir ```b``` strategijos (apie jas - vėliau)
-- Splitinimo strategijos pasirinkimo funkcija ```Stratpick```
+- Splitinimo strategijos pasirinkimo funkcija ```Strat_pick```
 
 **Koreguota**
 - Sutvarkytas minor bug'as: išvedant skaičiavimus pagal mediana rašydavo, kad galutinis vertinimas buvo skaičiuotas pagal vidurkį
 - Pasirodo, kad listo nebuvo įmanoma panaudoti su didesniais studentų kiekiais vien dėl mano kaltės, nes neišvalydavau temp struktūros.
 - Paspartintas readinimas iš failo: eilutės duomenys nuskaitomi į temp struktūra. Priėjųs eilutės galą, struktūra yra pushbackinama STL konteineryje.
-- Pasikartojantis kodas printinimo, skaičiavimo, vardų analižės vietose pakeistas kreipimusi į template funkcijas ```printtofile ,calc , names```
+- Pasikartojantis kodas printinimo, skaičiavimo, vardų analižės vietose pakeistas kreipimusi į template funkcijas ```print_to_file ,calc , names```
 - README fail'e pridėtos naudojimosi, įdiegimo instrukcijos.
 
 ---
@@ -127,8 +139,8 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 ![alt text](./Memes/tenor.gif "My face when")
 
 **Pridėta**
-- ```splitnprint``` ir ```readfile``` funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template'us (žiūrėti viršuje :) )
-- ```STLpick``` funkcija, kuri leidžia vartotojui pasirinkti ar jis norės dirbti su vektoriumi/deku/listu
+- ```split_n_print``` ir ```read_file2``` funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template'us (žiūrėti viršuje :) )
+- ```t_STL_pick``` funkcija, kuri leidžia vartotojui pasirinkti ar jis norės dirbti su vektoriumi/deku/listu
 - Naujuose inputuose sudėtas input handling'as
 - Į benchmark'o failą (v0.5_laikai.txt) išvedamas ir pasirinkto STL konteinerio pavadinimas
 - Nustatyta, kad listas lūžta, kai perlipa 19800 saugomų studentų skačių, listo generavimas apribotas iki 10000 studentų.
@@ -151,14 +163,14 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 **Pridėta**
 
 - ```Generuoti studentu faila (v0.4)``` meniu pasirinkimas kuris apjungia šias naujas funkcijas:
-- **overload'inta ```Genstudent``` funkcija**, kuri sugeneruoja nurodytą kiekį studentų
+- **overload'inta ```gen_student``` funkcija**, kuri sugeneruoja nurodytą kiekį studentų
    su atsitiktinais vardais, pavardėmis
    , egzaminų įverčiais ir vartotojo nurodytu namų darbų įverčių kiekiu ir šiuos duomenis išveda į failus su atitinkamais pavadinimais ```generuojamu studentu kiekis + studentu.txt```
-- ```readfile``` **funkcija** kuri nuskaito duomenis iš sugeneruotų failų ir juos sudeda į students vektorių.
-- ```splitnprint``` **funkcija** kuri, pagal vartotojo pasirinkimą ([m]ediana/[v]idurkis) suskaičiuoja studentų vektoriuje saugomų studentų galutinius pažymius pagal namų darbų įverčių medianą/namų darbų įverčių vidurkį, 
+- ```read_file2``` **funkcija** kuri nuskaito duomenis iš sugeneruotų failų ir juos sudeda į students vektorių.
+- ```split_n_print``` **funkcija** kuri, pagal vartotojo pasirinkimą ([m]ediana/[v]idurkis) suskaičiuoja studentų vektoriuje saugomų studentų galutinius pažymius pagal namų darbų įverčių medianą/namų darbų įverčių vidurkį, 
 išrikiuoja stundentus pagal galutinį pažymį,
  randa iteratorių ties kuriuo galutinis pažymys tampa lygus 5.0, panaudoja iteratorių skeliant studentų sąrašą į ```mldc``` studentus ir ```L_laivas``` studentus, juos atspausdina į failus su atitinkamais vardais ``` studentu skaičius + studentu + v/m + mldc/L_laivas```
-- Naudojant ```high_resolution_clock``` išmatuotas ```Genstudent```, ```readfile``` ir ```splitnprint``` veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000, 1000000), laikai išvedami į ```v0.4_laikai.txt``` failą
+- Naudojant ```high_resolution_clock``` išmatuotas ```gen_student```, ```read_file2``` ir ```split_n_print``` veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000, 1000000), laikai išvedami į ```v0.4_laikai.txt``` failą
 - Naujose funkcijose pridėtas input/exception handling'as
 - Dabar galima skelti ir atspausdinti ir duomenis kurie buvo sugeneruoti/įvesti paties naudotojo arba nuskaityti iš kursiokai.txt failo
 
@@ -173,7 +185,7 @@ išrikiuoja stundentus pagal galutinį pažymį,
 - Skeliant vartotojo įvestus/sugeneruotus/nuskaitytus duomenis, sudaryti failai ne visados pasižymi puikiu lygiavimu
 - Sugeneruoti studentų failai (dar neperskelti) irgi nėra puikiai išlygiuoti, nes iškart generuojant ir išvedant nėra galimybės surasti maxname ir maxsurname reikšmių
 - Studentų sąrašų generavimas ir skėlimas prikuria labaiiii daug failų.
-- Dėl multiple definition errorų į ```input.h``` ir ```input.cpp``` teko perkelti splitnprint funkciją, nors ji pagal veikimo principą turėtų priklausyti ```output.h``` ir ```output.cpp``` failams
+- Dėl multiple definition errorų į ```input.h``` ir ```input.cpp``` teko perkelti split_n_print funkciją, nors ji pagal veikimo principą turėtų priklausyti ```output.h``` ir ```output.cpp``` failams
 - Per daug kintamųjų, kurie kaip extern'ai yra deklaruojami ```mutual.h``` 
 
 **Laiko matavimo rezultatai ir pavyzdžiai** 
@@ -187,7 +199,7 @@ išrikiuoja stundentus pagal galutinį pažymį,
 - ```Input.h, Mutual.h, Output.h, Mutual.cpp, Output.cpp, Input.cpp```
 - Input handling (pagrinde ```cin.fail()```)
 - Naudojami ```vector.reserve()``` ir ```vector.shrink_to_fit()```
-- Exception handling (```try - catch```) ties ```students.push_back``` ir ```stud.nd.push_back```, nes pereita prie vektorių atminties rezervavimo
+- Exception handling (```try - catch```) ties ```students.push_back``` ir ```Stud.nd.push_back```, nes pereita prie vektorių atminties rezervavimo
 - Input handling nuskaitant failą - galima nuskaityti namų darbų pažymius net ir jei jie yra ne skaičiai arba mazesni uz 0/ didesni uz 10 (aptikus - nulinami), jei netinkamas input yra ilgesnis nei 4 simboliai - didelė rizika sugadinti nuskaitytų duomenų tikslumą 
 - Nested switch meniu klaidų spausdinimui
 - Programos struktūros sekcija README.MD faile
@@ -235,23 +247,84 @@ išrikiuoja stundentus pagal galutinį pažymį,
 - Visi testai vykdomi su 10 namų darbų.
 - Egzistuoja keturios skėlimo strategijos ```A, B, C, D```
 - Strategija ```A``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL konteinerį, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL konteinerį. Studentai iš pirminio STL konteinerio netrinami
-- Strategija ```B``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL konteinerį, iš pirminio studentų STL konteinerio šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL konteineriu
-- Strategija ```C``` - Pirminis studentų STL konteineris yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL konteinerio kontruktoriuje, resize`inant pirminį STL konteinerį yra gaunamas ```L_laivas``` STL konteineris.
+- Strategija ```B``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldc_students``` STL konteinerį, iš pirminio studentų STL konteinerio šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL konteineriu
+- Strategija ```C``` - Pirminis studentų STL konteineris yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldc_students``` STL konteinerio kontruktoriuje, resize`inant pirminį STL konteinerį yra gaunamas ```L_laivas``` STL konteineris.
 - Strategija ```D``` - Papildomos užduoties siūlomi skėlimo algoritmai:```m``` algoritmas, kuris skolininkus  perkelia į atskirą STL konteinerį, šiuos studentus ištrina iš pirminio STL konteinerio per ```erase``` funkciją, ```k``` algoritmas, kuris skolininkus irgi perkelia į atskirą STL konteinerį, kietus studentus perkelia į pirminio STL konteinerio priekį ir naudojant ```resize``` ir ```shrink_to_fit``` funkcijas iš šio STL konteinerio ištrina perteklinius kietus studentus/skolininkus ir atlaisvina atmintį 
 - ```vid``` ir ```med``` atitinkamai reiškia, kad teste galutinis pažymys buvo skaičiuotas pagal namų darbų įverčių vidurkį arba medianą
 
+**v2.0**
+
+**Pirmas testas**
+- Tikrina ```<``` operatoriaus overloadinimą - ar studtest1 galutinis pažymys pagal nd vidurkį yra mažesnis už studtest2 galutinį pažymį pagal vidurkį
+```
+TEST(check_op, test_eq ){
+    Stud studtest1(4.5, 7.8);
+    Stud studtest2(7.8, 4.5);
+    Important_Values v;
+    v.set_pchoice('v');
+    EXPECT_EQ(studtest1<studtest2, false);
+}
+```
+**Antras testas**
+- Tikrina ```stud``` klasės galutinio pažymio skaičiavimo pagal namų darbų vidurkį ```set_vid``` funkciją
+```
+TEST(check_vid, test_eq) {
+    Stud student;
+    student.set_nd(5);
+    student.set_nd(9);
+    student.set_nd(8);
+    student.set_nd(10);
+    student.set_nd(7);
+    student.set_ex(8);
+    student.set_vid(student.get_ndsize());
+    EXPECT_EQ(student.get_vid(),7.92);
+}
+```
+**Trečias testas**
+- Tikrina ```stud``` klasės galutinio pažymio skaičiavimo pagal namų darbų vidurkį ```set_vid``` funkciją, kai paduotame vektoriuje yra keli studentai su skirtingu namų darbų kiekiu, testuojama ir ```calc``` funkcija
+```
+TEST(check_vid2, test_eq) {
+    vector<Stud> studs;
+    Important_Values v;
+    v.set_pchoice('v');
+    Stud student;
+    student.set_nd(5);
+    student.set_nd(9);
+    student.set_nd(8);
+    student.set_nd(10);
+    student.set_nd(7);
+    student.set_ex(8);
+    studs.push_back(student);
+    Stud student2;
+    student2.set_nd(5);
+    student2.set_nd(9);
+    student2.set_nd(8);
+    student2.set_nd(10);
+    student2.set_ex(8);
+    studs.push_back(student2);
+    calc(studs, v.get_pchoice());
+    EXPECT_EQ(studs[1].get_vid(),7.36);
+}
+```
+**Testų rezultatai**
+```
+[----------] Global test environment tear-down
+[==========] 3 tests from 3 test cases ran. (3 ms total)
+[  PASSED  ] 3 tests.
+```
+
 **v1.1**
 
-**Programos veikimo laikų palyginimas naudojant ```stud``` struktūra arba ```stud``` klasę**
+**Programos veikimo laikų palyginimas naudojant ```Stud``` struktūra arba ```Stud``` klasę**
 
 - Šiam ir sekantiems (>=v1.1) sparčiausiems testams bus naudojama ```A``` dalijimo strategija
 
-|           | ```vector<struct stud>``` | ```vector<class stud>``` |
+|           | ```vector<struct Stud>``` | ```vector<class Stud>``` |
 |-----------|---------------------|--------------------|
 | 100000 v  | 3.94281 s.          | 1.73632 s.         |
 | 1000000 v | 39.8862 s.          | 35.73931 s.        |
 
-- Iš lentelės duomenų matome, kad ```stud``` realizacija per klasę sugebėjo paspartinti A strategiją.
+- Iš lentelės duomenų matome, kad ```Stud``` realizacija per klasę sugebėjo paspartinti A strategiją.
 
 **Programos veikimo laikų palyginimas naudojant skirtingus optimizavimo flag'us**
 
@@ -301,21 +374,21 @@ išrikiuoja stundentus pagal galutinį pažymį,
 a strategija
 
 if(pchoice=='v')
-            for (stud& stud : studentsd)
-                (stud.vid2>=test.vid2)?mldcd.push_back(stud):L_laivsd.push_back(stud);
+            for (Stud& Stud : students_d)
+                (Stud.vid2>=test.vid2)?mldc_d.push_back(Stud):L_laivsd.push_back(Stud);
         else if(pchoice=='m')
-            for (stud& stud : studentsd)
-                (stud.mvid>=test.mvid)?mldcd.push_back(stud):L_laivsd.push_back(stud);}
+            for (Stud& Stud : students_d)
+                (Stud.mvid>=test.mvid)?mldc_d.push_back(Stud):L_laivsd.push_back(Stud);}
 
 b strategija
 
 if(pchoice=='v'){
-            std::copy_if(studentsd.begin(), studentsd.end(), std::back_inserter(mldcstudentsd) ,[](auto v) {return v.vid2>test.vid2;});
-            studentsd.erase(std::remove_if(studentsd.begin(),studentsd.end(),[](auto v) {return v.vid2>test.vid2;}),studentsd.end());
+            std::copy_if(students_d.begin(), students_d.end(), std::back_inserter(mldc_students_d) ,[](auto v) {return v.vid2>test.vid2;});
+            students_d.erase(std::remove_if(students_d.begin(),students_d.end(),[](auto v) {return v.vid2>test.vid2;}),students_d.end());
         }
         if (pchoice=='m'){
-            std::copy_if(studentsd.begin(), studentsd.end(), std::back_inserter(mldcstudentsd) ,[](auto v) {return v.mvid>test.mvid;});
-            studentsd.erase(std::remove_if(studentsd.begin(),studentsd.end(),[](auto v) {return v.mvid>test.mvid;}),studentsd.end());
+            std::copy_if(students_d.begin(), students_d.end(), std::back_inserter(mldc_students_d) ,[](auto v) {return v.mvid>test.mvid;});
+            students_d.erase(std::remove_if(students_d.begin(),students_d.end(),[](auto v) {return v.mvid>test.mvid;}),students_d.end());
         }
 
 
@@ -367,13 +440,13 @@ if(pchoice=='v'){
 a ir b strategijos
 
 if(pchoice=='v')
-                upl=stable_partition(studentsl.begin(),studentsl.end(),[](auto v) {return v.vid2<test.vid2;});}
+                up_l=stable_partition(students_l.begin(),students_l.end(),[](auto v) {return v.vid2<test.vid2;});}
             else if(pchoice=='m')
-                upl=stable_partition(studentsl.begin(),studentsl.end(),[](auto v) {return v.mvid<test.mvid;});
+                up_l=stable_partition(students_l.begin(),students_l.end(),[](auto v) {return v.mvid<test.mvid;});
 
 
 ```
-- Šiuo atveju rastas ```upl```  iteratorius  ```a``` strategijos atveju yra panaudojamas konstruojant ```L_laivasl``` ir ```mldcl``` listus, ```b``` strategijos atveju šis iteratorius panaujomas konstruojant ```mldcstudentsl``` list'ą
+- Šiuo atveju rastas ```up_l```  iteratorius  ```a``` strategijos atveju yra panaudojamas konstruojant ```L_laivasl``` ir ```mldc_l``` listus, ```b``` strategijos atveju šis iteratorius panaujomas konstruojant ```mldc_students_l``` list'ą
 
 | STL konteineris        | std::vector<> | std::deque<> | std::list<>  |
 |---------------|---------------|--------------|--------------|
@@ -430,9 +503,9 @@ if(pchoice=='v')
 ## Programos struktūra
 - ```Input.h``` ir ```Input.cpp``` funkcijos/kintamieji/include'ai susyję su duomenų įvedimu
 - ```Output.h```ir ```Output.cpp``` funkcijos/kintamieji/include'ai susyję su duomenų išvedimu
-- ```Mutual.h```ir ```Mutual.cpp``` funkcijos/kintamieji/include'ai bendri visai programai (```#include iostream```,```handleinput()``` )
+- ```Mutual.h```ir ```Mutual.cpp``` funkcijos/kintamieji/include'ai bendri visai programai (```#include iostream```,```handle_input()``` )
 - ```main.cpp``` pagrindinis failas - meniu
-- ```stud.h``` ir ```stud.cpp``` stud klasei reikalingi include`ai ir funkcijos
-- ```ImportantValues.h``` ir ```ImportantValues.cpp``` sklandų programos veikimą užtikrinantys kintamieji ir su jais dirbančios funkcijos
+- ```Stud.h``` ir ```Stud.cpp``` Stud klasei reikalingi include`ai ir funkcijos
+- ```Important_Values.h``` ir ```Important_Values.cpp``` sklandų programos veikimą užtikrinantys kintamieji ir su jais dirbančios funkcijos
 - ```Humie.h``` ir ```Humie.cpp``` Humie klasei reikalingi include`ai ir funkcijos
 - ```Timer.h``` timer klasė

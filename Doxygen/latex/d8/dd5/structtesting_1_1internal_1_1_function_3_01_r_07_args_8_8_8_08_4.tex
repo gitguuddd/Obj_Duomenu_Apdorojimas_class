@@ -1,0 +1,142 @@
+\hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4}{}\section{testing\+::internal\+::Function$<$ R(Args...)$>$ Struct Template Reference}
+\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4}\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+
+
+{\ttfamily \#include $<$gmock-\/internal-\/utils.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}{Result}} = R
+\item 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}{Arg}} = \mbox{\hyperlink{structtesting_1_1internal_1_1_elem_from_list}{Elem\+From\+List}}$<$ I, typename \mbox{\hyperlink{structtesting_1_1internal_1_1_make_index_sequence}{Make\+Index\+Sequence}}$<$ sizeof...(\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}})$>$\+::type, Args... $>$
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}{Argument\+Tuple}} = std\+::tuple$<$ Args... $>$
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}{Argument\+Matcher\+Tuple}} = std\+::tuple$<$ \mbox{\hyperlink{classtesting_1_1_matcher}{Matcher}}$<$ \mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} $>$... $>$
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}{Make\+Result\+Void}} = void(Args...)
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}{Make\+Result\+Ignored\+Value}} = \mbox{\hyperlink{classtesting_1_1internal_1_1_ignored_value}{Ignored\+Value}}(Args...)
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}{Result}} = R
+\item 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}{Arg}} = \mbox{\hyperlink{structtesting_1_1internal_1_1_elem_from_list}{Elem\+From\+List}}$<$ I, typename \mbox{\hyperlink{structtesting_1_1internal_1_1_make_index_sequence}{Make\+Index\+Sequence}}$<$ sizeof...(\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}})$>$\+::type, Args... $>$
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}{Argument\+Tuple}} = std\+::tuple$<$ Args... $>$
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}{Argument\+Matcher\+Tuple}} = std\+::tuple$<$ \mbox{\hyperlink{classtesting_1_1_matcher}{Matcher}}$<$ \mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}} $>$... $>$
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}{Make\+Result\+Void}} = void(Args...)
+\item 
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}{Make\+Result\+Ignored\+Value}} = \mbox{\hyperlink{classtesting_1_1internal_1_1_ignored_value}{Ignored\+Value}}(Args...)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a9fbf56d693d099df9f23ad175ccef781}{Argument\+Count}} = sizeof...(\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}})
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!Arg@{Arg}}
+\index{Arg@{Arg}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{Arg}{Arg}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+template$<$size\+\_\+t I$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}{Arg}} =  \mbox{\hyperlink{structtesting_1_1internal_1_1_elem_from_list}{Elem\+From\+List}}$<$I, typename \mbox{\hyperlink{structtesting_1_1internal_1_1_make_index_sequence}{Make\+Index\+Sequence}}$<$sizeof...(\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}})$>$\+::type, Args...$>$}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!Arg@{Arg}}
+\index{Arg@{Arg}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{Arg}{Arg}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+template$<$size\+\_\+t I$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a2f31086b21cd71eb6c855b2835c16878}{Arg}} =  \mbox{\hyperlink{structtesting_1_1internal_1_1_elem_from_list}{Elem\+From\+List}}$<$I, typename \mbox{\hyperlink{structtesting_1_1internal_1_1_make_index_sequence}{Make\+Index\+Sequence}}$<$sizeof...(\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}})$>$\+::type, Args...$>$}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!ArgumentMatcherTuple@{ArgumentMatcherTuple}}
+\index{ArgumentMatcherTuple@{ArgumentMatcherTuple}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{ArgumentMatcherTuple}{ArgumentMatcherTuple}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}{Argument\+Matcher\+Tuple}} =  std\+::tuple$<$\mbox{\hyperlink{classtesting_1_1_matcher}{Matcher}}$<$\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}}$>$...$>$}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!ArgumentMatcherTuple@{ArgumentMatcherTuple}}
+\index{ArgumentMatcherTuple@{ArgumentMatcherTuple}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{ArgumentMatcherTuple}{ArgumentMatcherTuple}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_aa1b4dca988b45fea2307518af5ac8a09}{Argument\+Matcher\+Tuple}} =  std\+::tuple$<$\mbox{\hyperlink{classtesting_1_1_matcher}{Matcher}}$<$\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}}$>$...$>$}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!ArgumentTuple@{ArgumentTuple}}
+\index{ArgumentTuple@{ArgumentTuple}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{ArgumentTuple}{ArgumentTuple}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}{Argument\+Tuple}} =  std\+::tuple$<$Args...$>$}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!ArgumentTuple@{ArgumentTuple}}
+\index{ArgumentTuple@{ArgumentTuple}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{ArgumentTuple}{ArgumentTuple}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_afc6bddfcfc78f9308c268123ebc2a99b}{Argument\+Tuple}} =  std\+::tuple$<$Args...$>$}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!MakeResultIgnoredValue@{MakeResultIgnoredValue}}
+\index{MakeResultIgnoredValue@{MakeResultIgnoredValue}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{MakeResultIgnoredValue}{MakeResultIgnoredValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}{Make\+Result\+Ignored\+Value}} =  \mbox{\hyperlink{classtesting_1_1internal_1_1_ignored_value}{Ignored\+Value}}(Args...)}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!MakeResultIgnoredValue@{MakeResultIgnoredValue}}
+\index{MakeResultIgnoredValue@{MakeResultIgnoredValue}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{MakeResultIgnoredValue}{MakeResultIgnoredValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a23361a5e5eb49aad2e1dfe784e60b5da}{Make\+Result\+Ignored\+Value}} =  \mbox{\hyperlink{classtesting_1_1internal_1_1_ignored_value}{Ignored\+Value}}(Args...)}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!MakeResultVoid@{MakeResultVoid}}
+\index{MakeResultVoid@{MakeResultVoid}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{MakeResultVoid}{MakeResultVoid}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}{Make\+Result\+Void}} =  void(Args...)}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!MakeResultVoid@{MakeResultVoid}}
+\index{MakeResultVoid@{MakeResultVoid}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{MakeResultVoid}{MakeResultVoid}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a763920d3647641e1100bc4ade26d1d0c}{Make\+Result\+Void}} =  void(Args...)}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!Result@{Result}}
+\index{Result@{Result}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{Result}{Result}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}{Result}} =  R}
+
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!Result@{Result}}
+\index{Result@{Result}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{Result}{Result}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+using \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::\mbox{\hyperlink{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a71efbc408f9ce64e36e2cc41df0da194}{Result}} =  R}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a9fbf56d693d099df9f23ad175ccef781}\label{structtesting_1_1internal_1_1_function_3_01_r_07_args_8_8_8_08_4_a9fbf56d693d099df9f23ad175ccef781}} 
+\index{testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}!ArgumentCount@{ArgumentCount}}
+\index{ArgumentCount@{ArgumentCount}!testing::internal::Function$<$ R(Args...)$>$@{testing::internal::Function$<$ R(Args...)$>$}}
+\subsubsection{\texorpdfstring{ArgumentCount}{ArgumentCount}}
+{\footnotesize\ttfamily template$<$typename R , typename... Args$>$ \\
+constexpr size\+\_\+t \mbox{\hyperlink{structtesting_1_1internal_1_1_function}{testing\+::internal\+::\+Function}}$<$ R(Args...)$>$\+::Argument\+Count = sizeof...(\mbox{\hyperlink{namespacetesting_aaca153f67b689b8b9d5b8c67ecf8cee4}{Args}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/googletest-\/master/googlemock/include/gmock/internal/\mbox{\hyperlink{googletest-master_2googlemock_2include_2gmock_2internal_2gmock-internal-utils_8h}{gmock-\/internal-\/utils.\+h}}\end{DoxyCompactItemize}

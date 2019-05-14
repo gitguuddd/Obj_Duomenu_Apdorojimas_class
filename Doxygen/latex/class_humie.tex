@@ -1,0 +1,247 @@
+\hypertarget{class_humie}{}\section{Humie Class Reference}
+\label{class_humie}\index{Humie@{Humie}}
+
+
+{\ttfamily \#include $<$Humie.\+h$>$}
+
+Inheritance diagram for Humie\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_humie}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_humie_a1bfe9cf46655ca5952b83c1652d8c0a1}{f}} ()=0
+\item 
+void \mbox{\hyperlink{class_humie_a5552bf054c13cafd3e921b7de259b2d9}{scan\+\_\+name}} (istringstream \&t\+\_\+stream)
+\item 
+void \mbox{\hyperlink{class_humie_a98ca5452603ec476e06c6e73fd4007bb}{scan\+\_\+surname}} (istringstream \&t\+\_\+stream)
+\item 
+void \mbox{\hyperlink{class_humie_ad017a3f3950555056f3e9e9c904399c8}{set\+\_\+name}} (string t\+\_\+name)
+\item 
+void \mbox{\hyperlink{class_humie_ac42c5deca59ef1519b43fa4cb203f551}{set\+\_\+surname}} (string t\+\_\+surname)
+\item 
+void \mbox{\hyperlink{class_humie_aa73ce86c3603663083ae0d5c8b532157}{set\+\_\+nd}} (int t\+\_\+nd)
+\item 
+void \mbox{\hyperlink{class_humie_aa6368dac76b40953826412687225f90b}{push\+\_\+b}} ()
+\item 
+string \mbox{\hyperlink{class_humie_ac2878f4f3c6d4c9450e286401d96d50c}{get\+\_\+name}} () const
+\item 
+string \mbox{\hyperlink{class_humie_a984520f9906583e9daf46c4d6ea21712}{get\+\_\+surname}} () const
+\item 
+int \mbox{\hyperlink{class_humie_a403431ff800cd4855abd484061a2aa85}{get\+\_\+ndsize}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_humie_a9a042aaece31359fe6fed36471e6c45a}{Humie}} ()
+\item 
+\mbox{\hyperlink{class_humie_aaf022723e87d5b942b75ac0f3886040f}{Humie}} (string t\+\_\+name, string t\+\_\+surname, vector$<$ int $>$ t\+\_\+nd)
+\item 
+\mbox{\hyperlink{class_humie_a81c0810d76013148334772fbcaceaf93}{Humie}} (vector$<$ int $>$ t\+\_\+nd2, string t\+\_\+name, string t\+\_\+surname)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_humie_ad1721cb953022792ff05eadc1b18bd13}{m\+\_\+name}}
+\item 
+int \mbox{\hyperlink{class_humie_ab8dcd72d3da064284d0628271783771b}{m\+\_\+tempnd}}
+\item 
+string \mbox{\hyperlink{class_humie_a2ff317d172dd031ad358edaf6971afb2}{m\+\_\+surname}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_humie_ad1f9a0feba7e326695739192f6f317fb}{m\+\_\+nd}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Humie.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_humie_a9a042aaece31359fe6fed36471e6c45a}\label{class_humie_a9a042aaece31359fe6fed36471e6c45a}} 
+\index{Humie@{Humie}!Humie@{Humie}}
+\index{Humie@{Humie}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{Humie()}{Humie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Humie\+::\+Humie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 19 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_aaf022723e87d5b942b75ac0f3886040f}\label{class_humie_aaf022723e87d5b942b75ac0f3886040f}} 
+\index{Humie@{Humie}!Humie@{Humie}}
+\index{Humie@{Humie}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{Humie()}{Humie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Humie\+::\+Humie (\begin{DoxyParamCaption}\item[{string}]{t\+\_\+name,  }\item[{string}]{t\+\_\+surname,  }\item[{vector$<$ int $>$}]{t\+\_\+nd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 20 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_a81c0810d76013148334772fbcaceaf93}\label{class_humie_a81c0810d76013148334772fbcaceaf93}} 
+\index{Humie@{Humie}!Humie@{Humie}}
+\index{Humie@{Humie}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{Humie()}{Humie()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Humie\+::\+Humie (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{t\+\_\+nd2,  }\item[{string}]{t\+\_\+name,  }\item[{string}]{t\+\_\+surname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 21 of file Humie.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_humie_a1bfe9cf46655ca5952b83c1652d8c0a1}\label{class_humie_a1bfe9cf46655ca5952b83c1652d8c0a1}} 
+\index{Humie@{Humie}!f@{f}}
+\index{f@{f}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily virtual void Humie\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_stud_a6ebf0056208a353346da33a779763e4f}{Stud}}.
+
+\mbox{\Hypertarget{class_humie_ac2878f4f3c6d4c9450e286401d96d50c}\label{class_humie_ac2878f4f3c6d4c9450e286401d96d50c}} 
+\index{Humie@{Humie}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily string Humie\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_a403431ff800cd4855abd484061a2aa85}\label{class_humie_a403431ff800cd4855abd484061a2aa85}} 
+\index{Humie@{Humie}!get\_ndsize@{get\_ndsize}}
+\index{get\_ndsize@{get\_ndsize}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{get\_ndsize()}{get\_ndsize()}}
+{\footnotesize\ttfamily int Humie\+::get\+\_\+ndsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 34 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_a984520f9906583e9daf46c4d6ea21712}\label{class_humie_a984520f9906583e9daf46c4d6ea21712}} 
+\index{Humie@{Humie}!get\_surname@{get\_surname}}
+\index{get\_surname@{get\_surname}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{get\_surname()}{get\_surname()}}
+{\footnotesize\ttfamily string Humie\+::get\+\_\+surname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_aa6368dac76b40953826412687225f90b}\label{class_humie_aa6368dac76b40953826412687225f90b}} 
+\index{Humie@{Humie}!push\_b@{push\_b}}
+\index{push\_b@{push\_b}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{push\_b()}{push\_b()}}
+{\footnotesize\ttfamily void Humie\+::push\+\_\+b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 31 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_a5552bf054c13cafd3e921b7de259b2d9}\label{class_humie_a5552bf054c13cafd3e921b7de259b2d9}} 
+\index{Humie@{Humie}!scan\_name@{scan\_name}}
+\index{scan\_name@{scan\_name}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{scan\_name()}{scan\_name()}}
+{\footnotesize\ttfamily void Humie\+::scan\+\_\+name (\begin{DoxyParamCaption}\item[{istringstream \&}]{t\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Humie.\+cpp.
+
+\mbox{\Hypertarget{class_humie_a98ca5452603ec476e06c6e73fd4007bb}\label{class_humie_a98ca5452603ec476e06c6e73fd4007bb}} 
+\index{Humie@{Humie}!scan\_surname@{scan\_surname}}
+\index{scan\_surname@{scan\_surname}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{scan\_surname()}{scan\_surname()}}
+{\footnotesize\ttfamily void Humie\+::scan\+\_\+surname (\begin{DoxyParamCaption}\item[{istringstream \&}]{t\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file Humie.\+cpp.
+
+\mbox{\Hypertarget{class_humie_ad017a3f3950555056f3e9e9c904399c8}\label{class_humie_ad017a3f3950555056f3e9e9c904399c8}} 
+\index{Humie@{Humie}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void Humie\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{string}]{t\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_aa73ce86c3603663083ae0d5c8b532157}\label{class_humie_aa73ce86c3603663083ae0d5c8b532157}} 
+\index{Humie@{Humie}!set\_nd@{set\_nd}}
+\index{set\_nd@{set\_nd}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{set\_nd()}{set\_nd()}}
+{\footnotesize\ttfamily void Humie\+::set\+\_\+nd (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+nd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_ac42c5deca59ef1519b43fa4cb203f551}\label{class_humie_ac42c5deca59ef1519b43fa4cb203f551}} 
+\index{Humie@{Humie}!set\_surname@{set\_surname}}
+\index{set\_surname@{set\_surname}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{set\_surname()}{set\_surname()}}
+{\footnotesize\ttfamily void Humie\+::set\+\_\+surname (\begin{DoxyParamCaption}\item[{string}]{t\+\_\+surname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file Humie.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_humie_ad1721cb953022792ff05eadc1b18bd13}\label{class_humie_ad1721cb953022792ff05eadc1b18bd13}} 
+\index{Humie@{Humie}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily string Humie\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_ad1f9a0feba7e326695739192f6f317fb}\label{class_humie_ad1f9a0feba7e326695739192f6f317fb}} 
+\index{Humie@{Humie}!m\_nd@{m\_nd}}
+\index{m\_nd@{m\_nd}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{m\_nd}{m\_nd}}
+{\footnotesize\ttfamily vector$<$int$>$ Humie\+::m\+\_\+nd\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_a2ff317d172dd031ad358edaf6971afb2}\label{class_humie_a2ff317d172dd031ad358edaf6971afb2}} 
+\index{Humie@{Humie}!m\_surname@{m\_surname}}
+\index{m\_surname@{m\_surname}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{m\_surname}{m\_surname}}
+{\footnotesize\ttfamily string Humie\+::m\+\_\+surname\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 17 of file Humie.\+h.
+
+\mbox{\Hypertarget{class_humie_ab8dcd72d3da064284d0628271783771b}\label{class_humie_ab8dcd72d3da064284d0628271783771b}} 
+\index{Humie@{Humie}!m\_tempnd@{m\_tempnd}}
+\index{m\_tempnd@{m\_tempnd}!Humie@{Humie}}
+\subsubsection{\texorpdfstring{m\_tempnd}{m\_tempnd}}
+{\footnotesize\ttfamily int Humie\+::m\+\_\+tempnd\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 16 of file Humie.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Doxygen/\mbox{\hyperlink{_humie_8h}{Humie.\+h}}\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Doxygen/\mbox{\hyperlink{_humie_8cpp}{Humie.\+cpp}}\end{DoxyCompactItemize}

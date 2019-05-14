@@ -1,0 +1,152 @@
+\hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system}{}\section{googletest.\+scripts.\+upload.\+Version\+Control\+System Class Reference}
+\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system}\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+Inheritance diagram for googletest.\+scripts.\+upload.\+Version\+Control\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.937716cm]{d2/d1e/classgoogletest_1_1scripts_1_1upload_1_1_version_control_system}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a9dacd7672221771e0daf316d8c53e11c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_abd30c66b6c5c39c14df9a1fa4ffac67b}{options}})
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_aaada7d567809eca22e4a9ddd377429fe}{Generate\+Diff}} (self, args)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a65c6bfa5a25cadeaa54866c6d3cf9da3}{Get\+Unknown\+Files}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a00a0425490711b49a9bea0c38ba74003}{Check\+For\+Unknown\+Files}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af04094a3d55158ec8731c57af99eaf4c}{Get\+Base\+File}} (self, filename)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_ad99771f90fc21df8fce3152fa5567299}{Get\+Base\+Files}} (self, \mbox{\hyperlink{_mutual_8cpp_ae6c31fc00bc7f0cfda97440db3377063}{diff}})
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af3448579d851b563a5722188f0d64f28}{Upload\+Base\+Files}} (self, issue, rpc\+\_\+server, patch\+\_\+list, patchset, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_abd30c66b6c5c39c14df9a1fa4ffac67b}{options}}, files)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_ab4127110562fae350e57369dcdc4d4ab}{Is\+Image}} (self, filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_abd30c66b6c5c39c14df9a1fa4ffac67b}{options}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Abstract base class providing an interface to the VCS.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a9dacd7672221771e0daf316d8c53e11c}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a9dacd7672221771e0daf316d8c53e11c}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor.
+
+Args:
+  options: Command line options.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_git_v_c_s_a855833d850b297b23bee62796275adb7}{googletest.\+scripts.\+upload.\+Git\+V\+CS}}, and \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a1ddd99fb8914f899805a816c8daae63c}{googletest.\+scripts.\+upload.\+Subversion\+V\+CS}}.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a00a0425490711b49a9bea0c38ba74003}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a00a0425490711b49a9bea0c38ba74003}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!CheckForUnknownFiles@{CheckForUnknownFiles}}
+\index{CheckForUnknownFiles@{CheckForUnknownFiles}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{CheckForUnknownFiles()}{CheckForUnknownFiles()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Check\+For\+Unknown\+Files (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Show an "are you sure?" prompt if there are unknown files.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_aaada7d567809eca22e4a9ddd377429fe}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_aaada7d567809eca22e4a9ddd377429fe}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!GenerateDiff@{GenerateDiff}}
+\index{GenerateDiff@{GenerateDiff}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{GenerateDiff()}{GenerateDiff()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Generate\+Diff (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the current diff as a string.
+
+Args:
+  args: Extra arguments to pass to the diff command.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a14f6e335314bd90e0af5bfaf13614700}{googletest.\+scripts.\+upload.\+Mercurial\+V\+CS}}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_git_v_c_s_a0f17ec6f907aa737ac9b7c5d06f85884}{googletest.\+scripts.\+upload.\+Git\+V\+CS}}, and \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_aec042415e243ba61d29c70540dcc8d87}{googletest.\+scripts.\+upload.\+Subversion\+V\+CS}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af04094a3d55158ec8731c57af99eaf4c}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af04094a3d55158ec8731c57af99eaf4c}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!GetBaseFile@{GetBaseFile}}
+\index{GetBaseFile@{GetBaseFile}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{GetBaseFile()}{GetBaseFile()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Get\+Base\+File (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the content of the upstream version of a file.
+
+Returns:
+  A tuple (base_content, new_content, is_binary, status)
+base_content: The contents of the base file.
+new_content: For text files, this is empty.  For binary files, this is
+  the contents of the new file, since the diff output won't contain
+  information to reconstruct the current file.
+is_binary: True iff the file is binary.
+status: The status of the file.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ab76cf6be7060406969e511b335874fb9}{googletest.\+scripts.\+upload.\+Mercurial\+V\+CS}}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_git_v_c_s_ac9fcd4827b37346353ea602106399f07}{googletest.\+scripts.\+upload.\+Git\+V\+CS}}, and \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a1a49556f2fec864cb13543a2330a32a3}{googletest.\+scripts.\+upload.\+Subversion\+V\+CS}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_ad99771f90fc21df8fce3152fa5567299}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_ad99771f90fc21df8fce3152fa5567299}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!GetBaseFiles@{GetBaseFiles}}
+\index{GetBaseFiles@{GetBaseFiles}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{GetBaseFiles()}{GetBaseFiles()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Get\+Base\+Files (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{diff }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Helper that calls GetBase file for each file in the patch.
+
+Returns:
+  A dictionary that maps from filename to GetBaseFile's tuple.  Filenames
+  are retrieved based on lines that start with "Index:" or
+  "Property changes on:".
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a65c6bfa5a25cadeaa54866c6d3cf9da3}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a65c6bfa5a25cadeaa54866c6d3cf9da3}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!GetUnknownFiles@{GetUnknownFiles}}
+\index{GetUnknownFiles@{GetUnknownFiles}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{GetUnknownFiles()}{GetUnknownFiles()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Get\+Unknown\+Files (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of files unknown to the VCS.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ae616fb90f66bc9060d4e0637dc5ac9a6}{googletest.\+scripts.\+upload.\+Mercurial\+V\+CS}}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_git_v_c_s_adbbe5f9ce57c362cc9e79e270c39ab54}{googletest.\+scripts.\+upload.\+Git\+V\+CS}}, and \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_ac112319b31bf62e78d21c4416f5dad25}{googletest.\+scripts.\+upload.\+Subversion\+V\+CS}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_ab4127110562fae350e57369dcdc4d4ab}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_ab4127110562fae350e57369dcdc4d4ab}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!IsImage@{IsImage}}
+\index{IsImage@{IsImage}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{IsImage()}{IsImage()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Is\+Image (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns true if the filename has an image extension.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af3448579d851b563a5722188f0d64f28}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af3448579d851b563a5722188f0d64f28}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!UploadBaseFiles@{UploadBaseFiles}}
+\index{UploadBaseFiles@{UploadBaseFiles}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{UploadBaseFiles()}{UploadBaseFiles()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Version\+Control\+System.\+Upload\+Base\+Files (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{issue,  }\item[{}]{rpc\+\_\+server,  }\item[{}]{patch\+\_\+list,  }\item[{}]{patchset,  }\item[{}]{options,  }\item[{}]{files }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Uploads the base files (and if necessary, the current ones as well).\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_abd30c66b6c5c39c14df9a1fa4ffac67b}\label{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_abd30c66b6c5c39c14df9a1fa4ffac67b}} 
+\index{googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}!options@{options}}
+\index{options@{options}!googletest.scripts.upload.VersionControlSystem@{googletest.scripts.upload.VersionControlSystem}}
+\subsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Version\+Control\+System.\+options}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/release-\/1.\+8.\+1/googletest/scripts/\mbox{\hyperlink{_obj__test_2lib_2googletest-release-1_88_81_2googletest_2scripts_2upload_8py}{upload.\+py}}\end{DoxyCompactItemize}

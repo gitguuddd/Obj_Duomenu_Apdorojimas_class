@@ -1,0 +1,100 @@
+\hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess}{}\section{googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess Class Reference}
+\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess}\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a54393b7e39e3a24bf87b563310d837bf}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, command, working\+\_\+dir=None, capture\+\_\+stderr=True, env=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a9d86d41c62d56a41be36541ac8ae183c}{output}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a4a7012044bb9ae16f2f67e485356496e}{terminated\+\_\+by\+\_\+signal}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a5f6b1798d2c19ad34dca9e855b2c118f}{exited}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a80e327e492193af9039ae165b7a8b7ca}{signal}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a69815667956e96642caceda94dcadf26}{exit\+\_\+code}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a9307884959984ac8cd6b8446bf5091a5}{\+\_\+return\+\_\+code}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a54393b7e39e3a24bf87b563310d837bf}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a54393b7e39e3a24bf87b563310d837bf}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{command,  }\item[{}]{working\+\_\+dir = {\ttfamily None},  }\item[{}]{capture\+\_\+stderr = {\ttfamily True},  }\item[{}]{env = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Changes into a specified directory, if provided, and executes a command.
+
+Restores the old directory afterwards.
+
+Args:
+  command:        The command to run, in the form of sys.argv.
+  working_dir:    The directory to change into.
+  capture_stderr: Determines whether to capture stderr in the output member
+              or to discard it.
+  env:            Dictionary with environment to pass to the subprocess.
+
+Returns:
+  An object that represents outcome of the executed process. It has the
+  following attributes:
+terminated_by_signal   True iff the child process has been terminated
+                       by a signal.
+signal                 Sygnal that terminated the child process.
+exited                 True iff the child process exited normally.
+exit_code              The code with which the child process exited.
+output                 Child process's stdout and stderr output
+                       combined in a string.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a9307884959984ac8cd6b8446bf5091a5}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a9307884959984ac8cd6b8446bf5091a5}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!\_return\_code@{\_return\_code}}
+\index{\_return\_code@{\_return\_code}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{\_return\_code}{\_return\_code}}
+{\footnotesize\ttfamily googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+\_\+return\+\_\+code\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a69815667956e96642caceda94dcadf26}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a69815667956e96642caceda94dcadf26}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!exit\_code@{exit\_code}}
+\index{exit\_code@{exit\_code}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{exit\_code}{exit\_code}}
+{\footnotesize\ttfamily googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+exit\+\_\+code}
+
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a5f6b1798d2c19ad34dca9e855b2c118f}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a5f6b1798d2c19ad34dca9e855b2c118f}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!exited@{exited}}
+\index{exited@{exited}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{exited}{exited}}
+{\footnotesize\ttfamily googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+exited}
+
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a9d86d41c62d56a41be36541ac8ae183c}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a9d86d41c62d56a41be36541ac8ae183c}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!output@{output}}
+\index{output@{output}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+output}
+
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a80e327e492193af9039ae165b7a8b7ca}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a80e327e492193af9039ae165b7a8b7ca}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!signal@{signal}}
+\index{signal@{signal}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{signal}{signal}}
+{\footnotesize\ttfamily googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+signal}
+
+\mbox{\Hypertarget{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a4a7012044bb9ae16f2f67e485356496e}\label{classgoogletest_1_1test_1_1gtest__test__utils_1_1_subprocess_a4a7012044bb9ae16f2f67e485356496e}} 
+\index{googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}!terminated\_by\_signal@{terminated\_by\_signal}}
+\index{terminated\_by\_signal@{terminated\_by\_signal}!googletest.test.gtest\_test\_utils.Subprocess@{googletest.test.gtest\_test\_utils.Subprocess}}
+\subsubsection{\texorpdfstring{terminated\_by\_signal}{terminated\_by\_signal}}
+{\footnotesize\ttfamily googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+terminated\+\_\+by\+\_\+signal}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/release-\/1.\+8.\+1/googletest/test/\mbox{\hyperlink{_obj__test_2lib_2googletest-release-1_88_81_2googletest_2test_2gtest__test__utils_8py}{gtest\+\_\+test\+\_\+utils.\+py}}\end{DoxyCompactItemize}

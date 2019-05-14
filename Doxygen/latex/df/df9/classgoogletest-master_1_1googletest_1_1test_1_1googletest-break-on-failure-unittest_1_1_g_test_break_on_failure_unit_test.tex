@@ -1,0 +1,99 @@
+\hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test}{}\section{googletest-\/master.googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.G\+Test\+Break\+On\+Failure\+Unit\+Test Class Reference}
+\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test}\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+Inheritance diagram for googletest-\/master.googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.G\+Test\+Break\+On\+Failure\+Unit\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.914530cm]{df/df9/classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a5fe489b509744775f26c854cd9ecb5ab}{Run\+And\+Verify}} (self, env\+\_\+var\+\_\+value, flag\+\_\+value, expect\+\_\+seg\+\_\+fault)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_af9752ca29db661ce491873a42d88ee8e}{test\+Default\+Behavior}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a84216649c134066428d9483120e3e318}{test\+Env\+Var}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_acf80c57b59f0e7412aa879f5fc76c372}{test\+Flag}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a78eeb7684a8a47d252ec85bb431582ec}{test\+Flag\+Overrides\+Env\+Var}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a17c880d861dc923777e34623d385b69b}{test\+Break\+On\+Failure\+Overrides\+Throw\+On\+Failure}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a94b5fe16999d9f9060a5d7fe4b4ae85a}{test\+Catch\+Exceptions\+Does\+Not\+Interfere}} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Tests using the GTEST_BREAK_ON_FAILURE environment variable or
+the --gtest_break_on_failure flag to turn assertion failures into
+segmentation faults.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a5fe489b509744775f26c854cd9ecb5ab}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a5fe489b509744775f26c854cd9ecb5ab}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!RunAndVerify@{RunAndVerify}}
+\index{RunAndVerify@{RunAndVerify}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{RunAndVerify()}{RunAndVerify()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+Run\+And\+Verify (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{env\+\_\+var\+\_\+value,  }\item[{}]{flag\+\_\+value,  }\item[{}]{expect\+\_\+seg\+\_\+fault }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Runs googletest-break-on-failure-unittest_ and verifies that it does
+(or does not) have a seg-fault.
+
+Args:
+  env_var_value:    value of the GTEST_BREAK_ON_FAILURE environment
+                variable; None if the variable should be unset.
+  flag_value:       value of the --gtest_break_on_failure flag;
+                None if the flag should not be present.
+  expect_seg_fault: 1 if the program is expected to generate a seg-fault;
+                0 otherwise.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a17c880d861dc923777e34623d385b69b}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a17c880d861dc923777e34623d385b69b}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!testBreakOnFailureOverridesThrowOnFailure@{testBreakOnFailureOverridesThrowOnFailure}}
+\index{testBreakOnFailureOverridesThrowOnFailure@{testBreakOnFailureOverridesThrowOnFailure}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{testBreakOnFailureOverridesThrowOnFailure()}{testBreakOnFailureOverridesThrowOnFailure()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+test\+Break\+On\+Failure\+Overrides\+Throw\+On\+Failure (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests that gtest_break_on_failure overrides gtest_throw_on_failure.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a94b5fe16999d9f9060a5d7fe4b4ae85a}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a94b5fe16999d9f9060a5d7fe4b4ae85a}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!testCatchExceptionsDoesNotInterfere@{testCatchExceptionsDoesNotInterfere}}
+\index{testCatchExceptionsDoesNotInterfere@{testCatchExceptionsDoesNotInterfere}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{testCatchExceptionsDoesNotInterfere()}{testCatchExceptionsDoesNotInterfere()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+test\+Catch\+Exceptions\+Does\+Not\+Interfere (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests that gtest_catch_exceptions doesn't interfere.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_af9752ca29db661ce491873a42d88ee8e}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_af9752ca29db661ce491873a42d88ee8e}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!testDefaultBehavior@{testDefaultBehavior}}
+\index{testDefaultBehavior@{testDefaultBehavior}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{testDefaultBehavior()}{testDefaultBehavior()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+test\+Default\+Behavior (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests the behavior of the default mode.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a84216649c134066428d9483120e3e318}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a84216649c134066428d9483120e3e318}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!testEnvVar@{testEnvVar}}
+\index{testEnvVar@{testEnvVar}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{testEnvVar()}{testEnvVar()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+test\+Env\+Var (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests using the GTEST_BREAK_ON_FAILURE environment variable.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_acf80c57b59f0e7412aa879f5fc76c372}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_acf80c57b59f0e7412aa879f5fc76c372}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!testFlag@{testFlag}}
+\index{testFlag@{testFlag}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{testFlag()}{testFlag()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+test\+Flag (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests using the --gtest_break_on_failure flag.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a78eeb7684a8a47d252ec85bb431582ec}\label{classgoogletest-master_1_1googletest_1_1test_1_1googletest-break-on-failure-unittest_1_1_g_test_break_on_failure_unit_test_a78eeb7684a8a47d252ec85bb431582ec}} 
+\index{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}!testFlagOverridesEnvVar@{testFlagOverridesEnvVar}}
+\index{testFlagOverridesEnvVar@{testFlagOverridesEnvVar}!googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest@{googletest-\/master.googletest.test.googletest-\/break-\/on-\/failure-\/unittest.GTestBreakOnFailureUnitTest}}
+\subsubsection{\texorpdfstring{testFlagOverridesEnvVar()}{testFlagOverridesEnvVar()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+googletest-\/break-\/on-\/failure-\/unittest.\+G\+Test\+Break\+On\+Failure\+Unit\+Test.\+test\+Flag\+Overrides\+Env\+Var (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tests that the flag overrides the environment variable.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/master/googletest/test/\mbox{\hyperlink{_obj__test_2lib_2googletest-master_2googletest_2test_2googletest-break-on-failure-unittest_8py}{googletest-\/break-\/on-\/failure-\/unittest.\+py}}\end{DoxyCompactItemize}

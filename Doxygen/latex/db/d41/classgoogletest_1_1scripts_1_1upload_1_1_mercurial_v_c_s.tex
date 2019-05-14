@@ -1,0 +1,130 @@
+\hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s}{}\section{googletest.\+scripts.\+upload.\+Mercurial\+V\+CS Class Reference}
+\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s}\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+Inheritance diagram for googletest.\+scripts.\+upload.\+Mercurial\+V\+CS\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{db/d41/classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a5c1ce2bfd3f74ad5a0b554ed15446b35}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_abd30c66b6c5c39c14df9a1fa4ffac67b}{options}}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ac1412ab5eec8e991358292da2d595394}{repo\+\_\+dir}})
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a14f6e335314bd90e0af5bfaf13614700}{Generate\+Diff}} (self, extra\+\_\+args)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ae616fb90f66bc9060d4e0637dc5ac9a6}{Get\+Unknown\+Files}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ab76cf6be7060406969e511b335874fb9}{Get\+Base\+File}} (self, filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ac1412ab5eec8e991358292da2d595394}{repo\+\_\+dir}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_aff063ef99e0fc3f8ef748d911afbe854}{subdir}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ad6c82fc68ae2d6f67221cefc1ed45ce8}{base\+\_\+rev}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a1d3b5d9dd222bdf4a0b72969464bab25}{\+\_\+\+Get\+Rel\+Path}} (self, filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implementation of the VersionControlSystem interface for Mercurial.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a5c1ce2bfd3f74ad5a0b554ed15446b35}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a5c1ce2bfd3f74ad5a0b554ed15446b35}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options,  }\item[{}]{repo\+\_\+dir }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a1d3b5d9dd222bdf4a0b72969464bab25}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a1d3b5d9dd222bdf4a0b72969464bab25}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!\_GetRelPath@{\_GetRelPath}}
+\index{\_GetRelPath@{\_GetRelPath}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{\_GetRelPath()}{\_GetRelPath()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+\_\+\+Get\+Rel\+Path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Get relative path of a file according to the current directory,
+given its logical path in the repo.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a14f6e335314bd90e0af5bfaf13614700}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_a14f6e335314bd90e0af5bfaf13614700}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!GenerateDiff@{GenerateDiff}}
+\index{GenerateDiff@{GenerateDiff}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{GenerateDiff()}{GenerateDiff()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+Generate\+Diff (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the current diff as a string.
+
+Args:
+  args: Extra arguments to pass to the diff command.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_aaada7d567809eca22e4a9ddd377429fe}{googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ab76cf6be7060406969e511b335874fb9}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ab76cf6be7060406969e511b335874fb9}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!GetBaseFile@{GetBaseFile}}
+\index{GetBaseFile@{GetBaseFile}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{GetBaseFile()}{GetBaseFile()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+Get\+Base\+File (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the content of the upstream version of a file.
+
+Returns:
+  A tuple (base_content, new_content, is_binary, status)
+base_content: The contents of the base file.
+new_content: For text files, this is empty.  For binary files, this is
+  the contents of the new file, since the diff output won't contain
+  information to reconstruct the current file.
+is_binary: True iff the file is binary.
+status: The status of the file.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_af04094a3d55158ec8731c57af99eaf4c}{googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ae616fb90f66bc9060d4e0637dc5ac9a6}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ae616fb90f66bc9060d4e0637dc5ac9a6}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!GetUnknownFiles@{GetUnknownFiles}}
+\index{GetUnknownFiles@{GetUnknownFiles}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{GetUnknownFiles()}{GetUnknownFiles()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+Get\+Unknown\+Files (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of files unknown to the VCS.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_version_control_system_a65c6bfa5a25cadeaa54866c6d3cf9da3}{googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ad6c82fc68ae2d6f67221cefc1ed45ce8}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ad6c82fc68ae2d6f67221cefc1ed45ce8}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!base\_rev@{base\_rev}}
+\index{base\_rev@{base\_rev}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{base\_rev}{base\_rev}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+base\+\_\+rev}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ac1412ab5eec8e991358292da2d595394}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_ac1412ab5eec8e991358292da2d595394}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!repo\_dir@{repo\_dir}}
+\index{repo\_dir@{repo\_dir}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{repo\_dir}{repo\_dir}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+repo\+\_\+dir}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_aff063ef99e0fc3f8ef748d911afbe854}\label{classgoogletest_1_1scripts_1_1upload_1_1_mercurial_v_c_s_aff063ef99e0fc3f8ef748d911afbe854}} 
+\index{googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}!subdir@{subdir}}
+\index{subdir@{subdir}!googletest.scripts.upload.MercurialVCS@{googletest.scripts.upload.MercurialVCS}}
+\subsubsection{\texorpdfstring{subdir}{subdir}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Mercurial\+V\+C\+S.\+subdir}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/release-\/1.\+8.\+1/googletest/scripts/\mbox{\hyperlink{_obj__test_2lib_2googletest-release-1_88_81_2googletest_2scripts_2upload_8py}{upload.\+py}}\end{DoxyCompactItemize}

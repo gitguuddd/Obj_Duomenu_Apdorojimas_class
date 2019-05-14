@@ -1,0 +1,222 @@
+\hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server}{}\section{googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server Class Reference}
+\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server}\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+Inheritance diagram for googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d4/db8/classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aeb78ded9d1edafbf85b99bf6cf4309e0}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aa1334335424a5382caed65ee63375007}{host}}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ac6af7f7d28ac4e5770ab85a27a2e6452}{auth\+\_\+function}}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a8b509378400626f486134138fdbe8cb3}{host\+\_\+override}}=None, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_abd6fdce28ccdb05805f0728b8dce278a}{extra\+\_\+headers}}=\{\}, \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a741a8413da49641e293de90860212ef5}{save\+\_\+cookies}}=False)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a2d5933bff99163c58b94074e819af422}{Send}} (self, request\+\_\+path, payload=None, content\+\_\+type=\char`\"{}application/octet-\/stream\char`\"{}, timeout=None, $\ast$$\ast$kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aa1334335424a5382caed65ee63375007}{host}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a8b509378400626f486134138fdbe8cb3}{host\+\_\+override}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ac6af7f7d28ac4e5770ab85a27a2e6452}{auth\+\_\+function}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ab9b1e17d9af85854cdfabbeac8ddc264}{authenticated}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_abd6fdce28ccdb05805f0728b8dce278a}{extra\+\_\+headers}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a741a8413da49641e293de90860212ef5}{save\+\_\+cookies}}
+\item 
+\mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a9d1856f0051c281a9ff02f0ce164808f}{opener}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a63eceb4f0652dd8b366a9d1c68405d28}{\+\_\+\+Get\+Opener}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_afd3f89f57f7db4343ddc8cc65558b120}{\+\_\+\+Create\+Request}} (self, url, data=None)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ae9e21041be83376ddd74a66919e0e59f}{\+\_\+\+Get\+Auth\+Token}} (self, email, password)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_af3cbdd69919ed357d6bbc7534f57cccb}{\+\_\+\+Get\+Auth\+Cookie}} (self, auth\+\_\+token)
+\item 
+def \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a6df1e9f6492ff2fb80fa4206d64abbf1}{\+\_\+\+Authenticate}} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Provides a common interface for a simple RPC server.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aeb78ded9d1edafbf85b99bf6cf4309e0}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aeb78ded9d1edafbf85b99bf6cf4309e0}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{host,  }\item[{}]{auth\+\_\+function,  }\item[{}]{host\+\_\+override = {\ttfamily None},  }\item[{}]{extra\+\_\+headers = {\ttfamily \{\}},  }\item[{}]{save\+\_\+cookies = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates a new HttpRpcServer.
+
+Args:
+  host: The host to send requests to.
+  auth_function: A function that takes no arguments and returns an
+(email, password) tuple when called. Will be called if authentication
+is required.
+  host_override: The host header to send to the server (defaults to host).
+  extra_headers: A dict of extra headers to append to every request.
+  save_cookies: If True, save the authentication cookies to local disk.
+If False, use an in-memory cookiejar instead.  Subclasses must
+implement this functionality.  Defaults to False.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a6df1e9f6492ff2fb80fa4206d64abbf1}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a6df1e9f6492ff2fb80fa4206d64abbf1}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!\_Authenticate@{\_Authenticate}}
+\index{\_Authenticate@{\_Authenticate}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{\_Authenticate()}{\_Authenticate()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+\_\+\+Authenticate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Authenticates the user.
+
+The authentication process works as follows:
+ 1) We get a username and password from the user
+ 2) We use ClientLogin to obtain an AUTH token for the user
+(see https://developers.google.com/identity/protocols/AuthForInstalledApps).
+ 3) We pass the auth token to /_ah/login on the server to obtain an
+authentication cookie. If login was successful, it tries to redirect
+us to the URL we provided.
+
+If we attempt to access the upload API without first obtaining an
+authentication cookie, it returns a 401 response and directs us to
+authenticate ourselves with ClientLogin.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_http_rpc_server_a6a2403ba3834ce8b4b9e1c14eb897cfb}{googletest.\+scripts.\+upload.\+Http\+Rpc\+Server}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_afd3f89f57f7db4343ddc8cc65558b120}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_afd3f89f57f7db4343ddc8cc65558b120}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!\_CreateRequest@{\_CreateRequest}}
+\index{\_CreateRequest@{\_CreateRequest}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{\_CreateRequest()}{\_CreateRequest()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+\_\+\+Create\+Request (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{url,  }\item[{}]{data = {\ttfamily None} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Creates a new urllib request.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_af3cbdd69919ed357d6bbc7534f57cccb}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_af3cbdd69919ed357d6bbc7534f57cccb}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!\_GetAuthCookie@{\_GetAuthCookie}}
+\index{\_GetAuthCookie@{\_GetAuthCookie}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{\_GetAuthCookie()}{\_GetAuthCookie()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+\_\+\+Get\+Auth\+Cookie (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{auth\+\_\+token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Fetches authentication cookies for an authentication token.
+
+Args:
+  auth_token: The authentication token returned by ClientLogin.
+
+Raises:
+  HTTPError: If there was an error fetching the authentication cookies.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ae9e21041be83376ddd74a66919e0e59f}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ae9e21041be83376ddd74a66919e0e59f}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!\_GetAuthToken@{\_GetAuthToken}}
+\index{\_GetAuthToken@{\_GetAuthToken}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{\_GetAuthToken()}{\_GetAuthToken()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+\_\+\+Get\+Auth\+Token (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{email,  }\item[{}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Uses ClientLogin to authenticate the user, returning an auth token.
+
+Args:
+  email:    The user's email address
+  password: The user's password
+
+Raises:
+  ClientLoginError: If there was an error authenticating with ClientLogin.
+  HTTPError: If there was some other form of HTTP error.
+
+Returns:
+  The authentication token returned by ClientLogin.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a63eceb4f0652dd8b366a9d1c68405d28}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a63eceb4f0652dd8b366a9d1c68405d28}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!\_GetOpener@{\_GetOpener}}
+\index{\_GetOpener@{\_GetOpener}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{\_GetOpener()}{\_GetOpener()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+\_\+\+Get\+Opener (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Returns an OpenerDirector for making HTTP requests.
+
+Returns:
+  A urllib2.OpenerDirector object.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classgoogletest_1_1scripts_1_1upload_1_1_http_rpc_server_aaed250eb0837a8f3b5d7ac5a25faef2e}{googletest.\+scripts.\+upload.\+Http\+Rpc\+Server}}.
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a2d5933bff99163c58b94074e819af422}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a2d5933bff99163c58b94074e819af422}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!Send@{Send}}
+\index{Send@{Send}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{Send()}{Send()}}
+{\footnotesize\ttfamily def googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+Send (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request\+\_\+path,  }\item[{}]{payload = {\ttfamily None},  }\item[{}]{content\+\_\+type = {\ttfamily \char`\"{}application/octet-\/stream\char`\"{}},  }\item[{}]{timeout = {\ttfamily None},  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends an RPC and returns the response.
+
+Args:
+  request_path: The path to send the request to, eg /api/appversion/create.
+  payload: The body of the request, or None to send an empty request.
+  content_type: The Content-Type header to use.
+  timeout: timeout in seconds; default None i.e. no timeout.
+(Note: for large requests on OS X, the timeout doesn't work right.)
+  kwargs: Any keyword arguments are converted into query string parameters.
+
+Returns:
+  The response body, as a string.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ac6af7f7d28ac4e5770ab85a27a2e6452}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ac6af7f7d28ac4e5770ab85a27a2e6452}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!auth\_function@{auth\_function}}
+\index{auth\_function@{auth\_function}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{auth\_function}{auth\_function}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+auth\+\_\+function}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ab9b1e17d9af85854cdfabbeac8ddc264}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_ab9b1e17d9af85854cdfabbeac8ddc264}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!authenticated@{authenticated}}
+\index{authenticated@{authenticated}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{authenticated}{authenticated}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+authenticated}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_abd6fdce28ccdb05805f0728b8dce278a}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_abd6fdce28ccdb05805f0728b8dce278a}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!extra\_headers@{extra\_headers}}
+\index{extra\_headers@{extra\_headers}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{extra\_headers}{extra\_headers}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+extra\+\_\+headers}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aa1334335424a5382caed65ee63375007}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_aa1334335424a5382caed65ee63375007}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!host@{host}}
+\index{host@{host}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{host}{host}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+host}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a8b509378400626f486134138fdbe8cb3}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a8b509378400626f486134138fdbe8cb3}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!host\_override@{host\_override}}
+\index{host\_override@{host\_override}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{host\_override}{host\_override}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+host\+\_\+override}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a9d1856f0051c281a9ff02f0ce164808f}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a9d1856f0051c281a9ff02f0ce164808f}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!opener@{opener}}
+\index{opener@{opener}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{opener}{opener}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+opener}
+
+\mbox{\Hypertarget{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a741a8413da49641e293de90860212ef5}\label{classgoogletest_1_1scripts_1_1upload_1_1_abstract_rpc_server_a741a8413da49641e293de90860212ef5}} 
+\index{googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}!save\_cookies@{save\_cookies}}
+\index{save\_cookies@{save\_cookies}!googletest.scripts.upload.AbstractRpcServer@{googletest.scripts.upload.AbstractRpcServer}}
+\subsubsection{\texorpdfstring{save\_cookies}{save\_cookies}}
+{\footnotesize\ttfamily googletest.\+scripts.\+upload.\+Abstract\+Rpc\+Server.\+save\+\_\+cookies}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/release-\/1.\+8.\+1/googletest/scripts/\mbox{\hyperlink{_obj__test_2lib_2googletest-release-1_88_81_2googletest_2scripts_2upload_8py}{upload.\+py}}\end{DoxyCompactItemize}

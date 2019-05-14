@@ -1,0 +1,152 @@
+\hypertarget{_input_8h}{}\section{C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/code/\+Headers/\+Input.h File Reference}
+\label{_input_8h}\index{C:/Users/Mindaugas K/Documents/GitHub/Obj\_Duomenu\_apdorojimas\_class/code/Headers/Input.h@{C:/Users/Mindaugas K/Documents/GitHub/Obj\_Duomenu\_apdorojimas\_class/code/Headers/Input.h}}
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_stud}{Stud}} \mbox{\hyperlink{_input_8h_abef3acb5ac6a4ed0a3181e3003b31a6e}{user\+\_\+input}} ()
+\item 
+void \mbox{\hyperlink{_input_8h_a228beaee885211645ca43a8b244b434f}{gen\+\_\+student}} (int t\+\_\+gen\+\_\+size)
+\item 
+\mbox{\hyperlink{class_stud}{Stud}} \mbox{\hyperlink{_input_8h_a6d9f3fcb70f23f53691b2127972cbd56}{gen\+\_\+student}} ()
+\item 
+void \mbox{\hyperlink{_input_8h_aa4e00ecb03d31ef56cebcfdb991386f6}{read\+\_\+file2}} (bool \&t\+\_\+isempty, int \&t\+\_\+read\+\_\+count)
+\item 
+bool \mbox{\hyperlink{_input_8h_a121078ae4852d5c5106a768c42c9edf2}{sorting\+\_\+vid}} (const \mbox{\hyperlink{class_stud}{Stud}} t\+\_\+student1, const \mbox{\hyperlink{class_stud}{Stud}} t\+\_\+student2)
+\item 
+bool \mbox{\hyperlink{_input_8h_aaa4c7494ffc059cdcb7969651091b851}{sorting\+\_\+mvid}} (const \mbox{\hyperlink{class_stud}{Stud}} t\+\_\+student1, const \mbox{\hyperlink{class_stud}{Stud}} t\+\_\+student2)
+\item 
+void \mbox{\hyperlink{_input_8h_aec2fd8cd9140a1b535dc54a924396f40}{split}} (char t\+\_\+pchoice, char t\+\_\+strat, std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \&t\+\_\+up)
+\item 
+void \mbox{\hyperlink{_input_8h_acb836c1273e038de6fa7dbc64c16976e}{split\+\_\+d}} (char t\+\_\+pchoice, char t\+\_\+strat, std\+::deque$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \&t\+\_\+up\+\_\+d)
+\item 
+void \mbox{\hyperlink{_input_8h_afa3c2ca5e4edab62400aa1c7eaf7b371}{split\+\_\+l}} (char t\+\_\+pchoice, char t\+\_\+strat, std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \&t\+\_\+up\+\_\+l)
+\item 
+void \mbox{\hyperlink{_input_8h_a86bf17c2fbf345cc67fd88df69fe5621}{split\+\_\+n\+\_\+print}} (char t\+\_\+pchoice, char t\+\_\+strat)
+\item 
+void \mbox{\hyperlink{_input_8h_abf8a62a53be6b09fa46d4b6541dcc034}{split\+\_\+n\+\_\+print\+\_\+d}} (char t\+\_\+pchoice, char t\+\_\+strat)
+\item 
+void \mbox{\hyperlink{_input_8h_ad309e5fe49125e0e8579f2d79b3353dc}{split\+\_\+n\+\_\+print\+\_\+l}} (char t\+\_\+pchoice, char t\+\_\+strat)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \mbox{\hyperlink{_input_8h_a1bab821e29cf3eef5f694c45ac2886d3}{up}}
+\item 
+long long \mbox{\hyperlink{_input_8h_af0f2cc4946f88de776f7ffa35e382fcb}{seed}}
+\item 
+std\+::mt19937 \mbox{\hyperlink{_input_8h_a165edf02a34404e3217771f88baabb52}{mt}}
+\item 
+std\+::uniform\+\_\+real\+\_\+distribution$<$ double $>$ \mbox{\hyperlink{_input_8h_ab4d938bedaac03576bac6bec43547ca9}{dist}}
+\item 
+std\+::uniform\+\_\+real\+\_\+distribution$<$ double $>$ \mbox{\hyperlink{_input_8h_ae2c3aec85a2c0851b08fa9f0277b8963}{dist2}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_input_8h_a228beaee885211645ca43a8b244b434f}\label{_input_8h_a228beaee885211645ca43a8b244b434f}} 
+\index{Input.h@{Input.h}!gen\_student@{gen\_student}}
+\index{gen\_student@{gen\_student}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{gen\_student()}{gen\_student()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void gen\+\_\+student (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+gen\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_a6d9f3fcb70f23f53691b2127972cbd56}\label{_input_8h_a6d9f3fcb70f23f53691b2127972cbd56}} 
+\index{Input.h@{Input.h}!gen\_student@{gen\_student}}
+\index{gen\_student@{gen\_student}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{gen\_student()}{gen\_student()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_stud}{Stud}} gen\+\_\+student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_aa4e00ecb03d31ef56cebcfdb991386f6}\label{_input_8h_aa4e00ecb03d31ef56cebcfdb991386f6}} 
+\index{Input.h@{Input.h}!read\_file2@{read\_file2}}
+\index{read\_file2@{read\_file2}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{read\_file2()}{read\_file2()}}
+{\footnotesize\ttfamily void read\+\_\+file2 (\begin{DoxyParamCaption}\item[{bool \&}]{t\+\_\+isempty,  }\item[{int \&}]{t\+\_\+read\+\_\+count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_aaa4c7494ffc059cdcb7969651091b851}\label{_input_8h_aaa4c7494ffc059cdcb7969651091b851}} 
+\index{Input.h@{Input.h}!sorting\_mvid@{sorting\_mvid}}
+\index{sorting\_mvid@{sorting\_mvid}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{sorting\_mvid()}{sorting\_mvid()}}
+{\footnotesize\ttfamily bool sorting\+\_\+mvid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_stud}{Stud}}}]{t\+\_\+student1,  }\item[{const \mbox{\hyperlink{class_stud}{Stud}}}]{t\+\_\+student2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_a121078ae4852d5c5106a768c42c9edf2}\label{_input_8h_a121078ae4852d5c5106a768c42c9edf2}} 
+\index{Input.h@{Input.h}!sorting\_vid@{sorting\_vid}}
+\index{sorting\_vid@{sorting\_vid}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{sorting\_vid()}{sorting\_vid()}}
+{\footnotesize\ttfamily bool sorting\+\_\+vid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_stud}{Stud}}}]{t\+\_\+student1,  }\item[{const \mbox{\hyperlink{class_stud}{Stud}}}]{t\+\_\+student2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_aec2fd8cd9140a1b535dc54a924396f40}\label{_input_8h_aec2fd8cd9140a1b535dc54a924396f40}} 
+\index{Input.h@{Input.h}!split@{split}}
+\index{split@{split}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily void split (\begin{DoxyParamCaption}\item[{char}]{t\+\_\+pchoice,  }\item[{char}]{t\+\_\+strat,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \&}]{t\+\_\+up }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_acb836c1273e038de6fa7dbc64c16976e}\label{_input_8h_acb836c1273e038de6fa7dbc64c16976e}} 
+\index{Input.h@{Input.h}!split\_d@{split\_d}}
+\index{split\_d@{split\_d}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{split\_d()}{split\_d()}}
+{\footnotesize\ttfamily void split\+\_\+d (\begin{DoxyParamCaption}\item[{char}]{t\+\_\+pchoice,  }\item[{char}]{t\+\_\+strat,  }\item[{std\+::deque$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \&}]{t\+\_\+up\+\_\+d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_afa3c2ca5e4edab62400aa1c7eaf7b371}\label{_input_8h_afa3c2ca5e4edab62400aa1c7eaf7b371}} 
+\index{Input.h@{Input.h}!split\_l@{split\_l}}
+\index{split\_l@{split\_l}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{split\_l()}{split\_l()}}
+{\footnotesize\ttfamily void split\+\_\+l (\begin{DoxyParamCaption}\item[{char}]{t\+\_\+pchoice,  }\item[{char}]{t\+\_\+strat,  }\item[{std\+::list$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$\+::iterator \&}]{t\+\_\+up\+\_\+l }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_a86bf17c2fbf345cc67fd88df69fe5621}\label{_input_8h_a86bf17c2fbf345cc67fd88df69fe5621}} 
+\index{Input.h@{Input.h}!split\_n\_print@{split\_n\_print}}
+\index{split\_n\_print@{split\_n\_print}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{split\_n\_print()}{split\_n\_print()}}
+{\footnotesize\ttfamily void split\+\_\+n\+\_\+print (\begin{DoxyParamCaption}\item[{char}]{t\+\_\+pchoice,  }\item[{char}]{t\+\_\+strat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_abf8a62a53be6b09fa46d4b6541dcc034}\label{_input_8h_abf8a62a53be6b09fa46d4b6541dcc034}} 
+\index{Input.h@{Input.h}!split\_n\_print\_d@{split\_n\_print\_d}}
+\index{split\_n\_print\_d@{split\_n\_print\_d}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{split\_n\_print\_d()}{split\_n\_print\_d()}}
+{\footnotesize\ttfamily void split\+\_\+n\+\_\+print\+\_\+d (\begin{DoxyParamCaption}\item[{char}]{t\+\_\+pchoice,  }\item[{char}]{t\+\_\+strat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_ad309e5fe49125e0e8579f2d79b3353dc}\label{_input_8h_ad309e5fe49125e0e8579f2d79b3353dc}} 
+\index{Input.h@{Input.h}!split\_n\_print\_l@{split\_n\_print\_l}}
+\index{split\_n\_print\_l@{split\_n\_print\_l}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{split\_n\_print\_l()}{split\_n\_print\_l()}}
+{\footnotesize\ttfamily void split\+\_\+n\+\_\+print\+\_\+l (\begin{DoxyParamCaption}\item[{char}]{t\+\_\+pchoice,  }\item[{char}]{t\+\_\+strat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_input_8h_abef3acb5ac6a4ed0a3181e3003b31a6e}\label{_input_8h_abef3acb5ac6a4ed0a3181e3003b31a6e}} 
+\index{Input.h@{Input.h}!user\_input@{user\_input}}
+\index{user\_input@{user\_input}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{user\_input()}{user\_input()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_stud}{Stud}} user\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_input_8h_ab4d938bedaac03576bac6bec43547ca9}\label{_input_8h_ab4d938bedaac03576bac6bec43547ca9}} 
+\index{Input.h@{Input.h}!dist@{dist}}
+\index{dist@{dist}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily std\+::uniform\+\_\+real\+\_\+distribution$<$double$>$ dist}
+
+\mbox{\Hypertarget{_input_8h_ae2c3aec85a2c0851b08fa9f0277b8963}\label{_input_8h_ae2c3aec85a2c0851b08fa9f0277b8963}} 
+\index{Input.h@{Input.h}!dist2@{dist2}}
+\index{dist2@{dist2}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{dist2}{dist2}}
+{\footnotesize\ttfamily std\+::uniform\+\_\+real\+\_\+distribution$<$double$>$ dist2}
+
+\mbox{\Hypertarget{_input_8h_a165edf02a34404e3217771f88baabb52}\label{_input_8h_a165edf02a34404e3217771f88baabb52}} 
+\index{Input.h@{Input.h}!mt@{mt}}
+\index{mt@{mt}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{mt}{mt}}
+{\footnotesize\ttfamily std\+::mt19937 mt}
+
+\mbox{\Hypertarget{_input_8h_af0f2cc4946f88de776f7ffa35e382fcb}\label{_input_8h_af0f2cc4946f88de776f7ffa35e382fcb}} 
+\index{Input.h@{Input.h}!seed@{seed}}
+\index{seed@{seed}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily long long seed}
+
+\mbox{\Hypertarget{_input_8h_a1bab821e29cf3eef5f694c45ac2886d3}\label{_input_8h_a1bab821e29cf3eef5f694c45ac2886d3}} 
+\index{Input.h@{Input.h}!up@{up}}
+\index{up@{up}!Input.h@{Input.h}}
+\subsubsection{\texorpdfstring{up}{up}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_stud}{Stud}}$>$\+::iterator up}
+

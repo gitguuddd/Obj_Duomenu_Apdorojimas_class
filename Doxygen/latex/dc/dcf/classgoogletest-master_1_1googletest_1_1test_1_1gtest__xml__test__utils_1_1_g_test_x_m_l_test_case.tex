@@ -1,0 +1,121 @@
+\hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case}{}\section{googletest-\/master.googletest.\+test.\+gtest\+\_\+xml\+\_\+test\+\_\+utils.\+G\+Test\+X\+M\+L\+Test\+Case Class Reference}
+\label{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case}\index{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}}
+Inheritance diagram for googletest-\/master.googletest.\+test.\+gtest\+\_\+xml\+\_\+test\+\_\+utils.\+G\+Test\+X\+M\+L\+Test\+Case\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.710794cm]{dc/dcf/classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_a393b1518e95e01d508c25850ad0bc0f2}{Assert\+Equivalent\+Nodes}} (self, expected\+\_\+node, actual\+\_\+node)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_aeaf548d597d53c5bf3fc123da7ba789e}{Normalize\+Xml}} (self, element)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_a819d2d5213bad859c7fc9600d561b708}{identifying\+\_\+attribute}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_abaf47bd77c0d64861baccc28305bda9c}{\+\_\+\+Get\+Children}} (self, element)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Base class for tests of Google Test's XML output functionality.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_abaf47bd77c0d64861baccc28305bda9c}\label{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_abaf47bd77c0d64861baccc28305bda9c}} 
+\index{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}!\_GetChildren@{\_GetChildren}}
+\index{\_GetChildren@{\_GetChildren}!googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}}
+\subsubsection{\texorpdfstring{\_GetChildren()}{\_GetChildren()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+gtest\+\_\+xml\+\_\+test\+\_\+utils.\+G\+Test\+X\+M\+L\+Test\+Case.\+\_\+\+Get\+Children (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Fetches all of the child nodes of element, a DOM Element object.
+Returns them as the values of a dictionary keyed by the IDs of the
+children.  For <testsuites>, <testsuite>, <testcase>, and <property>
+elements, the ID is the value of their "name" attribute; for <failure>
+elements, it is the value of the "message" attribute; for <properties>
+elements, it is the value of their parent's "name" attribute plus the
+literal string "properties"; CDATA sections and non-whitespace
+text nodes are concatenated into a single CDATA section with ID
+"detail".  An exception is raised if any element other than the above
+four is encountered, if two child elements with the same identifying
+attributes are encountered, or if any other type of node is encountered.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_a393b1518e95e01d508c25850ad0bc0f2}\label{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_a393b1518e95e01d508c25850ad0bc0f2}} 
+\index{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}!AssertEquivalentNodes@{AssertEquivalentNodes}}
+\index{AssertEquivalentNodes@{AssertEquivalentNodes}!googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}}
+\subsubsection{\texorpdfstring{AssertEquivalentNodes()}{AssertEquivalentNodes()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+gtest\+\_\+xml\+\_\+test\+\_\+utils.\+G\+Test\+X\+M\+L\+Test\+Case.\+Assert\+Equivalent\+Nodes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{expected\+\_\+node,  }\item[{}]{actual\+\_\+node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts that actual_node (a DOM node object) is equivalent to
+expected_node (another DOM node object), in that either both of
+them are CDATA nodes and have the same value, or both are DOM
+elements and actual_node meets all of the following conditions:
+
+*  It has the same tag name as expected_node.
+*  It has the same set of attributes as expected_node, each with
+   the same value as the corresponding attribute of expected_node.
+   Exceptions are any attribute named "time", which needs only be
+   convertible to a floating-point number and any attribute named
+   "type_param" which only has to be non-empty.
+*  It has an equivalent set of child nodes (including elements and
+   CDATA sections) as expected_node.  Note that we ignore the
+   order of the children as they are not guaranteed to be in any
+   particular order.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_aeaf548d597d53c5bf3fc123da7ba789e}\label{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_aeaf548d597d53c5bf3fc123da7ba789e}} 
+\index{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}!NormalizeXml@{NormalizeXml}}
+\index{NormalizeXml@{NormalizeXml}!googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}}
+\subsubsection{\texorpdfstring{NormalizeXml()}{NormalizeXml()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+test.\+gtest\+\_\+xml\+\_\+test\+\_\+utils.\+G\+Test\+X\+M\+L\+Test\+Case.\+Normalize\+Xml (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{element }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalizes Google Test's XML output to eliminate references to transient
+information that may change from run to run.
+
+*  The "time" attribute of <testsuites>, <testsuite> and <testcase>
+   elements is replaced with a single asterisk, if it contains
+   only digit characters.
+*  The "timestamp" attribute of <testsuites> elements is replaced with a
+   single asterisk, if it contains a valid ISO8601 datetime value.
+*  The "type_param" attribute of <testcase> elements is replaced with a
+   single asterisk (if it sn non-empty) as it is the type name returned
+   by the compiler and is platform dependent.
+*  The line info reported in the first line of the "message"
+   attribute and CDATA section of <failure> elements is replaced with the
+   file's basename and a single asterisk for the line number.
+*  The directory names in file paths are removed.
+*  The stack traces are removed.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_a819d2d5213bad859c7fc9600d561b708}\label{classgoogletest-master_1_1googletest_1_1test_1_1gtest__xml__test__utils_1_1_g_test_x_m_l_test_case_a819d2d5213bad859c7fc9600d561b708}} 
+\index{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}!identifying\_attribute@{identifying\_attribute}}
+\index{identifying\_attribute@{identifying\_attribute}!googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase@{googletest-\/master.googletest.test.gtest\_xml\_test\_utils.GTestXMLTestCase}}
+\subsubsection{\texorpdfstring{identifying\_attribute}{identifying\_attribute}}
+{\footnotesize\ttfamily dictionary googletest-\/master.\+googletest.\+test.\+gtest\+\_\+xml\+\_\+test\+\_\+utils.\+G\+Test\+X\+M\+L\+Test\+Case.\+identifying\+\_\+attribute\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  \{}
+\DoxyCodeLine{      \textcolor{stringliteral}{'testsuites'}: \textcolor{stringliteral}{'name'},}
+\DoxyCodeLine{      \textcolor{stringliteral}{'testsuite'}: \textcolor{stringliteral}{'name'},}
+\DoxyCodeLine{      \textcolor{stringliteral}{'testcase'}: \textcolor{stringliteral}{'name'},}
+\DoxyCodeLine{      \textcolor{stringliteral}{'failure'}: \textcolor{stringliteral}{'message'},}
+\DoxyCodeLine{      \textcolor{stringliteral}{'property'}: \textcolor{stringliteral}{'name'},}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/master/googletest/test/\mbox{\hyperlink{_obj__test_2lib_2googletest-master_2googletest_2test_2gtest__xml__test__utils_8py}{gtest\+\_\+xml\+\_\+test\+\_\+utils.\+py}}\end{DoxyCompactItemize}

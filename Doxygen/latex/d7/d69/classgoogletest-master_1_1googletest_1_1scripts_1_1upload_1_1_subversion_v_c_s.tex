@@ -1,0 +1,187 @@
+\hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s}{}\section{googletest-\/master.googletest.\+scripts.\+upload.\+Subversion\+V\+CS Class Reference}
+\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s}\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+Inheritance diagram for googletest-\/master.googletest.\+scripts.\+upload.\+Subversion\+V\+CS\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d7/d69/classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_af7b67fa318df02166babb35cc4d71605}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_version_control_system_ad426345e0518e3ca15ca7e9284e45754}{options}})
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a8209d02ac6980b4cf6fe415ac28b3625}{Guess\+Base}} (self, required)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a25547b2a1179651ca489cd24c05072df}{Generate\+Diff}} (self, args)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a626e361b781f4403b60fcf00a129a92a}{Get\+Unknown\+Files}} (self)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a4390eaf4cfc0a1c28e2c0f21cd0cedb7}{Read\+File}} (self, filename)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a8850adde722d2ab300a6fe569cdcfd9e}{Get\+Status}} (self, filename)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a6374a566b05895b119efb904440d65f6}{Get\+Base\+File}} (self, filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_adaae99f66a45e0213deb9051b4bd9aa6}{rev\+\_\+start}}
+\item 
+\mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a334a99f7478b47c25a47d61089843135}{rev\+\_\+end}}
+\item 
+\mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a0669021ce91a16987475e27af8586b70}{svnls\+\_\+cache}}
+\item 
+\mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_ac2eefaffbdd9312bc855a22a01451e39}{svn\+\_\+base}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_aa62893a4bee019fe2a7830dd0866b5fe}{\+\_\+\+Guess\+Base}} (self, required)
+\item 
+def \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a310ff25edd58a6964f9ac3a498ef5d0b}{\+\_\+\+Collapse\+Keywords}} (self, content, keyword\+\_\+str)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Implementation of the VersionControlSystem interface for Subversion.\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_af7b67fa318df02166babb35cc4d71605}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_af7b67fa318df02166babb35cc4d71605}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor.
+
+Args:
+  options: Command line options.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_version_control_system_a28c02d45c4bd32f9750090e1eda733a3}{googletest-\/master.\+googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a310ff25edd58a6964f9ac3a498ef5d0b}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a310ff25edd58a6964f9ac3a498ef5d0b}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!\_CollapseKeywords@{\_CollapseKeywords}}
+\index{\_CollapseKeywords@{\_CollapseKeywords}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{\_CollapseKeywords()}{\_CollapseKeywords()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+\_\+\+Collapse\+Keywords (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{content,  }\item[{}]{keyword\+\_\+str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Collapses SVN keywords.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_aa62893a4bee019fe2a7830dd0866b5fe}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_aa62893a4bee019fe2a7830dd0866b5fe}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!\_GuessBase@{\_GuessBase}}
+\index{\_GuessBase@{\_GuessBase}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{\_GuessBase()}{\_GuessBase()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+\_\+\+Guess\+Base (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Returns the SVN base URL.
+
+Args:
+  required: If true, exits if the url can't be guessed, otherwise None is
+returned.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a25547b2a1179651ca489cd24c05072df}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a25547b2a1179651ca489cd24c05072df}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!GenerateDiff@{GenerateDiff}}
+\index{GenerateDiff@{GenerateDiff}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{GenerateDiff()}{GenerateDiff()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+Generate\+Diff (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the current diff as a string.
+
+Args:
+  args: Extra arguments to pass to the diff command.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_version_control_system_a655beae832bab0a437542ee635477485}{googletest-\/master.\+googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a6374a566b05895b119efb904440d65f6}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a6374a566b05895b119efb904440d65f6}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!GetBaseFile@{GetBaseFile}}
+\index{GetBaseFile@{GetBaseFile}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{GetBaseFile()}{GetBaseFile()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+Get\+Base\+File (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the content of the upstream version of a file.
+
+Returns:
+  A tuple (base_content, new_content, is_binary, status)
+base_content: The contents of the base file.
+new_content: For text files, this is empty.  For binary files, this is
+  the contents of the new file, since the diff output won't contain
+  information to reconstruct the current file.
+is_binary: True iff the file is binary.
+status: The status of the file.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_version_control_system_adfc913d49e48291939a9de8476a4c993}{googletest-\/master.\+googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a8850adde722d2ab300a6fe569cdcfd9e}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a8850adde722d2ab300a6fe569cdcfd9e}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!GetStatus@{GetStatus}}
+\index{GetStatus@{GetStatus}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{GetStatus()}{GetStatus()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+Get\+Status (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the status of a file.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a626e361b781f4403b60fcf00a129a92a}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a626e361b781f4403b60fcf00a129a92a}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!GetUnknownFiles@{GetUnknownFiles}}
+\index{GetUnknownFiles@{GetUnknownFiles}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{GetUnknownFiles()}{GetUnknownFiles()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+Get\+Unknown\+Files (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of files unknown to the VCS.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_version_control_system_aef7e59b815e037806eb11d94ed512ba6}{googletest-\/master.\+googletest.\+scripts.\+upload.\+Version\+Control\+System}}.
+
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a8209d02ac6980b4cf6fe415ac28b3625}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a8209d02ac6980b4cf6fe415ac28b3625}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!GuessBase@{GuessBase}}
+\index{GuessBase@{GuessBase}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{GuessBase()}{GuessBase()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+Guess\+Base (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{required }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Wrapper for _GuessBase.\end{DoxyVerb}
+ \mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a4390eaf4cfc0a1c28e2c0f21cd0cedb7}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a4390eaf4cfc0a1c28e2c0f21cd0cedb7}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily def googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+Read\+File (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the contents of a file.\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a334a99f7478b47c25a47d61089843135}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a334a99f7478b47c25a47d61089843135}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!rev\_end@{rev\_end}}
+\index{rev\_end@{rev\_end}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{rev\_end}{rev\_end}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+rev\+\_\+end}
+
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_adaae99f66a45e0213deb9051b4bd9aa6}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_adaae99f66a45e0213deb9051b4bd9aa6}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!rev\_start@{rev\_start}}
+\index{rev\_start@{rev\_start}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{rev\_start}{rev\_start}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+rev\+\_\+start}
+
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_ac2eefaffbdd9312bc855a22a01451e39}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_ac2eefaffbdd9312bc855a22a01451e39}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!svn\_base@{svn\_base}}
+\index{svn\_base@{svn\_base}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{svn\_base}{svn\_base}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+svn\+\_\+base}
+
+\mbox{\Hypertarget{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a0669021ce91a16987475e27af8586b70}\label{classgoogletest-master_1_1googletest_1_1scripts_1_1upload_1_1_subversion_v_c_s_a0669021ce91a16987475e27af8586b70}} 
+\index{googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}!svnls\_cache@{svnls\_cache}}
+\index{svnls\_cache@{svnls\_cache}!googletest-\/master.googletest.scripts.upload.SubversionVCS@{googletest-\/master.googletest.scripts.upload.SubversionVCS}}
+\subsubsection{\texorpdfstring{svnls\_cache}{svnls\_cache}}
+{\footnotesize\ttfamily googletest-\/master.\+googletest.\+scripts.\+upload.\+Subversion\+V\+C\+S.\+svnls\+\_\+cache}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mindaugas K/\+Documents/\+Git\+Hub/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas\+\_\+class/\+Obj\+\_\+test/lib/googletest-\/master/googletest/scripts/\mbox{\hyperlink{_obj__test_2lib_2googletest-master_2googletest_2scripts_2upload_8py}{upload.\+py}}\end{DoxyCompactItemize}

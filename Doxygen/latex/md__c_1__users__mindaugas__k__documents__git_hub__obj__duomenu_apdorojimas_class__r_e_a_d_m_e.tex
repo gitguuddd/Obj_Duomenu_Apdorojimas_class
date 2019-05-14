@@ -1,0 +1,582 @@
+
+\begin{DoxyEnumerate}
+\item Clone\textquotesingle{}inam repositoriją {\ttfamily \$ git clone \href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas.git}{\texttt{ https\+://github.\+com/gitguuddd/\+Obj\+\_\+\+Duomenu\+\_\+apdorojimas.\+git}}}
+\item Compile\textquotesingle{}inam programą paleisdami C\+Make\+Lists.\+txt failą
+\item Norint nuskaityti informaciją nuo failo reikia sukurti kursiokai.\+txt failą su tokia struktūra 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Pavarde     Vardas      ND1  ND2  ND3  ND4  ND5  ND6  ND7  ND8  Egzaminas}
+\DoxyCodeLine{Pavarde1    Vardas1     10   9    4    6    4    5    0    4    7}
+\DoxyCodeLine{Pavarde2    Vardas2     10   0    6    7    9    4    2    5    3}
+\DoxyCodeLine{Pavarde3    Vardas3     10   0    3    b    5    2    1    4    5}
+\end{DoxyCode}
+ \subsection*{-\/ Paleidžiame programą }
+\end{DoxyEnumerate}
+
+\subsection*{Naudojimosi instrukcija}
+
+
+\begin{DoxyItemize}
+\item Paleidųs programą programa paklaus vartotojo kokiu režimu jis nori vykdyti programą\+: išsamiu ar konkrečiu
+\item Išsamus režimas pasižymi labai didele pasirinkimo galimybe -\/ kiekvienam generuojamam studentu failui galima priskirti skirtingą skaičių namų darbų, galutinio pažymio skaičiavimo būdą. Šis režimas yra apkrautas vartotojo įvestimi
+\item Konkretus režimas kiek galima labiau sumažina vartotojo įvesčių kiekį -\/ generuojant failus reikia tik vieną kartą įvesti namų darbų skaičių ir galutinio pažymio skaičiavimo būdą
+\item Paleidųs programą ir pasirinkųs režimą bus matomas toks vaizdas 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:}
+\DoxyCodeLine{1. Ivesti studenta paciam}
+\DoxyCodeLine{2. Generuoti studenta}
+\DoxyCodeLine{3. Skaityti is failo}
+\DoxyCodeLine{4. Atspausdinti (galutinis pagal nd mediana)}
+\DoxyCodeLine{5. Atspausdinti (galutinis pagal nd vidurki)}
+\DoxyCodeLine{6. Generuoti studentu faila (v1.0)}
+\DoxyCodeLine{7. Skelti studentus i maladec ir L-laivo sarasus, atspausdinti}
+\end{DoxyCode}
+
+\item Pasirinkite norimą funkciją ivesdami jos numerį. Input\textquotesingle{}ai apsaugoti tai galima ir pasiaust \+:D
+\item Po 1, 2 arba 3 funkcijos įvykdomo programa grįžta į meniu, atnaujinamas saugomų studentų rodiklio skaičius
+\item 4, 5, 7 funkcijos neveiks, jei nebus saugomi bent vieno studento duomenys \subsection*{-\/ Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą }
+\end{DoxyItemize}
+
+\subsection*{Versijų istorija (changelog)}
+
+
+
+ \subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.5}{\texttt{ v1.\+5}}}
+
+(2019-\/05-\/07)
+
+ {\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item {\ttfamily Stud} derived klasės abstrakti bazinė klasė {\ttfamily Humie}
+\item {\ttfamily Important\+\_\+\+Values} klasė kurioje saugomi ir apsaugomi seniau per visą programą buvę išmėtyti globalūs kintamieji
+\item {\ttfamily Stud} klasės $>$$>$ ir $<$$<$ operatoriai
+\item {\ttfamily Stud} klasės {\ttfamily scan\+\_\+name} ir {\ttfamily scan\+\_\+surname} funkcijos
+\item {\ttfamily handle\+\_\+nd} funkcija skirta {\ttfamily ndcount} kintamojo įvedimo į {\ttfamily Important\+\_\+\+Values} tikrinimui
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Iš {\ttfamily Stud} klasės į {\ttfamily Humie} klasę perkelti {\ttfamily m\+\_\+name, m\+\_\+surname, m\+\_\+nd} kintamieji ir su jais susyjusios funkcijos. Taip užtikrinama, kad {\ttfamily Humie} klasė saugos įvestus duomenis, o {\ttfamily Stud} klasė -\/ išvedimui paruoštus duomenis
+\item Panaikinti beveik visi padriki globalūs kintamieji (palikti globalūs vektoriai, dekai, listai ir t.\+t). Minėti kintamieji perkelti į {\ttfamily Important\+\_\+\+Values} klasę
+\item Dėl sutikto \char`\"{}circular include\char`\"{} teko pertvarkyt headeriuose include\textquotesingle{}intus kitus headerius \+:(
+\item Realizuotų $>$$>$ ir $<$$<$ {\ttfamily Stud} klasės operatorių deka buvo pertvarkytos template\textquotesingle{}inė {\ttfamily read\+\_\+file2} , nuskaitymo nuo {\ttfamily kursiokai.\+txt} failo {\ttfamily read\+\_\+file2}, template\textquotesingle{}inė spausdinimo į failą {\ttfamily print\+\_\+to\+\_\+file} funkcijos
+\item Į github pridėtas {\ttfamily build} aplankas su jame esančiu kursiokai.\+txt failu
+\item Atnaujinta informacija apie programos struktūra
+\end{DoxyItemize}
+
+{\bfseries{Žinomos problemos/ką galima pagerinti}}
+\begin{DoxyItemize}
+\item Vis dar galima patobulinti programos struktūrą
+\item Kintamųjų ir funkcijų pavadinimų standartai \+:DD
+\end{DoxyItemize}
+
+
+
+ \subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.2}{\texttt{ v1.\+2}}}
+
+(2019-\/05-\/02)
+
+
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item {\ttfamily Rule of five} {\ttfamily Stud} klasės operatoriai
+\item Įvairūs {\ttfamily Stud} klasės palyginimo operatoriai
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Programos veikimo laiko skaičiavimas dabar realizuojamas per {\ttfamily Timer.\+h} klasę
+\item Stud klasė ir jos funkcijos iš {\ttfamily Mutual.\+h} ir {\ttfamily Mutual.\+cpp} iškeliamos į {\ttfamily Stud.\+h} ir {\ttfamily Stud.\+cpp}
+\item {\ttfamily Stud.\+h, Stud.\+cpp, Timer.\+h} failai laikomi classes aplankale
+\item Programos metu sugeneruoti failai saugomi {\ttfamily build} aplankale \subsection*{-\/ Dokumentacijoje atnaujinta informacija apie programos struktūrą }
+\end{DoxyItemize}
+
+\subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v1.1}{\texttt{ v1.\+1}}}
+
+(2019-\/04-\/23)
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item {\ttfamily Stud} struktūra pakeičiama į {\ttfamily Stud} klasę
+\item Iš klasės narių panaikinti tarpiniai {\ttfamily vid} ir {\ttfamily mvid} kintamieji, nes galutinio balo(vidurkis) ir galutinio balo(mediana) skaičiavimai vyksta setteriuose
+\item Pagal {\ttfamily Clang-\/tidy} rekomendacijas keliose vietose panaudotas {\ttfamily std\+::move}
+\item Panaikinta daug perteklinių try-\/catch blokų
+\end{DoxyItemize}
+
+{\bfseries{Žinomi bugai/ ką galima patobulinti}}
+\begin{DoxyItemize}
+\item Programos struktūra is still a wreck
+\item Kartais {\ttfamily L\+\_\+laivas} S\+TL konteineryje galima išvysti vieną studentą su galutiniu balu, kuris lygus {\ttfamily 5}, galima custom predicate problema
+\item Galima patobulinti ir pačią klasę -\/ padaryti ją suprantamesne \subsection*{-\/ Pats metas pradėti taikyti kintamųjų ir funkcijų pavadinimų standartus }
+\end{DoxyItemize}
+
+\subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.0.1}{\texttt{ v1.\+0.\+1}}}
+
+(2019-\/03-\/27)
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item Funkcijos {\ttfamily t\+\_\+gavo\+\_\+skola, rask\+\_\+\+Minkstus, rask\+\_\+\+Minkstus\+\_\+d, rask\+\_\+\+Kietus, rask\+\_\+\+Kietus\+\_\+d}
+\item Papildomos užduoties siūlomi splitinimo variantai pridėti kaip papildoma {\ttfamily d} splitinimo strategija
+\item Pridėta galimybė pasirinkti programos veikimo rėžima\+: išsamus/konkretus
+\item Skeliant studentus naudojant papildomos užduoties algoritmus skėlimo laikai bus išvedami į {\ttfamily Papildomos\+\_\+uzduoties\+\_\+laikai.\+txt} failą
+\item Kai vartotojas pats įveda vardą/pavardę programa tikrina ar varde/pavardėje yra tik raidės, atradųs kitokį simbolį vardas/pavardė yra keičiami į {\ttfamily Bad\+Input}
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Sutvarkyti keli \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+md}} failo bug\textquotesingle{}ai
+\item Pertvarkyta \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+md}} failo struktūra
+\item visi \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+md}} paveiksliukai sukelti į {\ttfamily Memes} folderį
+\end{DoxyItemize}
+
+
+
+ \subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.0}{\texttt{ v1.\+0}}}
+
+(2019-\/03-\/25)
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item Prie naudojamos {\ttfamily c} splitinimo strategijos pridėtos {\ttfamily a} ir {\ttfamily b} strategijos (apie jas -\/ vėliau)
+\item Splitinimo strategijos pasirinkimo funkcija {\ttfamily Strat\+\_\+pick}
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Sutvarkytas minor bug\textquotesingle{}as\+: išvedant skaičiavimus pagal mediana rašydavo, kad galutinis vertinimas buvo skaičiuotas pagal vidurkį
+\item Pasirodo, kad listo nebuvo įmanoma panaudoti su didesniais studentų kiekiais vien dėl mano kaltės, nes neišvalydavau temp struktūros.
+\item Paspartintas readinimas iš failo\+: eilutės duomenys nuskaitomi į temp struktūra. Priėjųs eilutės galą, struktūra yra pushbackinama S\+TL konteineryje.
+\item Pasikartojantis kodas printinimo, skaičiavimo, vardų analižės vietose pakeistas kreipimusi į template funkcijas {\ttfamily print\+\_\+to\+\_\+file ,calc , names}
+\item R\+E\+A\+D\+ME fail\textquotesingle{}e pridėtos naudojimosi, įdiegimo instrukcijos.
+\end{DoxyItemize}
+
+
+
+ \subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5}{\texttt{ v0.\+5}}}
+
+(2019-\/03-\/18)  
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item {\ttfamily split\+\_\+n\+\_\+print} ir {\ttfamily read\+\_\+file2} funkcijoms sukurti listo ir deque variantai, nes labai pasisekė kurti funkcijų template\textquotesingle{}us (žiūrėti viršuje \+:) )
+\item {\ttfamily t\+\_\+\+S\+T\+L\+\_\+pick} funkcija, kuri leidžia vartotojui pasirinkti ar jis norės dirbti su vektoriumi/deku/listu
+\item Naujuose inputuose sudėtas input handling\textquotesingle{}as
+\item Į benchmark\textquotesingle{}o failą (v0.\+5\+\_\+laikai.\+txt) išvedamas ir pasirinkto S\+TL konteinerio pavadinimas
+\item Nustatyta, kad listas lūžta, kai perlipa 19800 saugomų studentų skačių, listo generavimas apribotas iki 10000 studentų.
+\item 
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Visur sutvarkytas lygiavimas
+\item {\ttfamily v0.\+4\+\_\+laikai.\+txt} keičiama į {\ttfamily v0.\+5\+\_\+laikai.\+txt}
+\item {\ttfamily Generuoti studentu faila (v0.\+4)} keičiama į {\ttfamily Generuoti studentu faila (v0.\+5)}
+\item Pasirodo, kad {\ttfamily Generuoti studentu faila (v0.\+5)} funkcija visados generuodavo vienu studentu mažiau nei reikia. Tai sutvarkyta
+\item Namų darbų skaičiaus maksimalus pasirinkimas padidintas iki 1000000
+\item Keliose vietose panaikinti nereikalingi try-\/catch blokai
+\item Po 0.\+5 studentų generavimo programa į menių negrįžta ir tiesiog baiga darbą.
+\end{DoxyItemize}
+
+
+
+ \subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.4}{\texttt{ v0.\+4}}}
+
+(2019-\/03-\/11) 
+
+{\bfseries{Pridėta}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Generuoti studentu faila (v0.\+4)} meniu pasirinkimas kuris apjungia šias naujas funkcijas\+:
+\item {\bfseries{overload\textquotesingle{}inta {\ttfamily gen\+\_\+student} funkcija}}, kuri sugeneruoja nurodytą kiekį studentų su atsitiktinais vardais, pavardėmis , egzaminų įverčiais ir vartotojo nurodytu namų darbų įverčių kiekiu ir šiuos duomenis išveda į failus su atitinkamais pavadinimais {\ttfamily generuojamu studentu kiekis + studentu.\+txt}
+\item {\ttfamily read\+\_\+file2} {\bfseries{funkcija}} kuri nuskaito duomenis iš sugeneruotų failų ir juos sudeda į students vektorių.
+\item {\ttfamily split\+\_\+n\+\_\+print} {\bfseries{funkcija}} kuri, pagal vartotojo pasirinkimą (\mbox{[}m\mbox{]}ediana/\mbox{[}v\mbox{]}idurkis) suskaičiuoja studentų vektoriuje saugomų studentų galutinius pažymius pagal namų darbų įverčių medianą/namų darbų įverčių vidurkį, išrikiuoja stundentus pagal galutinį pažymį, randa iteratorių ties kuriuo galutinis pažymys tampa lygus 5.\+0, panaudoja iteratorių skeliant studentų sąrašą į {\ttfamily mldc} studentus ir {\ttfamily L\+\_\+laivas} studentus, juos atspausdina į failus su atitinkamais vardais {\ttfamily studentu skaičius + studentu + v/m + mldc/\+L\+\_\+laivas}
+\item Naudojant {\ttfamily high\+\_\+resolution\+\_\+clock} išmatuotas {\ttfamily gen\+\_\+student}, {\ttfamily read\+\_\+file2} ir {\ttfamily split\+\_\+n\+\_\+print} veikimo laikai dirbant su visais studentų sąrašų variantais (10, 100, 1000, 10000, 100000, 1000000), laikai išvedami į {\ttfamily v0.\+4\+\_\+laikai.\+txt} failą
+\item Naujose funkcijose pridėtas input/exception handling\textquotesingle{}as
+\item Dabar galima skelti ir atspausdinti ir duomenis kurie buvo sugeneruoti/įvesti paties naudotojo arba nuskaityti iš kursiokai.\+txt failo
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+
+
+\begin{DoxyItemize}
+\item Kursioko Igno D. patarimu mt19937 seedinimas pakeistas iš random device į {\ttfamily high\+\_\+resolution\+\_\+clock\+::now().time\+\_\+since\+\_\+epoch().count()}, nes pasirodo, kad mano kompiuteris neturi random device \+:(
+\item Sutvarkyti keli minor bug\textquotesingle{}ai susyję su informacijos išvedimu konsolėje
+\item Pakeistas \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+md}} failas
+\end{DoxyItemize}
+
+{\bfseries{Ką artimiausiame release reiktų pataisyti, bet ko tikriausiai nepataisysių}}
+\begin{DoxyItemize}
+\item Skeliant vartotojo įvestus/sugeneruotus/nuskaitytus duomenis, sudaryti failai ne visados pasižymi puikiu lygiavimu
+\item Sugeneruoti studentų failai (dar neperskelti) irgi nėra puikiai išlygiuoti, nes iškart generuojant ir išvedant nėra galimybės surasti maxname ir maxsurname reikšmių
+\item Studentų sąrašų generavimas ir skėlimas prikuria labaiiii daug failų.
+\item Dėl multiple definition errorų į {\ttfamily input.\+h} ir {\ttfamily input.\+cpp} teko perkelti split\+\_\+n\+\_\+print funkciją, nors ji pagal veikimo principą turėtų priklausyti {\ttfamily output.\+h} ir {\ttfamily output.\+cpp} failams
+\item Per daug kintamųjų, kurie kaip extern\textquotesingle{}ai yra deklaruojami {\ttfamily mutual.\+h}
+\end{DoxyItemize}
+
+{\bfseries{Laiko matavimo rezultatai ir pavyzdžiai}}
+\begin{DoxyItemize}
+\item Visi sarašai buvo sugeneruoti naudojant Release profilį ir -\/O3 flagą
+\end{DoxyItemize}
+
+
+
+ \subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.3}{\texttt{ v0.\+3}}}
+
+(2019-\/02-\/25)
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item {\ttfamily Input.\+h, Mutual.\+h, Output.\+h, Mutual.\+cpp, Output.\+cpp, Input.\+cpp}
+\item Input handling (pagrinde {\ttfamily cin.\+fail()})
+\item Naudojami {\ttfamily vector.\+reserve()} ir {\ttfamily vector.\+shrink\+\_\+to\+\_\+fit()}
+\item Exception handling ({\ttfamily try -\/ catch}) ties {\ttfamily students.\+push\+\_\+back} ir {\ttfamily Stud.\+nd.\+push\+\_\+back}, nes pereita prie vektorių atminties rezervavimo
+\item Input handling nuskaitant failą -\/ galima nuskaityti namų darbų pažymius net ir jei jie yra ne skaičiai arba mazesni uz 0/ didesni uz 10 (aptikus -\/ nulinami), jei netinkamas input yra ilgesnis nei 4 simboliai -\/ didelė rizika sugadinti nuskaitytų duomenų tikslumą
+\item Nested switch meniu klaidų spausdinimui
+\item Programos struktūros sekcija \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+MD}} faile
+\item 
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Panaikinti goto, taip pat ir easter egg (L\+I\+N\+E\+K\+A\+P\+UT\+:), perdaryta switch logika.
+\item Pasirodo, kad senesnių versijų duomenys nebuvo labai tikslūs, duomenys patikslinti. \subsection*{-\/ kursiokai.\+txt failas tikslingai sucorruptintas norint išbandyti input handling\textquotesingle{}a. }
+\end{DoxyItemize}
+
+\subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.2}{\texttt{ v0.\+2}}}
+
+(2019-\/02-\/18)
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item Kursiokai.\+txt
+\item Rūšiavimas pagal studento vardą ir pavardę
+\item Nuskaitymas iš failo
+\item Galimybė visais būdais gautus duomenis atspausdinti viename output sąraše
+\item Primityvus switch\textquotesingle{}o error handling\textquotesingle{}as naudojant goto
+\item Easter egg
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}}
+\begin{DoxyItemize}
+\item Pakeistas \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+md}} failas
+\end{DoxyItemize}
+
+{\bfseries{Žinomi trūkumai/ką reikia kuo greičiau ištaisyti}}
+\begin{DoxyItemize}
+\item Goto switche reikia pakeisti į normalų refactoringa dirbant prie v0.\+3
+\item Studentų rikiavimas veiks keistokai jei bus naudojami ne vienodo ilgio vardai ir pavardės. \subsection*{-\/ Nemažai vietų trūksta exception/error handling\textquotesingle{}o }
+\end{DoxyItemize}
+
+\subsubsection*{\href{https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.1}{\texttt{ v0.\+1}}}
+
+(2019-\/02-\/18)
+
+{\bfseries{Pridėta}}
+\begin{DoxyItemize}
+\item C\+Make failas
+\item Pirmininis programos {\ttfamily cpp} failas
+\item Alternatyvios programos (su masyvu ) {\ttfamily cpp} failas (veikiantis bardakas)
+\end{DoxyItemize}
+
+{\bfseries{Koreguota}} \subsection*{-\/ Pakeistas \mbox{\hyperlink{_r_e_a_d_m_e_8md}{R\+E\+A\+D\+M\+E.\+md}} failas }
+
+\subsection*{Benchmark\textquotesingle{}ai}
+
+{\bfseries{Truputis informacijos norint suprasti benchmarkus}}
+\begin{DoxyItemize}
+\item Visi testai yra vykdomi Release profilyje
+\item Visi testai vykdomi su 10 namų darbų.
+\item Egzistuoja keturios skėlimo strategijos {\ttfamily A, B, C, D}
+\item Strategija {\ttfamily A} -\/ Studentai, kurių galutinis pažymys yra $>$= 5.\+0 yra perkeliami į {\ttfamily mldc} S\+TL konteinerį, kurių yra mažesnis už 5.\+0 -\/ į {\ttfamily L\+\_\+laivas} S\+TL konteinerį. Studentai iš pirminio S\+TL konteinerio netrinami
+\item Strategija {\ttfamily B} -\/ Studentai, kurių galutinis pažymys yra $>$=5.\+0 yra perkeliami į {\ttfamily mldc\+\_\+students} S\+TL konteinerį, iš pirminio studentų S\+TL konteinerio šie studentai yra pašalinami, pirminis S\+TL\textquotesingle{}as tampa {\ttfamily L\+\_\+laivas} S\+TL konteineriu
+\item Strategija {\ttfamily C} -\/ Pirminis studentų S\+TL konteineris yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant {\ttfamily std\+::upper\+\_\+bound} randamas iteratorių {\ttfamily up}, ties kuriuo reikšmės perlipa {\ttfamily 4.\+999999999} ribą. Šis iteratoriaus yra naudojamas {\ttfamily mldc\+\_\+students} S\+TL konteinerio kontruktoriuje, resize{\ttfamily inant pirminį S\+TL konteinerį yra gaunamas}{\ttfamily L\+\_\+laivas}{\ttfamily S\+TL konteineris.}
+\item {\ttfamily Strategija}{\ttfamily D}{\ttfamily -\/ Papildomos užduoties siūlomi skėlimo algoritmai\+:}{\ttfamily m}{\ttfamily algoritmas, kuris skolininkus perkelia į atskirą S\+TL konteinerį, šiuos studentus ištrina iš pirminio S\+TL konteinerio per}{\ttfamily erase}{\ttfamily funkciją,}{\ttfamily k}{\ttfamily algoritmas, kuris skolininkus irgi perkelia į atskirą S\+TL konteinerį, kietus studentus perkelia į pirminio S\+TL konteinerio priekį ir naudojant}{\ttfamily resize}{\ttfamily ir}{\ttfamily shrink\+\_\+to\+\_\+fit}{\ttfamily funkcijas iš šio S\+TL konteinerio ištrina perteklinius kietus studentus/skolininkus ir atlaisvina atmintį -\/}{\ttfamily vid}{\ttfamily ir}{\ttfamily med}\`{} atitinkamai reiškia, kad teste galutinis pažymys buvo skaičiuotas pagal namų darbų įverčių vidurkį arba medianą
+\end{DoxyItemize}
+
+{\bfseries{v1.\+1}}
+
+{\bfseries{Programos veikimo laikų palyginimas naudojant {\ttfamily Stud} struktūra arba {\ttfamily Stud} klasę}}
+
+
+\begin{DoxyItemize}
+\item Šiam ir sekantiems ($>$=v1.\+1) sparčiausiems testams bus naudojama {\ttfamily A} dalijimo strategija
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily vector$<$struct Stud$>$}  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily vector$<$class Stud$>$}   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily vector$<$struct Stud$>$}  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily vector$<$class Stud$>$}   }\\\cline{1-3}
+\endhead
+100000 v  &3.\+94281 s.  &1.\+73632 s.   \\\cline{1-3}
+1000000 v  &39.\+8862 s.  &35.\+73931 s.   \\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item Iš lentelės duomenų matome, kad {\ttfamily Stud} realizacija per klasę sugebėjo paspartinti A strategiją.
+\end{DoxyItemize}
+
+{\bfseries{Programos veikimo laikų palyginimas naudojant skirtingus optimizavimo flag\textquotesingle{}us}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/O1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/O2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/O3   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/O1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/O2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/O3   }\\\cline{1-4}
+\endhead
+100000 v  &3.\+799484 s.  &3.\+532669 s.  &3.\+595513 s.   \\\cline{1-4}
+1000000 v  &41.\+12474 s.  &40.\+11205 s.  &34.\+53586 s.   \\\cline{1-4}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item Kaip ir reikėjo tikėtis -\/ O3 optimizacijos flag\textquotesingle{}as labiausiai padėjo programai. Neaiškumą lyginant 100000v -\/O2 ir 100000v -\/O3 galima paaiškinti tuo, kad duomenų tikslumui koją galėjo pakišti atsitiktinis kompiuteriuo apkrovos kitimas.
+\item 
+\end{DoxyItemize}
+
+{\bfseries{v1.\+0.\+1}}
+
+{\bfseries{Papidomos užduoties skėlimo algoritmų (D strategijos) laikai dirbant su vector arba deque}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$   }\\\cline{1-3}
+\endhead
+10000 m  &4.\+71733 s.  &1.\+65675 s.   \\\cline{1-3}
+10000 k  &11.\+7855 s.  &0.\+004923 s.   \\\cline{1-3}
+100000 m  &497.\+472 s.  &175.\+256 s.   \\\cline{1-3}
+100000 k  &3144.\+7 s.  &0.\+061832 s.   \\\cline{1-3}
+1000000 m  &inf.  &inf.   \\\cline{1-3}
+1000000 k  &inf.  &0.\+600361 s.   \\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item Iš lentelės duomenų matome, kad {\ttfamily m} algoritmas vektoriui buvo palankesnis nei {\ttfamily k} algoritmas.\+Tai galima paaiškinti tuo, kad {\ttfamily k} algoritme naudojamas kėlimas į priekį vektoriui yra O(\+N) sudėtingumo funkcija ir gerokai apsunkina vektoriaus darba -\/ labai daug laiko užima saugomų objektų perstumdymas.
+\item Tačiau deque atveju {\ttfamily k} algoritmas buvo totalus game winner, nes deque turi {\ttfamily push\+\_\+front} funkciją ir ją labai sėkmingai panaudoja {\ttfamily k} algoritmą.\+Tai yra vienintelė kombinacija, kuri pabaigė darbą su 1000000 studentų.
+\end{DoxyItemize}
+
+{\bfseries{v1.\+0}}
+
+{\bfseries{Skirtingų S\+TL konteineriu naudojamos atminties kiekis pritaikant a strategiją}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endhead
+Naudojamos atminties kiekis programos pradžioje  &\PBS\centering 635 MB  &\PBS\centering 966.\+6 MB  &\PBS\centering 971.\+6 MB   \\\cline{1-4}
+10 skirtumas  &\PBS\centering + 0.\+2 MB  &\PBS\centering + 0.\+2 MB  &\PBS\centering + 0.\+3 MB   \\\cline{1-4}
+100 skirtumas  &\PBS\centering + 0.\+3 MB  &\PBS\centering + 0.\+4 MB  &\PBS\centering + 0.\+7 MB   \\\cline{1-4}
+1000 skirtumas  &\PBS\centering + 0.\+9 MB  &\PBS\centering + 1.\+8 MB  &\PBS\centering + 0.\+9 MB   \\\cline{1-4}
+10000 skirtumas  &\PBS\centering + 3.\+2 MB  &\PBS\centering + 3.\+9 MB  &\PBS\centering + 2.\+4 MB   \\\cline{1-4}
+100000 skirtumas  &\PBS\centering + 34.\+1 MB  &\PBS\centering + 30.\+8 MB  &\PBS\centering + 36.\+9 MB   \\\cline{1-4}
+1000000 skirtumas  &\PBS\centering + 616.\+2 MB  &\PBS\centering + 293.\+4 MB  &\PBS\centering + 322.\+6 MB   \\\cline{1-4}
+\end{longtabu}
+
+\begin{DoxyItemize}
+\item Iš lentelės duomenų matome, kad {\ttfamily vector} S\+TL konteineris yra labai jautrus tokiam atminties švaistymui
+\end{DoxyItemize}
+
+{\bfseries{Programos benchmark\textquotesingle{}as prieš optimizuojant a ir b strategijas}}
+\begin{DoxyItemize}
+\item a ir b strategijoms buvo būdingas štai toks kodas 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{a strategija}
+\DoxyCodeLine{}
+\DoxyCodeLine{if(pchoice=='v')}
+\DoxyCodeLine{            for (Stud\& Stud : students\_d)}
+\DoxyCodeLine{                (Stud.vid2>=test.vid2)?mldc\_d.push\_back(Stud):L\_laivsd.push\_back(Stud);}
+\DoxyCodeLine{        else if(pchoice=='m')}
+\DoxyCodeLine{            for (Stud\& Stud : students\_d)}
+\DoxyCodeLine{                (Stud.mvid>=test.mvid)?mldc\_d.push\_back(Stud):L\_laivsd.push\_back(Stud);\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{b strategija}
+\DoxyCodeLine{}
+\DoxyCodeLine{if(pchoice=='v')\{}
+\DoxyCodeLine{            std::copy\_if(students\_d.begin(), students\_d.end(), std::back\_inserter(mldc\_students\_d) ,[](auto v) \{return v.vid2>test.vid2;\});}
+\DoxyCodeLine{            students\_d.erase(std::remove\_if(students\_d.begin(),students\_d.end(),[](auto v) \{return v.vid2>test.vid2;\}),students\_d.end());}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        if (pchoice=='m')\{}
+\DoxyCodeLine{            std::copy\_if(students\_d.begin(), students\_d.end(), std::back\_inserter(mldc\_students\_d) ,[](auto v) \{return v.mvid>test.mvid;\});}
+\DoxyCodeLine{            students\_d.erase(std::remove\_if(students\_d.begin(),students\_d.end(),[](auto v) \{return v.mvid>test.mvid;\}),students\_d.end());}
+\DoxyCodeLine{        \}}
+\end{DoxyCode}
+ \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endhead
+10med. A  &0.\+004149 s.  &0.\+007609 s.  &0.\+004057 s.   \\\cline{1-4}
+10vid. A  &0.\+004931 s.  &0.\+004841 s.  &0.\+004829 s.   \\\cline{1-4}
+10med. B  &0.\+006466 s.  &0.\+008885 s.  &0.\+005813 s.   \\\cline{1-4}
+10vid. B  &0.\+00897 s.  &0.\+006701 s.  &0.\+006041 s.   \\\cline{1-4}
+10med. C  &0.\+004168 s.  &0.\+009851 s.  &0.\+005049 s.   \\\cline{1-4}
+10vid .C  &0.\+003733 s.  &0.\+003545 s.  &0.\+004209 s.   \\\cline{1-4}
+100med. A  &0.\+008164 s.  &0.\+008695 s.  &0.\+007641 s.   \\\cline{1-4}
+100vid. A  &0.\+006982 s.  &0.\+008061 s.  &0.\+007104 s.   \\\cline{1-4}
+100med. B  &0.\+008847 s.  &0.\+00708 s.  &0.\+007023 s.   \\\cline{1-4}
+100vid. B  &0.\+010152 s.  &0.\+10384 s.  &0.\+006812 s.   \\\cline{1-4}
+100med. C  &0.\+008884 s.  &0.\+007204 s.  &0.\+009949 s.   \\\cline{1-4}
+100vid. C  &0.\+009582 s.  &0.\+009121 s.  &0.\+009793 s.   \\\cline{1-4}
+1000med. A  &0.\+045407 s.  &0.\+030931 s.  &0.\+045012 s.   \\\cline{1-4}
+1000vid. A  &0.\+035778 s.  &0.\+031794 s.  &0.\+038341 s.   \\\cline{1-4}
+1000med. B  &0.\+033443 s.  &0.\+034769 s.  &0.\+029803 s.   \\\cline{1-4}
+1000vid. B  &0.\+034354 s.  &0.\+039826 s.  &0.\+03594 s.   \\\cline{1-4}
+1000med. C  &0.\+03992 s.  &0.\+0331154 s.  &0.\+039117 s.   \\\cline{1-4}
+1000vid. C  &0.\+054393 s.  &0.\+034342 s.  &0.\+032307 s.   \\\cline{1-4}
+10000med. A  &0.\+324686 s.  &0.\+256643 s.  &0.\+263765 s.   \\\cline{1-4}
+10000vid. A  &0.\+289927 s.  &0.\+25493 s.  &0.\+276006 s.   \\\cline{1-4}
+10000med. B  &0.\+320333 s.  &0.\+260436 s.  &0.\+280009 s.   \\\cline{1-4}
+10000vid. B  &0.\+263332 s.  &0.\+323455 s.  &0.\+288229 s.   \\\cline{1-4}
+10000med. C  &0.\+411803 s.  &0.\+298277 s.  &0.\+309161 s.   \\\cline{1-4}
+10000vid. C  &0.\+38127 s.  &1.\+135304 s.  &0.\+349428 s.   \\\cline{1-4}
+100000med. A  &3.\+065104 s.  &2.\+835945 s.  &3.\+072419 s.   \\\cline{1-4}
+100000vid. A  &1.\+805628 s.  &2.\+696151 s.  &3.\+472723 s.   \\\cline{1-4}
+100000med. B  &4.\+301535 s.  &2.\+959285 s.  &2.\+5732259 s.   \\\cline{1-4}
+100000vid. B  &3.\+135811 s.  &3.\+096747 s.  &3.\+225552 s.   \\\cline{1-4}
+100000med. C  &4.\+298746 s.  &2.\+977456 s.  &3.\+801098 s.   \\\cline{1-4}
+100000vid. C  &3.\+871526 s.  &2.\+391564 s.  &3.\+627411 s.   \\\cline{1-4}
+1000000med. A  &29.\+86407 s.  &27.\+74826 s.  &30.\+25982 s.   \\\cline{1-4}
+1000000vid. A  &34.\+03236 s.  &28.\+82433 s.  &31.\+97502 s.   \\\cline{1-4}
+1000000med. B  &32.\+57199 s.  &30.\+12409 s.  &31.\+86533 s.   \\\cline{1-4}
+1000000vid. B  &31.\+42009 s.  &32.\+16509 s.  &30.\+41746 s.   \\\cline{1-4}
+1000000med. C  &40.\+5757 s.  &29.\+35842 s.  &35.\+62856 s.   \\\cline{1-4}
+1000000vid. C  &38.\+07228 s.  &38.\+83359 s.  &37.\+20177 s.   \\\cline{1-4}
+\end{longtabu}
+
+\item Iš lentelės duomenų matome, kad mano programos atveju dirbant su skirtingais S\+TL konteineriais programa sugaišta panašų kiekį laiko
+\end{DoxyItemize}
+
+{\bfseries{Programos darbas po a ir b strategijų optimizavimo}}
+\begin{DoxyItemize}
+\item {\ttfamily c} strategija į lentelę neįtraukta, nes ji nesikeitė. Optimizavus {\ttfamily b} strategiją, savo veikimo principu ji tapo labai panaši į {\ttfamily c} strategiją
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{a ir b strategijos}
+\DoxyCodeLine{}
+\DoxyCodeLine{if(pchoice=='v')}
+\DoxyCodeLine{                up\_l=stable\_partition(students\_l.begin(),students\_l.end(),[](auto v) \{return v.vid2<test.vid2;\});\}}
+\DoxyCodeLine{            else if(pchoice=='m')}
+\DoxyCodeLine{                up\_l=stable\_partition(students\_l.begin(),students\_l.end(),[](auto v) \{return v.mvid<test.mvid;\});}
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Šiuo atveju rastas {\ttfamily up\+\_\+l} iteratorius {\ttfamily a} strategijos atveju yra panaudojamas konstruojant {\ttfamily L\+\_\+laivasl} ir {\ttfamily mldc\+\_\+l} listus, {\ttfamily b} strategijos atveju šis iteratorius panaujomas konstruojant {\ttfamily mldc\+\_\+students\+\_\+l} list\textquotesingle{}ą
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endhead
+10med. A  &0.\+004988 s.  &0.\+007974 s.  &0.\+0039868 s.   \\\cline{1-4}
+10vid. A  &0.\+005936 s.  &0.\+002994 s.  &0.\+002991 s.   \\\cline{1-4}
+10med. B  &0.\+004985 s.  &0.\+005987 s.  &0.\+003991 s.   \\\cline{1-4}
+10vid. B  &0.\+004985 s.  &0.\+003962 s.  &0.\+0049816 s.   \\\cline{1-4}
+100med. A  &0.\+011115 s.  &0.\+008017 s.  &0.\+005984 s.   \\\cline{1-4}
+100vid. A  &0.\+009008 s.  &0.\+005985 s.  &0.\+00798 s.   \\\cline{1-4}
+100med. B  &0.\+006915 s.  &0.\+007979 s.  &0.\+008972 s.   \\\cline{1-4}
+100vid. B  &0.\+007977 s.  &0.\+007942 s.  &0.\+008011 s.   \\\cline{1-4}
+1000med. A  &0.\+031731 s.  &0.\+03291 s.  &0.\+034002 s.   \\\cline{1-4}
+1000vid. A  &0.\+029913 s.  &0.\+037914 s.  &0.\+030915 s.   \\\cline{1-4}
+1000med. B  &0.\+030947 s.  &0.\+034943 s.  &0.\+032974 s.   \\\cline{1-4}
+1000vid. B  &0.\+031914 s.  &0.\+032948 s.  &0.\+030878 s.   \\\cline{1-4}
+10000med. A  &0.\+260302 s.  &0.\+317148 s.  &0.\+2702790 s.   \\\cline{1-4}
+10000vid. A  &0.\+291251 s.  &0.\+277272 s.  &0.\+278252 s.   \\\cline{1-4}
+10000med. B  &0.\+266288 s.  &0.\+302154 s.  &0.\+274262 s.   \\\cline{1-4}
+10000vid. B  &0.\+281282 s.  &0.\+268279 s.  &0.\+279253 s.   \\\cline{1-4}
+100000med. A  &2.\+902221 s.  &3.\+120653 s.  &3.\+318164 s.   \\\cline{1-4}
+100000vid. A  &3.\+013925 s.  &3.\+081752 s.  &3.\+280935 s.   \\\cline{1-4}
+100000med. B  &2.\+917195 s.  &2.\+934117 s.  &3.\+274237 s.   \\\cline{1-4}
+100000vid. B  &3.\+018921 s.  &3.\+047839 s.  &2.\+751651 s.   \\\cline{1-4}
+1000000med. A  &28.\+70126 s.  &29.\+83323 s.  &29.\+43332 s.   \\\cline{1-4}
+1000000vid. A  &29.\+14299 s.  &30.\+59215 s.  &29.\+58191 s.   \\\cline{1-4}
+1000000med. B  &29.\+73743 s.  &29.\+01442 s.  &29.\+41837 s.   \\\cline{1-4}
+1000000vid. B  &28.\+89283 s.  &30.\+00679 s.  &29.\+0454 s.   \\\cline{1-4}
+\end{longtabu}
+
+
+{\bfseries{v0.\+5}} {\bfseries{Testavimo rezultatai naudojant skirtingus S\+TL konteinerius}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+TL konteineris  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::deque$<$$>$  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::list$<$$>$   }\\\cline{1-4}
+\endhead
+10vid  &0.\+009014 s.  &0.\+005128 s.  &0.\+003992 s.   \\\cline{1-4}
+10med  &0.\+006949 s.  &0.\+002992 s.  &0.\+004979 s.   \\\cline{1-4}
+100vid  &0.\+007017 s.  &0.\+009007 s.  &0.\+00698 s.   \\\cline{1-4}
+100med  &0.\+007977 s.  &0.\+007982 s.  &0.\+008977 s.   \\\cline{1-4}
+1000vid  &0.\+035963 s.  &0.\+040521 s.  &0.\+4627448 s.   \\\cline{1-4}
+1000med  &0.\+031945 s.  &0.\+032907 s.  &0.\+191491 s.   \\\cline{1-4}
+10000vid  &0.\+328088 s.  &0.\+323124 s.  &7.\+471561 s.   \\\cline{1-4}
+10000med  &0.\+310168 s.  &0.\+308523 s.  &19.\+684555 s.   \\\cline{1-4}
+100000vid  &3.\+757647 s.  &3.\+352958 s.  &Nėra   \\\cline{1-4}
+100000med  &3.\+35035 s.  &3.\+537462 s.  &Nėra   \\\cline{1-4}
+1000000vid  &37.\+74918 s.  &42.\+60728 s.  &Nėra   \\\cline{1-4}
+1000000med  &41.\+558277 s.  &37.\+02453 s.  &Nėra   \\\cline{1-4}
+\end{longtabu}
+
+
+{\bfseries{v0.\+4}}
+\begin{DoxyItemize}
+\item {\bfseries{Laiko matavimo rezultatų failo vaizdas visuose sąrašuose generuojant po 10 namų darbų pažymių ir pasirinkus galutinio pažymio skaičiavimą pagal vidurkį}} 
+\item {\bfseries{Laiko matavimo rezultatų failo vaizdas visuose sąrašuose generuojant po 10 namų darbų pažymių ir pasirinkus galutinio pažymio skaičiavimą pagal medianą}} !\mbox{[}alt text\mbox{]}(./\+Memes/med10.png \char`\"{}\+:)\char`\"{})
+\end{DoxyItemize}
+
+
+
+ \subsection*{Programos struktūra}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Input.\+h} ir {\ttfamily Input.\+cpp} funkcijos/kintamieji/include\textquotesingle{}ai susyję su duomenų įvedimu
+\item {\ttfamily Output.\+h}ir {\ttfamily Output.\+cpp} funkcijos/kintamieji/include\textquotesingle{}ai susyję su duomenų išvedimu
+\item {\ttfamily Mutual.\+h}ir {\ttfamily Mutual.\+cpp} funkcijos/kintamieji/include\textquotesingle{}ai bendri visai programai ({\ttfamily \#include iostream},{\ttfamily handle\+\_\+input()} )
+\item {\ttfamily \mbox{\hyperlink{main_8cpp}{main.\+cpp}}} pagrindinis failas -\/ meniu
+\item {\ttfamily Stud.\+h} ir {\ttfamily Stud.\+cpp} Stud klasei reikalingi include{\ttfamily ai ir funkcijos -\/}{\ttfamily Important\+\_\+\+Values.\+h}{\ttfamily ir}{\ttfamily Important\+\_\+\+Values.\+cpp}{\ttfamily sklandų programos veikimą užtikrinantys kintamieji ir su jais dirbančios funkcijos -\/}{\ttfamily Humie.\+h}{\ttfamily ir}{\ttfamily Humie.\+cpp}{\ttfamily Humie klasei reikalingi include}ai ir funkcijos
+\item {\ttfamily Timer.\+h} timer klasė 
+\end{DoxyItemize}
