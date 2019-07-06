@@ -43,7 +43,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Nuoroda į užduoties reikalavimus
 
 ---
-### [v2.0](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v2.0)
+### [v2.0](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/V2.0)
 **Pridėta**
 - Doxygen dokumentacija (Latex ir HTML formatai) Doxygen aplankale
 - ```Obj_test``` aplankalas kuriame saugomi unit testai, paleidžiami per runBasicClasstests. Testai ir jų rezultatai aprašyti benchmark skiltyje. Unit testams naudojamas gtest 1.8.1
