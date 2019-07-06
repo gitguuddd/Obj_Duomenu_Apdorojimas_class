@@ -38,6 +38,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 
 ---
 ### [v2.1](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v2.1)
+(2019-07-06)
 **Pridėta**
 - Nuoroda į užduoties reikalavimus
 
