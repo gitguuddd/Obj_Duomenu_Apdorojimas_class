@@ -115,6 +115,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Sutvarkyti keli README.md failo bug'ai
 - Pertvarkyta README.md failo struktūra
 - visi README.md paveiksliukai sukelti į ```Memes``` folderį
+- poop
 
 
 ---
