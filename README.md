@@ -1,3 +1,7 @@
+## Nuoroda į užduoties reikalavimus
+[3 užduotis](https://github.com/objprog/paskaitos2019/wiki/3-oji-u%C5%BEduotis)
+
+
 ## Įdiegimo instrukcija
 1. Clone'inam repositoriją ```$ git clone https://github.com/gitguuddd/Obj_Duomenu_apdorojimas.git```
 2. Compile'inam programą paleisdami CMakeLists.txt failą
@@ -26,14 +30,21 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 7. Skelti studentus i maladec ir L-laivo sarasus, atspausdinti
 ```
 - Pasirinkite norimą funkciją ivesdami jos numerį. Input'ai apsaugoti tai galima ir pasiaust :D
-- Po 1, 2 arba 3 funkcijos įvykdomo programa grįžta į meniu, atnaujinamas saugomų studentų rodiklio skaičius
+- Po 1, 2 arba 3 funkcijos įvykdymo programa grįžta į meniu, atnaujinamas saugomų studentų rodiklio skaičius
 - 4, 5, 7 funkcijos neveiks, jei nebus saugomi bent vieno studento duomenys
 - Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą
 ---
 ## Versijų istorija (changelog)
 
 ---
-### [v2.0](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v2.0)
+### [v2.1](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/v2.1)
+(2019-07-06)
+
+**Pridėta**
+- Nuoroda į užduoties reikalavimus
+
+---
+### [v2.0](https://github.com/gitguuddd/Obj_Duomenu_Apdorojimas_class/releases/tag/V2.0)
 **Pridėta**
 - Doxygen dokumentacija (Latex ir HTML formatai) Doxygen aplankale
 - ```Obj_test``` aplankalas kuriame saugomi unit testai, paleidžiami per runBasicClasstests. Testai ir jų rezultatai aprašyti benchmark skiltyje. Unit testams naudojamas gtest 1.8.1
